@@ -610,6 +610,7 @@ newtarget->npc->comb = false;
 void Map::display_back(){
 FreeChunk *fcf;
 
+SDL_SetRenderDrawBlendMode( WIN_MAIN.render, SDL_BLENDMODE_BLEND );
 
 //Normal Map + Back Layer
 ApplyTex( DisplayLocation_x  , DisplayLocation_y , RendNormalMap );
@@ -651,6 +652,7 @@ void Map::display_fore(){
 
 FreeChunk *fcf;
 
+SDL_SetRenderDrawBlendMode( WIN_MAIN.render, SDL_BLENDMODE_MOD );
 
 ApplyTex( DisplayLocation_x  , DisplayLocation_y , RendForeLayer );
 

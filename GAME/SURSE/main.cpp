@@ -7,8 +7,8 @@
 
 int main( int argc,char **argv ){
 int ERROR;
-///LOAD Settings
 
+///LOAD Settings
 SETTINGS.load();
 
 ///Init
