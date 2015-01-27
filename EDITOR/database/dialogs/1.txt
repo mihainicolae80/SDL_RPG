@@ -1,0 +1,16 @@
+Name: Mr quest man
+txtline: Hello friend , i am quest man
+txtline: and this is my quest
+txtline: actualy your quest 
+
+NEWTOPIC: Click here to talk
+NEWTOPIC: Here u get a quest 
+
+
+OPENTOPIC(1):
+txtline: there is nothing else i can say
+txtline: good bye
+
+OPENTOPIC(1):
+txtline: now i give you the quest
+startquest: 1 CHOSE 

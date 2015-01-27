@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="RPG GAME" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/RPG GAME" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="SDL2main" />
+					<Add library="SDL2" />
+					<Add library="SDL2_image" />
+					<Add library="SDL2_ttf" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/RPG GAME" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="SURSE/anim.cpp" />
+		<Unit filename="SURSE/anim.h" />
+		<Unit filename="SURSE/base.cpp" />
+		<Unit filename="SURSE/base.h" />
+		<Unit filename="SURSE/basics.cpp" />
+		<Unit filename="SURSE/basics.h" />
+		<Unit filename="SURSE/combat.cpp" />
+		<Unit filename="SURSE/combat.h" />
+		<Unit filename="SURSE/console_extern.cpp" />
+		<Unit filename="SURSE/console_extern.h" />
+		<Unit filename="SURSE/data.cpp" />
+		<Unit filename="SURSE/data.h" />
+		<Unit filename="SURSE/debug.cpp" />
+		<Unit filename="SURSE/debug.h" />
+		<Unit filename="SURSE/dialog.cpp" />
+		<Unit filename="SURSE/dialog.h" />
+		<Unit filename="SURSE/gevents.cpp" />
+		<Unit filename="SURSE/gevents.h" />
+		<Unit filename="SURSE/interface.cpp" />
+		<Unit filename="SURSE/interface.h" />
+		<Unit filename="SURSE/inventory.cpp" />
+		<Unit filename="SURSE/inventory.h" />
+		<Unit filename="SURSE/loot.cpp" />
+		<Unit filename="SURSE/loot.h" />
+		<Unit filename="SURSE/main.cpp" />
+		<Unit filename="SURSE/main_headers.h" />
+		<Unit filename="SURSE/map.cpp" />
+		<Unit filename="SURSE/map.h" />
+		<Unit filename="SURSE/misc.cpp" />
+		<Unit filename="SURSE/misc.h" />
+		<Unit filename="SURSE/npc.cpp" />
+		<Unit filename="SURSE/npc.h" />
+		<Unit filename="SURSE/pixel_manip.cpp" />
+		<Unit filename="SURSE/pixel_manip.h" />
+		<Unit filename="SURSE/player.cpp" />
+		<Unit filename="SURSE/player.h" />
+		<Unit filename="SURSE/quests.cpp" />
+		<Unit filename="SURSE/quests.h" />
+		<Unit filename="SURSE/run.cpp" />
+		<Unit filename="SURSE/run.h" />
+		<Unit filename="SURSE/scripts.cpp" />
+		<Unit filename="SURSE/scripts.h" />
+		<Unit filename="SURSE/settings.cpp" />
+		<Unit filename="SURSE/structs.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
