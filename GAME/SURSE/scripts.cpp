@@ -40,12 +40,12 @@ while( FirstScript->next != LastScript && WaitForDelay == false )
     if( cscr->command == "wait" )
     {
         tDelay = SDL_GetTicks() + cscr->info[0];
-        CONSOLE.out("Waiting");
+        //CONSOLE.out("Waiting");
         WaitForDelay = true;
     }
     else
     if( cscr->command == "addanime:" )
-    ALLANIMES.addanime( cscr->info[0],cscr->info[1],cscr->info[2] ),CONSOLE.out("Addanime");
+    ALLANIMES.addanime( cscr->info[0],cscr->info[1],cscr->info[2] );//,CONS.out("Addanime");
     else
     if( cscr->command == "addfreechunk:" )
     {
@@ -96,7 +96,7 @@ if( WaitForDelay == true )
     if( tDelay <= SDL_GetTicks() )
     {
         WaitForDelay = false;
-        CONSOLE.out("Stop Waiting");
+        //CONS.out("Stop Waiting");
     }
 
 }

@@ -3,7 +3,7 @@
 
 #include "structs.h"
 #include "basics.h"
-#include "console_extern.h"
+#include "console.h"
 #include "pixel_manip.h"
 
 extern class DataBase{

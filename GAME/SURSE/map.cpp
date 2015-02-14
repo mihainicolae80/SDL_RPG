@@ -105,7 +105,7 @@ string read_str;
 ifstream file(filename.str().c_str()),in_aux;
 
 if( file.is_open() == false )
-CONSOLE.out( "Failed to open map" );
+CONS.out( "Failed to open map" );
 
 //Test only
 //ofstream out_temp("LoadMap_NPCFILE.txt");
@@ -441,14 +441,14 @@ while( saux != "CLOSE_NOTPLAYERCREATURE" && !file.fail() )
                 dtaux->action[ cactions ] = DIALACT_INTERMANIP;
                 in_aux>>dtaux->act_id[cactions]>>dtaux->action_nr[cactions]>>dtaux->act_info[cactions];
                 cactions++;
-                CONSOLE.out( "Red Intermanip Command" );
+                CONS.out( "Red Intermanip Command" );
             }
             else if( saux == "colidemanip:" )
             {
                 dtaux->action[ cactions ] = DIALACT_COLMANIP;
                 in_aux>>dtaux->act_id[cactions]>>dtaux->act_info[cactions];
                 cactions++;
-                CONSOLE.out( "Red Colmanip Command" );
+                CONS.out( "Red Colmanip Command" );
             }
 
             in_aux >> saux;
@@ -509,6 +509,7 @@ file.close();
 PostLoadChanges();
 delete modelchunk;
 }
+
 void Map::AddFreeChunk( FreeChunk *model,int ground ){
 FreeChunk *newchunk = new FreeChunk;
 *newchunk = *model;
@@ -715,9 +716,9 @@ switch( cDayTime )
 void Map::handle_logics(){
 
 if( MapWidth < SCREEN_WIDTH )
-    DisplayLocation_x = ( BASE_SCREEN_WIDTH - MapWidth )/2;
+    DisplayLocation_x = ( SCREEN_WIDTH - MapWidth )/2;
 if( MapHeight < SCREEN_HEIGHT )
-    DisplayLocation_y = ( BASE_SCREEN_HEIGHT - MapHeight )/2;
+    DisplayLocation_y = ( SCREEN_HEIGHT - MapHeight )/2;
 
 }
 void Map::manipulate_inter( int id,int val,int info,int type ){
@@ -735,7 +736,7 @@ for( isaux = FirstItr->next ; isaux != LastItr;isaux = isaux->next )
 
         stringstream ssaux;
         ssaux<<"id: "<<isaux->id<<" val: "<<isaux->info[0];
-        CONSOLE.out( ssaux.str().c_str() );
+        CONS.out( ssaux.str().c_str() );
 
 
     }
@@ -753,12 +754,14 @@ for( isaux = FirstCol->next ; isaux != LastCol;isaux = isaux->next )
         isaux->ON = val;
         stringstream ssaux;
         ssaux<<"Colider id: "<<isaux->id<<" ON: "<<isaux->ON;
-        CONSOLE.out( ssaux.str().c_str() );
+        CONS.out( ssaux.str().c_str() );
     }
 
 }
 
 }
+
+//Day - Night cicle
 void Map::handle_time(){
 if( SDL_GetTicks() > tstart + tSuccSpeed && DaySuccession == true)
 {
@@ -788,63 +791,66 @@ else if( succ == 0 )
 void Map::SetDaySuccSpeed(int nr){
 tSuccSpeed = nr;
 }
+
+//Map cleanup
 void Map::CleanCMap(){
-FreeChunk *FreeChunkAux;
-COLLIDER *ColliderDelAux;
-InterSpot *ISAux;
 
-SDL_DestroyTexture( RendNormalMap );
+    FreeChunk *FreeChunkAux;
+    COLLIDER *ColliderDelAux;
+    InterSpot *ISAux;
 
-//Clean BG
-while( FirstFreeChunk_back -> next != LastFreeChunk_back )
-{
-    FreeChunkAux = FirstFreeChunk_back -> next;
-    FirstFreeChunk_back -> next = FirstFreeChunk_back -> next -> next;
-    delete FreeChunkAux;
-}
-LastChunk_back = FirstFreeChunk_back;
-//Clean BG
-while( FirstFreeChunk_fore -> next != LastFreeChunk_fore )
-{
-    FreeChunkAux = FirstFreeChunk_fore -> next;
-    FirstFreeChunk_fore -> next = FirstFreeChunk_fore -> next -> next;
-    delete FreeChunkAux;
-}
-LastChunk_fore = FirstFreeChunk_fore;
+    SDL_DestroyTexture( RendNormalMap );
 
-while( FirstFreeChunk_dynam -> next != LastFreeChunk_dynam )
-{
-    FreeChunkAux = FirstFreeChunk_dynam -> next;
-    FirstFreeChunk_fore -> next = FirstFreeChunk_dynam -> next -> next;
-    delete FreeChunkAux;
-}
-LastChunk_dynam = FirstFreeChunk_dynam;
-
-//Clean Lights
-while( FirstLight ->next != LastLight )
-{
-    LIGHT *p = FirstLight,*delaux;
-    for(;p ->next != LastLight && p ->next != NULL ;p = p->next)
+    //Clean BG
+    while( FirstFreeChunk_back -> next != LastFreeChunk_back )
     {
-        delaux = p->next;
-        p->next = p->next ->next;
-        delete delaux;
+        FreeChunkAux = FirstFreeChunk_back -> next;
+        FirstFreeChunk_back -> next = FirstFreeChunk_back -> next -> next;
+        delete FreeChunkAux;
     }
-}
+    LastChunk_back = FirstFreeChunk_back;
+    //Clean BG
+    while( FirstFreeChunk_fore -> next != LastFreeChunk_fore )
+    {
+        FreeChunkAux = FirstFreeChunk_fore -> next;
+        FirstFreeChunk_fore -> next = FirstFreeChunk_fore -> next -> next;
+        delete FreeChunkAux;
+    }
+    LastChunk_fore = FirstFreeChunk_fore;
 
-while( FirstCol -> next != LastCol )
-{
-    ColliderDelAux = FirstCol ->next;
-    FirstCol -> next = FirstCol -> next -> next;
-    delete ColliderDelAux;
-}
+    while( FirstFreeChunk_dynam -> next != LastFreeChunk_dynam )
+    {
+        FreeChunkAux = FirstFreeChunk_dynam -> next;
+        FirstFreeChunk_fore -> next = FirstFreeChunk_dynam -> next -> next;
+        delete FreeChunkAux;
+    }
+    LastChunk_dynam = FirstFreeChunk_dynam;
 
-while( FirstItr->next != LastItr )
-{
-    ISAux = FirstItr->next;
-    FirstItr->next = FirstItr->next->next;
-    delete ISAux;
-}
+    //Clean Lights
+    while( FirstLight ->next != LastLight )
+    {
+        LIGHT *p = FirstLight,*delaux;
+        for(;p ->next != LastLight && p ->next != NULL ;p = p->next)
+        {
+            delaux = p->next;
+            p->next = p->next ->next;
+            delete delaux;
+        }
+    }
+
+    while( FirstCol -> next != LastCol )
+    {
+        ColliderDelAux = FirstCol ->next;
+        FirstCol -> next = FirstCol -> next -> next;
+        delete ColliderDelAux;
+    }
+
+    while( FirstItr->next != LastItr )
+    {
+        ISAux = FirstItr->next;
+        FirstItr->next = FirstItr->next->next;
+        delete ISAux;
+    }
 
 
 }

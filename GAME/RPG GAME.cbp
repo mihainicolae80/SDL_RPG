@@ -46,8 +46,8 @@
 		<Unit filename="SURSE/basics.h" />
 		<Unit filename="SURSE/combat.cpp" />
 		<Unit filename="SURSE/combat.h" />
-		<Unit filename="SURSE/console_extern.cpp" />
-		<Unit filename="SURSE/console_extern.h" />
+		<Unit filename="SURSE/console.cpp" />
+		<Unit filename="SURSE/console.h" />
 		<Unit filename="SURSE/data.cpp" />
 		<Unit filename="SURSE/data.h" />
 		<Unit filename="SURSE/debug.cpp" />

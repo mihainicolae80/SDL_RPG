@@ -1,5 +1,5 @@
 #include "run.h"
-#include "console_extern.h"
+#include "console.h"
 #include "misc.h"
 
 
@@ -7,137 +7,151 @@
 
 void RUN_GAME(){
 
-bool RUN = true;
+    bool RUN = true;
 
 
-//TEST ONLY
-PLAYER.TeleportXY( 101,101 );
-PLAYER.TurnBody( RIGHT );
-PLAYER.teleportZone( 1 );
+    //TEST ONLY
+    PLAYER.TeleportXY( 101,101 );
+    PLAYER.TurnBody( RIGHT );
+    PLAYER.teleportZone( 0 );
 
-INVENTORY.init_bags();
-INVENTORY.addTestItems();
-
-
-///MAIN GAME LOOP
-while( RUN ){
-
-CONTROL.resetTimeFrame();
-
-///EVENTS
-while( SDL_PollEvent( &event ) ){
-
-CONSOLE.sendEvents( &event );
+    INVENTORY.init_bags();
+    INVENTORY.addTestItems();
 
 
-if( event.window.windowID == WINDOW_MAIN_ID )
-{
-    ENGINE_handleEvent_resizeWindow( &event );
+    /// --- MAIN GAME LOOP ---
+    while( RUN ){
 
-    // SEND EVENTS
+    CONTROL.resetTimeFrame();
 
-    if( PLAYER.SPEAK_NPC )          DIALOG.handle_events(event);
+    ///EVENTS
+    while( SDL_PollEvent( &event ) ){
 
-    if( QUEST.SHOW_QUEST )          QUEST .handle_events(event);
-
-    if( LOOT.SHOW_LOOT )            LOOT  .handle_events( event );
-
-    PLAYER.handleEvents( &event );
+    if( CONS.is_shown() )
+        CONS.sendEvent( &event );
 
 
-    if( event.window.event == SDL_WINDOWEVENT_CLOSE || event.type == SDL_QUIT )
-        RUN = false;
-    else
-    if( event.type == SDL_KEYDOWN )
+    if( event.window.windowID == WINDOW_MAIN_ID )
     {
+        ENGINE_HandleEvents( &event );
 
-        if( event.key.keysym.sym == SDLK_ESCAPE )       RUN = false;
+        // SEND EVENTS
+
+        if( PLAYER.SPEAK_NPC )          DIALOG.handle_events(event);
+
+        if( QUEST.SHOW_QUEST )          QUEST .handle_events(event);
+
+        if( LOOT.SHOW_LOOT )            LOOT  .handle_events( event );
+
+        PLAYER.handleEvents( &event );
+
+        // -- X Quit event --
+        if( event.window.event == SDL_WINDOWEVENT_CLOSE || event.type == SDL_QUIT )
+            RUN = false;
         else
-        if( event.key.keysym.sym == SDLK_i )            //INVENTORY
+        // -- KEYDOWN --
+        if( event.type == SDL_KEYDOWN )
         {
-            ///pause_timers();
-            INVENTORY.open();
-            ///resume_timers();
+
+            if( event.key.keysym.sym == SDLK_ESCAPE )       RUN = false;
+            else
+            if( event.key.keysym.sym == SDLK_i )            //INVENTORY
+            {
+                ///pause_timers();
+                INVENTORY.open();
+                ///resume_timers();
+            }
+            else
+            if( event.key.keysym.sym == SDLK_p )            //QUEST PANNEL
+            {
+                QUEST.SHOW_QUEST = !QUEST.SHOW_QUEST;
+            }
+            else
+            if( event.key.keysym.sym == SDLK_BACKQUOTE )
+            {
+                CONS.switch_if_display();
+            }
+            else
+            if( event.key.keysym.sym == SDLK_F11 )
+            {
+                if( ENGINE_displaymode == DISPLAYMODE_FREE ) ENGINE_displaymode = DISPLAYMODE_LETTERBOX;
+                else
+                ENGINE_displaymode = DISPLAYMODE_FREE;
+            }
+
+
         }
-        else
-        if( event.key.keysym.sym == SDLK_p )            //QUEST PANNEL
-            QUEST.SHOW_QUEST = !QUEST.SHOW_QUEST;
 
     }
 
-}
-
-}
+    }
 
 
 
-///LOGICS
-CONTROL.updateFPS();
+    ///LOGICS
+    CONTROL.updateFPS();
 
 
-handle_GAMEevents();
+    handle_GAMEevents();
 
-SCRIPT.handle();
+    SCRIPT.handle();
 
-PLAYER.handleMovement();
-PLAYER.handleMisc();
+    PLAYER.handleMovement();
+    PLAYER.handleMisc();
 
-GAME_MAP.handle_logics();
+    GAME_MAP.handle_logics();
 
-GAME_NPCS.handle_interaction();
-ALLANIMES.handle_anime();
+    GAME_NPCS.handle_interaction();
+    ALLANIMES.handle_anime();
 
-if( PLAYER.SPEAK_NPC ) DIALOG.handle_logics();
-
-
-
+    if( PLAYER.SPEAK_NPC ) DIALOG.handle_logics();
 
 
 
+    ///RENDER
 
-///RENDER
+    SDL_SetRenderDrawColor( RENDER_MAIN,80,80,80,255 );
+    SDL_RenderClear( RENDER_MAIN );
 
-SDL_SetRenderDrawColor( RENDER_MAIN,80,80,80,255 );
-SDL_RenderClear( RENDER_MAIN );
+    //MAP
+    GAME_MAP.display_back();
 
-//MAP
-GAME_MAP.display_back();
+    GAME_NPCS.show( BACK );
 
-GAME_NPCS.show( BACK );
+    ///DISPLAY HERO
 
-///DISPLAY HERO
+    PLAYER.draw();
 
-PLAYER.draw();
+    ALLANIMES.showanimes();
 
-ALLANIMES.showanimes();
+    GAME_NPCS.show( FORE );
 
-GAME_NPCS.show( FORE );
-
-GAME_MAP.display_fore();
-
-
-COMBAT.showtexts();
+    GAME_MAP.display_fore();
 
 
-if( PLAYER.SPEAK_NPC )     DIALOG.show();
-else                       cInterface.display();
+    COMBAT.showtexts();
 
 
-if( LOOT.SHOW_LOOT ) LOOT.show();
-
-if( QUEST.SHOW_QUEST ) QUEST.show();
-
+    if( PLAYER.SPEAK_NPC )     DIALOG.show();
+    else                       cInterface.display();
 
 
-SDL_RenderPresent( RENDER_MAIN );
+    if( LOOT.SHOW_LOOT ) LOOT.show();
+
+    if( QUEST.SHOW_QUEST ) QUEST.show();
 
 
-///FPS Cap
-CONTROL.limitFPS();
+    CONS.draw();
 
-CONTROL.countFrame();
+    ENGINE_RenderPresent();
 
-}
+
+    ///FPS Cap
+    CONTROL.limitFPS();
+
+    CONTROL.countFrame();
+
+    }
 
 
 }

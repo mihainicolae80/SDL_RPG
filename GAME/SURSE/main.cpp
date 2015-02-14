@@ -17,7 +17,7 @@ if( ERROR != 0 ) return ERROR;
 
 RUN_GAME();
 
-ENGINE_Cleanup();
+ENGINE_Quit();
 
 return 0;
 }

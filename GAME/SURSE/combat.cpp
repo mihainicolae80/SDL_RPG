@@ -119,7 +119,6 @@ for( NPCList *cnpc = FirstEnemy->next; cnpc != LastEnemy; cnpc = cnpc->next )
 
 
             ssaux << damage;
-            CONSOLE.out( ssaux.str().c_str() );
             Combat::addtext(inpc->rFrame.x + inpc->rBody.x,inpc->rFrame.y + inpc->rBody.y - 35
                             ,ssaux.str().c_str(),RED);
             break;

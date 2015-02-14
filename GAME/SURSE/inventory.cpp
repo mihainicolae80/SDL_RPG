@@ -298,8 +298,12 @@ while( run_inventory ){
             run_inventory = false;
         }
         else if( event.type == SDL_MOUSEBUTTONDOWN ){
-            mouse_x = event.button.x;
-            mouse_y = event.button.y;
+            mouse_x = mousetovirtual(event.button.x);
+            mouse_y = mousetovirtual(event.button.y);
+
+
+
+
 
             if( event.button.button == SDL_BUTTON_LEFT )
             {
@@ -434,8 +438,6 @@ while( run_inventory ){
             }
             else if( event.button.button == SDL_BUTTON_RIGHT )
             {
-                mouse_x = event.button.x;
-                mouse_y = event.button.y;
 
                 found_box = false;
 
@@ -570,8 +572,8 @@ while( run_inventory ){
 
         }
         else if( event.type == SDL_MOUSEBUTTONUP ){
-            mouse_x = event.button.x;
-            mouse_y = event.button.y;
+            mouse_x = mousetovirtual(event.button.x);
+            mouse_y = mousetovirtual(event.button.y);
 
             if( bTransfInvItem )
             {
@@ -820,8 +822,10 @@ while( run_inventory ){
             }
         }
         else if( event.type == SDL_MOUSEMOTION ){
-            mouse_x = event.motion.x;
-            mouse_y = event.motion.y;
+            mouse_x = mousetovirtual(event.motion.x);
+            mouse_y = mousetovirtual(event.motion.y);
+
+
             bToolTip_SearchChunkPos = true;
         }
     }
@@ -1372,7 +1376,7 @@ for( i = 0; i < 3 ;i ++ )
 
 
 
-    SDL_RenderPresent( RENDER_MAIN );
+    ENGINE_RenderPresent();
 
     RENDER_ONCE = false;
 }

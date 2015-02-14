@@ -232,7 +232,7 @@ if( !SHOW_QUEST_DETAIL )
             stringstream ssaux;
             ssaux.str("");
             ssaux<<"desc line: "<<ACTIVE_QUEST[i].desc_lines;
-            CONSOLE.out( ssaux.str().c_str() );
+            CONS.out( ssaux.str().c_str() );
             cquest = i;
 
             if( tempsurf != NULL ) SDL_FreeSurface( tempsurf ),tempsurf = NULL;
@@ -332,7 +332,7 @@ if( newevent.type == SDL_MOUSEMOTION )
                 Crow = j;
                 stringstream ssaux;
                 ssaux <<"Mouse on Block "<<i<<','<<j;
-                CONSOLE.out(ssaux.str().c_str());
+                CONS.out(ssaux.str().c_str());
 
                 if( tooltip_canvas != NULL )
                 SDL_DestroyTexture( tooltip_canvas ); tooltip_canvas = NULL;

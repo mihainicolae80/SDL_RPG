@@ -67,7 +67,7 @@ if( file.is_open() == false )
 {
     ssaux.str("");
     ssaux<<"Can't open loottab"<<x;
-    CONSOLE.out(ssaux.str().c_str() );
+    CONS.out(ssaux.str().c_str() );
 }
 else
 ///READ ITEMS

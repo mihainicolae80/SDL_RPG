@@ -3,10 +3,10 @@
 
 #include "basics.h"
 #include "gevents.h"
-#include "console_extern.h"
+#include "console.h"
 #include "map.h"
 
-#define CONSOUT CONSOLE.out
+#define CONSOUT CONS.out
 
 extern class Combat{
 struct GAME_combattxt{

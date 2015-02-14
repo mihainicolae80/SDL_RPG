@@ -18,7 +18,12 @@
 #include "scripts.h"
 #include "player.h"
 #include "misc.h"
-#include "console_extern.h"
+#include "console.h"
+
+
+// -- VAR --
+int ENGINE_displaymode = DISPLAYMODE_LETTERBOX;
+
 
 /// -- CLASSES --
 
@@ -26,7 +31,7 @@ CLS_WINDOWING   WIN_MAIN;
 
 
 /// --- FUNCTIONS: CLS_WINDOWING ---
-     CLS_WINDOWING::CLS_WINDOWING(){
+    CLS_WINDOWING::CLS_WINDOWING(){
 width  = 100;
 height = 100;
 
@@ -85,144 +90,148 @@ return false;
 /// --- FUNCTIONS: MISC ---
 int  ENGINE_Init(){
 
-int ERROR = 0;
+    int ERROR = 0;
+    int flags = 0;
 
-/// --- INIT Debug TEXT ---
-DEBUG.init_low();
+    /// --- INIT Debug TEXT ---
+    DEBUG.init_low();
 
-/// --- INIT SDL ---
-if( SDL_Init( SDL_INIT_EVERYTHING ) == -1 )
-{
-    DEBUG_OUT_GEN( "CRITICAL ERROR: Failed to load SDL!" );
+    /// --- INIT SDL ---
+    if( SDL_Init( SDL_INIT_EVERYTHING ) == -1 )
+    {
+        DEBUG_OUT_GEN( "CRITICAL ERROR: Failed to load SDL!" );
 
-    return ERROR_CRIT;
-}
+        return ERROR_CRIT;
+    }
 
-/// --- INIT TTF ---
-if( TTF_Init() == -1 )
-{
-    DEBUG_OUT_GEN(  "CRITICAL ERROR: Failed to load TTF!" );
-    return ERROR_CRIT;
-}
+    /// --- INIT TTF ---
+    if( TTF_Init() == -1 )
+    {
+        DEBUG_OUT_GEN(  "CRITICAL ERROR: Failed to load TTF!" );
+        return ERROR_CRIT;
+    }
 
+    /*
+    ///--- INIT //CONSOLE ---
+    if( //CONSOLE.init() )
+    {
+        DEBUG_OUT_GEN( "Failed to init //CONSOLE" );
+        return ERROR_CRIT;
+    }
+    */
 
-///--- INIT CONSOLE ---
-if( CONSOLE.init() )
-{
-    DEBUG_OUT_GEN( "Failed to init CONSOLE" );
-    return ERROR_CRIT;
-}
+    ///--- INIT WINDOW + RENDERER ---
 
+    WIN_MAIN.setTitle( "RPG GAME" );
+    WIN_MAIN.setWindowWidth ( SETTINGS.getScreenWidth() );
+    WIN_MAIN.setWindowHeight( SETTINGS.getScreenHeight() );
 
-///--- INIT WINDOW + RENDERER ---
-WIN_MAIN.setTitle( "RPG CONSOLE" );
-WIN_MAIN.setWindowWidth ( SCREEN_WIDTH_CONS );
-WIN_MAIN.setWindowHeight( SCREEN_HEIGHT_CONS );
-WIN_MAIN.setWindowFlags( 0 );
+    //Flags
+    flags = SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE;
+    if( SETTINGS.getFullScreen() )
+        flags |= SDL_WINDOW_FULLSCREEN;
 
+    WIN_MAIN.setWindowFlags( flags );
 
-WIN_MAIN.setTitle( "RPG GAME" );
-WIN_MAIN.setWindowWidth ( SETTINGS.getScreenWidth() );
-WIN_MAIN.setWindowHeight( SETTINGS.getScreenHeight() );
-WIN_MAIN.setWindowFlags( SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE );
+    WIN_MAIN.setRenderFlags( SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
 
-WIN_MAIN.setRenderFlags( SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
-
-if( WIN_MAIN.createWindow() )
-{
-    DEBUG_OUT_GEN( "Failed to create WINDOW" );
-    return ERROR_CRIT;
-}
-
-
-if( WIN_MAIN.createRender() )
-{
-    DEBUG_OUT_GEN( "Failed to create RENDERER" );
-    return ERROR_CRIT;
-}
-
-/// --- Debug  INIT_PICTURES ---
-if( DEBUG.init_high() )
-{
-    ERROR_ADD( ERROR_LOW );
-    CONSOUT      ( "Faild to load DEBUG graphical elements" );
-}
+    if( WIN_MAIN.createWindow() )
+    {
+        DEBUG_OUT_GEN( "Failed to create WINDOW" );
+        return ERROR_CRIT;
+    }
 
 
-LoadingTitle( 0 );
+    if( WIN_MAIN.createRender() )
+    {
+        DEBUG_OUT_GEN( "Failed to create RENDERER" );
+        return ERROR_CRIT;
+    }
 
-/// --- Load FONTS ----
-if( !BAS_LoadFonts() )
-{
-    CONSOUT( "Failed to load some/all FONTS" );
-    ERROR_ADD( ERROR_HIGH );
-}
+    // -- INIT CONSOLE --
+    CONS.init();
 
-
-LoadingTitle( 5 );
-
-
-/// --- INIT POINTERS ---
-#define init_pointer(first,last,type) first = new type;last = new type; first->next = last;last->next = NULL;
-
-init_pointer( FirstFreeChunk_back,LastFreeChunk_back,FreeChunk );
-init_pointer( FirstFreeChunk_fore,LastFreeChunk_fore,FreeChunk );
-init_pointer( FirstFreeChunk_dynam,LastFreeChunk_dynam,FreeChunk );
-
-init_pointer( FirstLight,LastLight,LIGHT );
-init_pointer( FirstCol,LastCol,COLLIDER );
-init_pointer( FirstItr,LastItr,InterSpot );
-init_pointer( FirstNPC,LastNPC,NotPLayerCreature );
-init_pointer( FirstEnemy,LastEnemy,NPCList );
-
-init_pointer( FirstConsText,LastConsText,CONSOLE_TEXT );
+    /// --- Debug  INIT_PICTURES ---
+    if( DEBUG.init_high() )
+    {
+        ERROR_ADD( ERROR_LOW );
+        //CONSOUT      ( "Faild to load DEBUG graphical elements" );
+    }
 
 
-SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
+    LoadingTitle( 0 );
+
+    /// --- Load FONTS ----
+    if( !BAS_LoadFonts() )
+    {
+        //CONSOUT( "Failed to load some/all FONTS" );
+        ERROR_ADD( ERROR_HIGH );
+    }
 
 
-LoadingTitle( 6 );
-
-CONSOLE.out( "Init Pointers-OK" );
-
-GAME_EVENTS .init();
-CONSOLE.out( "Init Game_Event-OK" );    LoadingTitle( 15 );
-Pixels      .init();
-CONSOLE.out( "Init PixelManip-OK" );    LoadingTitle( 20 );
-DATABASE    .init();
-CONSOLE.out( "Init Database-OK" );      LoadingTitle( 25 );
-ALLANIMES   .init();
-CONSOLE.out( "Init Anim-OK" );          LoadingTitle( 30 );
-COMBAT      .init();
-CONSOLE.out( "Init Combat-OK" );        LoadingTitle( 35 );
-GAME_NPCS   .init();
-CONSOLE.out( "Init NPC-OK" );           LoadingTitle( 40 );
-GAME_MAP    .init();
-CONSOLE.out( "Init Map-OK" );           LoadingTitle( 55 );
-cInterface  .init();
-CONSOLE.out( "Init Interface-OK" );     LoadingTitle( 60 );
-QUEST       .init();
-CONSOLE.out( "Init Quests-OK" );        LoadingTitle( 70 );
-DIALOG      .init();
-CONSOLE.out( "Init Dialog-OK" );        LoadingTitle( 75 );
-INVENTORY   .init();
-CONSOLE.out( "Init Inventory-OK" );     LoadingTitle( 85 );
-PLAYER      .init();
-CONSOLE.out( "Init PLAYER-OK" );        LoadingTitle( 95 );
-
-LOOT.init();
-
-CONSOLE.out( "INITIALIZATION FINISED:" );
-
-stringstream sserror;
-sserror << "ERROR LEVEL: " << ERROR;
-
-CONSOLE.out( sserror.str() );
+    LoadingTitle( 5 );
 
 
-LoadingTitle( 100 );
+    /// --- INIT POINTERS ---
+    #define init_pointer(first,last,type) first = new type;last = new type; first->next = last;last->next = NULL;
 
-return ERROR;
+    init_pointer( FirstFreeChunk_back,LastFreeChunk_back,FreeChunk );
+    init_pointer( FirstFreeChunk_fore,LastFreeChunk_fore,FreeChunk );
+    init_pointer( FirstFreeChunk_dynam,LastFreeChunk_dynam,FreeChunk );
+
+    init_pointer( FirstLight,LastLight,LIGHT );
+    init_pointer( FirstCol,LastCol,COLLIDER );
+    init_pointer( FirstItr,LastItr,InterSpot );
+    init_pointer( FirstNPC,LastNPC,NotPLayerCreature );
+    init_pointer( FirstEnemy,LastEnemy,NPCList );
+
+
+
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
+
+
+    LoadingTitle( 6 );
+
+    CONS.out( "Init Pointers-OK" );
+
+    GAME_EVENTS .init();
+    ////CONSOLE.out( "Init Game_Event-OK" );    LoadingTitle( 15 );
+    Pixels      .init();
+    ////CONS.out( "Init PixelManip-OK" );    LoadingTitle( 20 );
+    DATABASE    .init();
+    ////CONS.out( "Init Database-OK" );      LoadingTitle( 25 );
+    ALLANIMES   .init();
+    ////CONS.out( "Init Anim-OK" );          LoadingTitle( 30 );
+    COMBAT      .init();
+    ////CONS.out( "Init Combat-OK" );        LoadingTitle( 35 );
+    GAME_NPCS   .init();
+    //CONS.out( "Init NPC-OK" );           LoadingTitle( 40 );
+    GAME_MAP    .init();
+    //CONS.out( "Init Map-OK" );           LoadingTitle( 55 );
+    cInterface  .init();
+    //CONS.out( "Init Interface-OK" );     LoadingTitle( 60 );
+    QUEST       .init();
+    //CONS.out( "Init Quests-OK" );        LoadingTitle( 70 );
+    DIALOG      .init();
+    //CONS.out( "Init Dialog-OK" );        LoadingTitle( 75 );
+    INVENTORY   .init();
+    //CONS.out( "Init Inventory-OK" );     LoadingTitle( 85 );
+    PLAYER      .init();
+    //CONS.out( "Init PLAYER-OK" );        LoadingTitle( 95 );
+
+    LOOT.init();
+
+    //CONS.out( "INITIALIZATION FINISED:" );
+
+    stringstream sserror;
+    sserror << "ERROR LEVEL: " << ERROR;
+
+    //CONS.out( sserror.str() );
+
+
+    LoadingTitle( 100 );
+
+    return ERROR;
 }
 void ENGINE_handleEvent_resizeWindow( SDL_Event *EVENT ){
 int w,h;
@@ -233,18 +242,6 @@ int w,h;
         WIN_MAIN.setWindowWidth ( w );
         WIN_MAIN.setWindowHeight( h );
     }
-}
-void ENGINE_Cleanup(){
-INVENTORY.cleanup();
-cInterface.cleanup();
-ALLANIMES.cleanup();
-
-SDL_DestroyRenderer( RENDER_MAIN );
-SDL_DestroyRenderer( RENDER_CONSOLE );
-SDL_DestroyWindow( WINDOW_MAIN );
-SDL_DestroyWindow( WINDOW_CONSOLE );
-TTF_Quit();
-SDL_Quit();
 }
 void LoadingTitle( int percent ){
 static SDL_Texture *txLoadTitle,*txLoadBar_empty,*txLoadBar_fill;
@@ -265,13 +262,237 @@ rLoadBar.w = 547*percent/100;
 SDL_SetRenderDrawColor( RENDER_MAIN, 0,0,0,255 );
 SDL_RenderClear( RENDER_MAIN );
 
-ApplyTex( (BASE_SCREEN_WIDTH - 600)/2, 300,txLoadTitle );
-ApplyTex( (BASE_SCREEN_WIDTH - 537)/2, BASE_SCREEN_HEIGHT - 300,txLoadBar_empty );
-ApplyTex( (BASE_SCREEN_WIDTH - 537)/2, BASE_SCREEN_HEIGHT - 300,txLoadBar_fill,&rLoadBar );
+ApplyTex( (SCREEN_WIDTH - 600)/2, 300,txLoadTitle );
+ApplyTex( (SCREEN_WIDTH - 537)/2, SCREEN_HEIGHT - 300,txLoadBar_empty );
+ApplyTex( (SCREEN_WIDTH - 537)/2, SCREEN_HEIGHT - 300,txLoadBar_fill,&rLoadBar );
 SDL_RenderPresent( RENDER_MAIN );
 //SDL_Delay( 300 );
 }
+void ENGINE_HandleEvent_resizeWindow( SDL_Event *EVENT ){
+int w,h;
+    if( EVENT->type         == SDL_WINDOWEVENT &&
+        EVENT->window.event == SDL_WINDOWEVENT_RESIZED )
+    {
+        SDL_GetWindowSize( WIN_MAIN.window, &w, &h );
+        WIN_MAIN.setWindowWidth ( w );
+        WIN_MAIN.setWindowHeight( h );
+    }
+}
+void ENGINE_HandleEvents( SDL_Event *EVENT ){
 
+    //Handle window resize events
+    ENGINE_HandleEvent_resizeWindow( EVENT );
+}
+void ENGINE_Quit(void){
+
+INVENTORY.cleanup();
+cInterface.cleanup();
+ALLANIMES.cleanup();
+
+SDL_DestroyRenderer( RENDER_MAIN );
+SDL_DestroyWindow( WINDOW_MAIN );
+
+TTF_Quit();
+SDL_Quit();
+}
+
+
+
+SDL_Surface *LoadSurf(string file){
+SDL_Surface *loadedimg = NULL;
+
+loadedimg = IMG_Load( file.c_str() );
+
+if( loadedimg == NULL )
+{
+    //DEBUG.fout( FILE_FLF, (string)"load fail: " + file );
+    //DEBUG.fout( FILE_FLF, (string)"reason: "    + SDL_GetError() + (string)"\n" );
+}
+
+return loadedimg;
+}
+SDL_Texture *LoadTex(string file){
+SDL_Texture *loadedtex = NULL;
+
+loadedtex = IMG_LoadTexture(WIN_MAIN.render,file.c_str() );
+
+if( loadedtex == NULL )
+{
+    //DEBUG.fout( FILE_FLF, (string)"load fail: " + file );
+    //DEBUG.fout( FILE_FLF, (string)"reason: "    + SDL_GetError() + (string)"\n" );
+}
+
+return loadedtex;
+}
+//Apply Tex
+void ApplyTexFree(int x,int y,SDL_Texture *tex,SDL_Rect *clip ,int w,int h ){
+
+    SDL_Rect pos;
+
+    pos.x = x;
+    pos.y = y;
+
+    if( clip != NULL )
+    {
+        pos.w = clip->w;
+        pos.h = clip->h;
+    }
+    else
+    SDL_QueryTexture( tex,NULL,NULL,&pos.w,&pos.h );
+
+    if( w != NO_CHANGE ) pos.w = w;
+    if( h != NO_CHANGE ) pos.h = h;
+
+    SDL_RenderCopy( RENDER_MAIN,tex,clip,&pos );
+}
+void ApplyTexLetterbox(int x,int y,SDL_Texture *tex,SDL_Rect *clip,int w,int h ){
+
+    SDL_Rect pos;
+
+    pos.y = Y_ABS;
+
+    pos.x = ceil( (double)x * SCALE );
+    pos.y += ceil( (double)y * SCALE  );
+
+
+    if( clip != NULL )
+    {
+        pos.w = clip->w;
+        pos.h = clip->h;
+    }
+    else
+    SDL_QueryTexture( tex,NULL,NULL,&pos.w,&pos.h );
+
+    if( w != NO_CHANGE ) pos.w = w;
+    if( h != NO_CHANGE ) pos.h = h;
+
+    //ADJUST
+    pos.w = ceil((double)pos.w * SCALE);
+    pos.h = ceil((double)pos.h * SCALE);
+
+
+    SDL_RenderCopy( RENDER_MAIN,tex,clip,&pos );
+}
+void ApplyTex(int x,int y,SDL_Texture *tex,SDL_Rect *clip ,int w ,int h){
+
+    //Free Mode
+    if( ENGINE_displaymode == DISPLAYMODE_FREE )
+    {
+        ApplyTexFree( x, y, tex, clip, w, h );
+    }
+    //Letterbox Mode
+    else
+    if( ENGINE_displaymode == DISPLAYMODE_LETTERBOX )
+    {
+        ApplyTexLetterbox( x, y, tex, clip , w, h );
+    }
+}
+//Draw Rect
+void DrawRectFree(int x,int y,int x2,int y2){
+
+    SDL_Rect target;
+
+    target.x = x<x2 ? x : x2 ;
+    target.y = y<y2 ? y : y2 ;
+    target.w = BAS_abs( x - x2 );
+    target.h = BAS_abs( y - y2 );
+
+    SDL_RenderDrawRect( RENDER_MAIN, &target );
+}
+void DrawRectLetterbox(int x,int y,int x2,int y2){
+
+    SDL_Rect target;
+
+    target.y = Y_ABS;
+
+    target.x = (x<x2 ? x : x2)  * SCALE;
+    target.y += (y<y2 ? y : y2) * SCALE;
+    target.w = BAS_abs( x - x2 ) * SCALE;
+    target.h = BAS_abs( y - y2 ) * SCALE;
+
+
+    SDL_RenderDrawRect( RENDER_MAIN, &target );
+}
+void DrawRect(int x,int y,int x2,int y2,SDL_Color *color){
+
+    SDL_SetRenderDrawColor( RENDER_MAIN,color->r,color->g,color->b,color->a );
+
+    //If in FREE MODE
+    if( ENGINE_displaymode == DISPLAYMODE_FREE )
+    DrawRectFree(x,y,x2,y2);
+
+    //If in Letterbox MODE
+    else
+    if( ENGINE_displaymode == DISPLAYMODE_LETTERBOX )
+    DrawRectLetterbox(x,y,x2,y2);
+}
+//Fill Rect
+void FillRectFree(int x,int y,int x2,int y2){
+
+    SDL_Rect target;
+
+    target.x = x<x2 ? x : x2 ;
+    target.y = y<y2 ? y : y2 ;
+    target.w = BAS_abs( x - x2 );
+    target.h = BAS_abs( y - y2 );
+
+    SDL_RenderFillRect( RENDER_MAIN, &target );
+}
+void FillRectLetterbox(int x,int y,int x2,int y2){
+
+    SDL_Rect target;
+
+    target.y = Y_ABS;
+
+    target.x = (x<x2 ? x : x2)  * SCALE ;
+    target.y += (y<y2 ? y : y2) * SCALE ;
+    target.w = BAS_abs( x - x2 ) * SCALE ;
+    target.h = BAS_abs( y - y2 ) * SCALE;
+
+
+    SDL_RenderFillRect( RENDER_MAIN, &target );
+}
+void FillRect(int x,int y,int x2,int y2,SDL_Color *color){
+
+    SDL_SetRenderDrawColor( RENDER_MAIN,color->r,color->g,color->b,color->a );
+
+    //If in FREE MODE
+    if( ENGINE_displaymode == DISPLAYMODE_FREE )
+    FillRectFree(x,y,x2,y2);
+
+    //If in Letterbox MODE
+    else
+    if( ENGINE_displaymode == DISPLAYMODE_LETTERBOX )
+    FillRectLetterbox(x,y,x2,y2);
+}
+
+
+void ENGINE_RenderPresent( void){
+
+    SDL_Rect blackline1,blackline2;
+
+    /// -- BLACKLINES --
+    if( ENGINE_displaymode == DISPLAYMODE_LETTERBOX )
+    {
+        //--- INIT BLACKLINES ---
+        blackline1.x = 0;
+        blackline1.y = 0;
+        blackline2.x = 0;
+        blackline2.y = Y_ABS + REAL_SCREEN_HEIGHT;
+        blackline1.w = WIN_MAIN.getWindowWidth();
+        blackline1.h = (WIN_MAIN.getWindowHeight()-REAL_SCREEN_HEIGHT)/2;
+        blackline2.w = WIN_MAIN.getWindowWidth();
+        blackline2.h = (WIN_MAIN.getWindowHeight()-REAL_SCREEN_HEIGHT)/2;
+
+        //Draw Black Lines
+        SDL_SetRenderDrawColor( RENDER_MAIN, 0,0,0,255 );
+        SDL_RenderFillRect( RENDER_MAIN, &blackline1 );
+        SDL_RenderFillRect( RENDER_MAIN, &blackline2 );
+    }
+
+
+    SDL_RenderPresent( RENDER_MAIN );
+}
 
 /// --- SHALL DISSAPEAR! ---
 
@@ -298,7 +519,6 @@ CLS_CONTROL CONTROL;
 NPCList *FirstEnemy, *LastEnemy;
 InterSpot *FirstItr,*LastItr;
 COLLIDER *FirstCol,*LastCol;
-CONSOLE_TEXT *FirstConsText,*LastConsText;
 FreeChunk *FirstFreeChunk_back,*FirstFreeChunk_fore,*FirstFreeChunk_dynam,
           *LastFreeChunk_back ,*LastFreeChunk_fore ,*LastFreeChunk_dynam;
 LIGHT *FirstLight, *LastLight;
@@ -313,7 +533,7 @@ GAME_event newGEvent,Gevent_NULL;
 TTF_Font *Font14,*Font18,*Font20,*Font24,*Font2_14,*Font2_18,*Font2_20,*Font2_24;
 
 //COLORS
-SDL_Color WHITE        = {255,255,255};
+SDL_Color WHITE        = {255,255,255,255};
 SDL_Color BLACK        = {0,0,0};
 SDL_Color RED          = {255,21,5};
 SDL_Color BLUE         = {0,0,255};

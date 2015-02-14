@@ -103,7 +103,7 @@ SDL_RenderFillRect( RENDERER_MAIN,&rAttack );
 ApplyTex( rAttack.x ,rAttack.y ,AttackImg,NULL);
 */
 //Botbar
-ApplyTex(0,BASE_SCREEN_HEIGHT - 3,botline,NULL);
+ApplyTex(0,SCREEN_HEIGHT - 3,botline,NULL);
 }
 void Interface::cleanup(){
 int i;

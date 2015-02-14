@@ -383,6 +383,7 @@ for( t = FirstItr -> next; t != LastItr ; t = t -> next )
 }
 void CLS_PLAYER::draw(void){
 
+/*
 //Shielf BG
 if( shield_cmode == 2 )
 ApplyTex( GAME_MAP.DisplayLocation_x + _PhysicalBody.x - BLOCK_WIDTH/2  + _PhysicalBody.w/2 ,
@@ -394,12 +395,12 @@ if( cloak_cmode == 2 )
 ApplyTex( GAME_MAP.DisplayLocation_x + _PhysicalBody.x - BLOCK_WIDTH/2  + _PhysicalBody.w/2 ,
           GAME_MAP.DisplayLocation_y + _PhysicalBody.y - BLOCK_HEIGHT/2 - 10 ,
           txEQUIPT_Cloak,&_SkinSlices[cloak_cmode][cloak_cframe] );
-
+*/
 //Skin
 ApplyTex( GAME_MAP.DisplayLocation_x + _PhysicalBody.x - BLOCK_WIDTH/2  + _PhysicalBody.w/2 ,
           GAME_MAP.DisplayLocation_y + _PhysicalBody.y - BLOCK_HEIGHT/2 - 10 ,
           _txSkin,&_SkinSlices[look_categ][look_frame] );
-/**/
+/*
 //Chest
 ApplyTex( GAME_MAP.DisplayLocation_x + _PhysicalBody.x - BLOCK_WIDTH/2  + _PhysicalBody.w/2 ,
           GAME_MAP.DisplayLocation_y + _PhysicalBody.y - BLOCK_HEIGHT/2 - 10 ,
@@ -415,6 +416,8 @@ if( shield_cmode != 2 )
 ApplyTex( GAME_MAP.DisplayLocation_x + _PhysicalBody.x - BLOCK_WIDTH/2  + _PhysicalBody.w/2 ,
           GAME_MAP.DisplayLocation_y + _PhysicalBody.y - BLOCK_HEIGHT/2 - 10 ,
           txEQUIPT_Shield,&_SkinSlices[shield_cmode][shield_cframe] );
+
+*/
 
 // ABOVE HEAD TIP
 if( PLAYER.SHOW_TIP && !HideTip )
@@ -442,7 +445,7 @@ if( EVENT->type == SDL_KEYDOWN )
             {
                 if( PLAYER.AvailableInterSpot->info[0] == true )//LOCKED message
                 {
-                    PLAYER.AboveHeadTip = BAS_RenderText_Texture( Font14,"Locked",BLACK );
+                    PLAYER.AboveHeadTip = BAS_RenderText( Font14,"Locked",BLACK );
                 }
                 else
                 {

@@ -141,21 +141,5 @@ info_4: 0
 CLOSE_INTERACTION
 
 OPEN_NOTPLAYERCREATURE
-Add:
-Nume:         Friendly NPC
-x: 152
-y: 62
-w: 100
-h: 100
-skinnr: 1
-filenr: 1
-Add:
-Nume:         Enemy NPC
-x: 297
-y: 55
-w: 100
-h: 100
-skinnr: 3
-filenr: 2
 CLOSE_NOTPLAYERCREATURE
 file_end

@@ -148,10 +148,6 @@ extern struct NPCList{
 NotPLayerCreature *npc;
 NPCList *next;
 }*FirstEnemy,*LastEnemy;
-extern struct CONSOLE_TEXT{
-SDL_Texture *tex;
-CONSOLE_TEXT* next;
-}*FirstConsText,*LastConsText;
 
 
 #endif // STRUCTS_H_INCLUDED

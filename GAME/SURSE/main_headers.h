@@ -61,8 +61,8 @@ const int FPS_CAP = 60;//60
 const int PLAYER_STARTZONE = 0;
 const int SCREEN_WIDTH_CONS  = 400;
 const int SCREEN_HEIGHT_CONS = 500;
-const int BLOCK_WIDTH      = 100;
-const int BLOCK_HEIGHT     = 100;
+const int BLOCK_WIDTH      = 200;
+const int BLOCK_HEIGHT     = 200;
 const int TOPIC_CAP        = 4;
 const int QUEST_CAP        = 10;
 //Flags

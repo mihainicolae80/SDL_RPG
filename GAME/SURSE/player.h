@@ -14,7 +14,7 @@
 #define ACTION_DIALOG        3
 #define ACTION_LOOT          4
 
-const int hero_movement_speed = 5 ;//min 4  (step length)
+const int hero_movement_speed = 7 ;//min 4  (step length)
 const int cloak_frames = 5;
 const int HERO_RUN_TWAIT = 15;//min  0 (delway between steps)10
 

@@ -62,76 +62,6 @@ return nou;
 }
 
 
-
-SDL_Surface *LoadSurf(string file){
-SDL_Surface *loadedimg = NULL;
-
-loadedimg = IMG_Load( file.c_str() );
-
-if( loadedimg == NULL )
-{
-    DEBUG.fout( FILE_FLF, (string)"load fail: " + file );
-    DEBUG.fout( FILE_FLF, (string)"reason: "    + SDL_GetError() + (string)"\n" );
-}
-
-return loadedimg;
-}
-SDL_Texture *LoadTex(string file){
-SDL_Texture *loadedtex = NULL;
-
-loadedtex = IMG_LoadTexture(RENDER_MAIN,file.c_str() );
-
-if( loadedtex == NULL )
-{
-    DEBUG.fout( FILE_FLF, (string)"load fail: " + file );
-    DEBUG.fout( FILE_FLF, (string)"reason: "    + SDL_GetError() + (string)"\n" );
-}
-
-return loadedtex;
-}
-void ApplyTex(int x,int y,SDL_Texture *tex,SDL_Rect *clip ,int w ,int h){
-SDL_Rect pos;
-
-pos.x = x;
-pos.y = y;
-
-    if( clip != NULL )
-    {
-        pos.w = clip->w;
-        pos.h = clip->h;
-    }
-    else
-    SDL_QueryTexture( tex,NULL,NULL,&pos.w,&pos.h );
-
-    if( w != NO_CHANGE ) pos.w = w;
-    if( h != NO_CHANGE ) pos.h = h;
-
-    //ADJUST
-
-    //pos.w = ceil((double)pos.w * SCALE);
-    //pos.h = ceil((double)pos.h * SCALE);
-
-    //pos.x = ceil( (double)pos.x * SCALE );
-    //pos.y = ceil( (double)pos.y * SCALE );
-
-    //pos.y += Y_ABSOLUTE;
-
-    //Rescale based on SCREEN_HEIGHT
-    //default ScrHrap
-    //pos.x *= ScrHRap;
-    //pos.y *= ScrHRap;
-    //pos.w *= ScrHRap;
-    //pos.h *= ScrHRap;
-
-    ///DISSABLED
-    //Adjust by camera
-    //pos.x -= camera_x;
-    //pos.y -= camera_y;
-
-SDL_RenderCopy( RENDER_MAIN,tex,clip,&pos );
-}
-
-
 bool detect_colision(NotPLayerCreature *npc ){
 COLLIDER *cl;
 int x,y,w,h;
@@ -209,13 +139,13 @@ if( Font14 || Font18 || Font20 || Font24 ||
 return false;
 }
 
-SDL_Texture* BAS_RenderText_Texture( TTF_Font *font,const char *text,SDL_Color color ){
+SDL_Texture* BAS_RenderText( TTF_Font *font,const char *text,SDL_Color color ){
 
 SDL_Surface *aux_surf = NULL;
 SDL_Texture *dest = NULL;
 
 aux_surf = TTF_RenderText_Blended( font,text,color );
-dest = SDL_CreateTextureFromSurface( RENDER_MAIN, aux_surf );
+dest = SDL_CreateTextureFromSurface( WIN_MAIN.render, aux_surf );
 return dest;
 }
 void         BAS_DestroyTex( SDL_Texture **tex ){
@@ -226,3 +156,4 @@ if( &tex != NULL )
     *tex = NULL;
 }
 }
+

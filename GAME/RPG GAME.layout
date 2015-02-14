@@ -1,665 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="SURSE/player.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="147" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="13" />
-			<Collapse line="37" />
-			<Collapse line="71" />
-			<Collapse line="75" />
-			<Collapse line="79" />
-			<Collapse line="82" />
-			<Collapse line="85" />
-			<Collapse line="105" />
-			<Collapse line="111" />
-			<Collapse line="117" />
-			<Collapse line="123" />
-			<Collapse line="131" />
-			<Collapse line="134" />
-			<Collapse line="137" />
-			<Collapse line="139" />
-			<Collapse line="144" />
-			<Collapse line="146" />
-			<Collapse line="151" />
-			<Collapse line="153" />
-			<Collapse line="158" />
-			<Collapse line="160" />
-			<Collapse line="167" />
-			<Collapse line="169" />
-			<Collapse line="173" />
-			<Collapse line="177" />
-			<Collapse line="181" />
-			<Collapse line="188" />
-			<Collapse line="190" />
-			<Collapse line="195" />
-			<Collapse line="200" />
-			<Collapse line="205" />
-			<Collapse line="219" />
-			<Collapse line="223" />
-			<Collapse line="231" />
-			<Collapse line="243" />
-			<Collapse line="251" />
-			<Collapse line="256" />
-			<Collapse line="268" />
-			<Collapse line="277" />
-			<Collapse line="281" />
-			<Collapse line="284" />
-			<Collapse line="286" />
-			<Collapse line="288" />
-			<Collapse line="293" />
-			<Collapse line="307" />
-			<Collapse line="314" />
-			<Collapse line="316" />
-			<Collapse line="321" />
-			<Collapse line="334" />
-			<Collapse line="339" />
-			<Collapse line="341" />
-			<Collapse line="343" />
-			<Collapse line="348" />
-			<Collapse line="368" />
-			<Collapse line="373" />
-			<Collapse line="383" />
-			<Collapse line="430" />
-			<Collapse line="434" />
-			<Collapse line="436" />
-			<Collapse line="439" />
-			<Collapse line="441" />
-			<Collapse line="443" />
-			<Collapse line="447" />
-			<Collapse line="455" />
-			<Collapse line="461" />
-			<Collapse line="463" />
-			<Collapse line="469" />
-			<Collapse line="475" />
-			<Collapse line="483" />
-			<Collapse line="489" />
-			<Collapse line="491" />
-			<Collapse line="502" />
-			<Collapse line="505" />
-			<Collapse line="513" />
-			<Collapse line="517" />
-		</Folding>
-	</File>
-	<File name="SURSE/npc.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="11762" topLine="31" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="21" />
-			<Collapse line="29" />
-			<Collapse line="32" />
-			<Collapse line="35" />
-			<Collapse line="37" />
-			<Collapse line="46" />
-			<Collapse line="48" />
-			<Collapse line="57" />
-			<Collapse line="106" />
-			<Collapse line="108" />
-			<Collapse line="115" />
-			<Collapse line="121" />
-			<Collapse line="127" />
-			<Collapse line="133" />
-			<Collapse line="139" />
-			<Collapse line="156" />
-			<Collapse line="166" />
-			<Collapse line="176" />
-			<Collapse line="192" />
-			<Collapse line="196" />
-			<Collapse line="209" />
-			<Collapse line="216" />
-			<Collapse line="223" />
-			<Collapse line="231" />
-			<Collapse line="255" />
-			<Collapse line="263" />
-			<Collapse line="274" />
-			<Collapse line="294" />
-			<Collapse line="307" />
-			<Collapse line="321" />
-			<Collapse line="328" />
-			<Collapse line="334" />
-			<Collapse line="338" />
-			<Collapse line="347" />
-			<Collapse line="359" />
-			<Collapse line="362" />
-			<Collapse line="365" />
-			<Collapse line="371" />
-		</Folding>
-	</File>
-	<File name="SURSE/basics.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="566" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="4" />
-			<Collapse line="9" />
-			<Collapse line="18" />
-			<Collapse line="23" />
-			<Collapse line="29" />
-			<Collapse line="37" />
-			<Collapse line="46" />
-		</Folding>
-	</File>
-	<File name="SURSE/npc.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="376" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SURSE/debug.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1648" topLine="30" />
-		</Cursor>
-		<Folding>
-			<Collapse line="19" />
-			<Collapse line="47" />
-		</Folding>
-	</File>
-	<File name="SURSE/anim.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5983" topLine="231" />
-		</Cursor>
-	</File>
-	<File name="SURSE/misc.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="367" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="8" />
-		</Folding>
-	</File>
-	<File name="SURSE/pixel_manip.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="702" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SURSE/structs.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2040" topLine="1" />
-		</Cursor>
-		<Folding>
-			<Collapse line="8" />
-			<Collapse line="16" />
-			<Collapse line="22" />
-			<Collapse line="28" />
-			<Collapse line="35" />
-			<Collapse line="41" />
-			<Collapse line="47" />
-			<Collapse line="53" />
-			<Collapse line="59" />
-			<Collapse line="66" />
-			<Collapse line="76" />
-			<Collapse line="82" />
-			<Collapse line="86" />
-			<Collapse line="94" />
-			<Collapse line="98" />
-			<Collapse line="104" />
-			<Collapse line="109" />
-			<Collapse line="114" />
-			<Collapse line="121" />
-			<Collapse line="146" />
-			<Collapse line="150" />
-		</Folding>
-	</File>
-	<File name="SURSE/scripts.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="577" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="12" />
-			<Collapse line="14" />
-		</Folding>
-	</File>
-	<File name="SURSE/base.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="310" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="23" />
-		</Folding>
-	</File>
-	<File name="SURSE/console_extern.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6351" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="6" />
-			<Collapse line="28" />
-			<Collapse line="31" />
-			<Collapse line="40" />
-			<Collapse line="47" />
-			<Collapse line="53" />
-			<Collapse line="56" />
-			<Collapse line="69" />
-			<Collapse line="83" />
-			<Collapse line="85" />
-			<Collapse line="95" />
-			<Collapse line="111" />
-			<Collapse line="128" />
-			<Collapse line="135" />
-			<Collapse line="137" />
-			<Collapse line="146" />
-			<Collapse line="165" />
-			<Collapse line="178" />
-			<Collapse line="216" />
-			<Collapse line="223" />
-			<Collapse line="232" />
-		</Folding>
-	</File>
-	<File name="SURSE/loot.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="96" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="7" />
-		</Folding>
-	</File>
-	<File name="SURSE/main_headers.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1381" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="SURSE/map.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="16165" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="28" />
-			<Collapse line="32" />
-			<Collapse line="44" />
-			<Collapse line="45" />
-			<Collapse line="67" />
-			<Collapse line="69" />
-			<Collapse line="77" />
-			<Collapse line="89" />
-			<Collapse line="125" />
-			<Collapse line="131" />
-			<Collapse line="144" />
-			<Collapse line="163" />
-			<Collapse line="168" />
-			<Collapse line="181" />
-			<Collapse line="207" />
-			<Collapse line="233" />
-			<Collapse line="246" />
-			<Collapse line="261" />
-			<Collapse line="282" />
-			<Collapse line="302" />
-			<Collapse line="306" />
-			<Collapse line="316" />
-			<Collapse line="330" />
-			<Collapse line="344" />
-			<Collapse line="346" />
-			<Collapse line="351" />
-			<Collapse line="358" />
-			<Collapse line="366" />
-			<Collapse line="374" />
-			<Collapse line="384" />
-			<Collapse line="392" />
-			<Collapse line="399" />
-			<Collapse line="405" />
-			<Collapse line="420" />
-			<Collapse line="439" />
-			<Collapse line="446" />
-			<Collapse line="463" />
-			<Collapse line="499" />
-			<Collapse line="511" />
-			<Collapse line="519" />
-			<Collapse line="525" />
-			<Collapse line="531" />
-			<Collapse line="539" />
-			<Collapse line="546" />
-			<Collapse line="558" />
-			<Collapse line="568" />
-			<Collapse line="579" />
-			<Collapse line="586" />
-			<Collapse line="601" />
-			<Collapse line="609" />
-			<Collapse line="620" />
-			<Collapse line="628" />
-			<Collapse line="630" />
-			<Collapse line="638" />
-			<Collapse line="650" />
-			<Collapse line="668" />
-			<Collapse line="677" />
-			<Collapse line="679" />
-			<Collapse line="691" />
-			<Collapse line="694" />
-			<Collapse line="714" />
-			<Collapse line="722" />
-			<Collapse line="726" />
-			<Collapse line="728" />
-			<Collapse line="745" />
-			<Collapse line="749" />
-			<Collapse line="751" />
-			<Collapse line="761" />
-			<Collapse line="763" />
-			<Collapse line="770" />
-			<Collapse line="773" />
-			<Collapse line="775" />
-			<Collapse line="781" />
-			<Collapse line="787" />
-			<Collapse line="790" />
-			<Collapse line="799" />
-			<Collapse line="807" />
-			<Collapse line="815" />
-			<Collapse line="824" />
-			<Collapse line="827" />
-			<Collapse line="835" />
-			<Collapse line="842" />
-			<Collapse line="850" />
-		</Folding>
-	</File>
-	<File name="SURSE/dialog.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SURSE/combat.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="587" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="128" />
-			<Collapse line="134" />
-			<Collapse line="142" />
-			<Collapse line="150" />
-			<Collapse line="158" />
-			<Collapse line="170" />
-			<Collapse line="173" />
-			<Collapse line="177" />
-			<Collapse line="191" />
-			<Collapse line="193" />
-			<Collapse line="200" />
-			<Collapse line="203" />
-			<Collapse line="205" />
-			<Collapse line="212" />
-			<Collapse line="218" />
-			<Collapse line="221" />
-			<Collapse line="224" />
-		</Folding>
-	</File>
-	<File name="SURSE/anim.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="381" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="10" />
-		</Folding>
-	</File>
-	<File name="SURSE/main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="149" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SURSE/player.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1088" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="SURSE/interface.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="613" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SURSE/base.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2260" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SURSE/interface.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2624" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="6" />
-			<Collapse line="48" />
-			<Collapse line="59" />
-			<Collapse line="84" />
-			<Collapse line="107" />
-			<Collapse line="126" />
-			<Collapse line="129" />
-			<Collapse line="132" />
-			<Collapse line="139" />
-		</Folding>
-	</File>
-	<File name="SURSE/misc.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="712" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="12" />
-			<Collapse line="15" />
-			<Collapse line="26" />
-			<Collapse line="29" />
-			<Collapse line="32" />
-			<Collapse line="37" />
-		</Folding>
-	</File>
-	<File name="SURSE/gevents.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="167" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="9" />
-		</Folding>
-	</File>
-	<File name="SURSE/loot.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1670" topLine="3" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="9" />
-			<Collapse line="14" />
-			<Collapse line="74" />
-			<Collapse line="85" />
-			<Collapse line="90" />
-			<Collapse line="132" />
-			<Collapse line="136" />
-			<Collapse line="142" />
-			<Collapse line="149" />
-			<Collapse line="154" />
-			<Collapse line="163" />
-			<Collapse line="168" />
-			<Collapse line="170" />
-			<Collapse line="173" />
-			<Collapse line="175" />
-			<Collapse line="179" />
-			<Collapse line="207" />
-			<Collapse line="216" />
-			<Collapse line="221" />
-			<Collapse line="228" />
-			<Collapse line="233" />
-			<Collapse line="235" />
-			<Collapse line="238" />
-			<Collapse line="240" />
-			<Collapse line="244" />
-			<Collapse line="273" />
-			<Collapse line="280" />
-			<Collapse line="313" />
-			<Collapse line="318" />
-			<Collapse line="321" />
-			<Collapse line="332" />
-			<Collapse line="349" />
-			<Collapse line="359" />
-		</Folding>
-	</File>
-	<File name="SURSE/data.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="179" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SURSE/quests.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="119" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="9" />
-		</Folding>
-	</File>
-	<File name="SURSE/console_extern.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="401" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="SURSE/quests.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="11737" topLine="134" />
-		</Cursor>
-		<Folding>
-			<Collapse line="4" />
-			<Collapse line="21" />
-			<Collapse line="73" />
-			<Collapse line="79" />
-			<Collapse line="86" />
-			<Collapse line="94" />
-			<Collapse line="104" />
-			<Collapse line="151" />
-			<Collapse line="159" />
-			<Collapse line="245" />
-			<Collapse line="277" />
-			<Collapse line="289" />
-			<Collapse line="296" />
-			<Collapse line="380" />
-			<Collapse line="398" />
-			<Collapse line="418" />
-			<Collapse line="420" />
-			<Collapse line="427" />
-			<Collapse line="434" />
-			<Collapse line="442" />
-			<Collapse line="449" />
-			<Collapse line="451" />
-			<Collapse line="455" />
-			<Collapse line="464" />
-			<Collapse line="468" />
-			<Collapse line="473" />
-			<Collapse line="479" />
-			<Collapse line="484" />
-			<Collapse line="488" />
-			<Collapse line="495" />
-			<Collapse line="500" />
-			<Collapse line="512" />
-		</Folding>
-	</File>
-	<File name="SURSE/run.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1615" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="SURSE/data.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="14558" topLine="39" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="6" />
-			<Collapse line="12" />
-			<Collapse line="32" />
-			<Collapse line="39" />
-			<Collapse line="42" />
-			<Collapse line="48" />
-			<Collapse line="54" />
-			<Collapse line="60" />
-			<Collapse line="97" />
-			<Collapse line="100" />
-			<Collapse line="113" />
-			<Collapse line="123" />
-			<Collapse line="126" />
-			<Collapse line="148" />
-			<Collapse line="157" />
-			<Collapse line="169" />
-			<Collapse line="179" />
-			<Collapse line="207" />
-			<Collapse line="216" />
-			<Collapse line="225" />
-			<Collapse line="237" />
-			<Collapse line="246" />
-			<Collapse line="257" />
-			<Collapse line="268" />
-			<Collapse line="295" />
-			<Collapse line="302" />
-			<Collapse line="311" />
-			<Collapse line="324" />
-			<Collapse line="335" />
-			<Collapse line="362" />
-			<Collapse line="369" />
-			<Collapse line="378" />
-			<Collapse line="389" />
-			<Collapse line="400" />
-			<Collapse line="425" />
-			<Collapse line="432" />
-			<Collapse line="444" />
-			<Collapse line="452" />
-			<Collapse line="465" />
-			<Collapse line="467" />
-			<Collapse line="474" />
-			<Collapse line="492" />
-			<Collapse line="493" />
-			<Collapse line="496" />
-			<Collapse line="500" />
-			<Collapse line="515" />
-			<Collapse line="532" />
-		</Folding>
-	</File>
-	<File name="SURSE/debug.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="400" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="SURSE/map.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="597" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="10" />
-		</Folding>
-	</File>
-	<File name="SURSE/basics.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="561" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="SURSE/combat.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="157" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SURSE/scripts.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2676" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="4" />
-			<Collapse line="13" />
-			<Collapse line="32" />
-			<Collapse line="35" />
-			<Collapse line="40" />
-			<Collapse line="50" />
-			<Collapse line="52" />
-			<Collapse line="55" />
-			<Collapse line="77" />
-			<Collapse line="94" />
-			<Collapse line="96" />
-		</Folding>
-	</File>
-	<File name="SURSE/run.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="188" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SURSE/inventory.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="35221" topLine="855" />
-		</Cursor>
-		<Folding>
-			<Collapse line="484" />
-		</Folding>
-	</File>
 	<File name="SURSE/gevents.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1386" topLine="0" />
@@ -677,6 +18,58 @@
 			<Collapse line="85" />
 			<Collapse line="88" />
 			<Collapse line="99" />
+		</Folding>
+	</File>
+	<File name="SURSE/basics.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="228" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="SURSE/anim.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="381" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="10" />
+		</Folding>
+	</File>
+	<File name="SURSE/map.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="20728" topLine="440" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="28" />
+			<Collapse line="32" />
+			<Collapse line="44" />
+			<Collapse line="45" />
+			<Collapse line="67" />
+			<Collapse line="69" />
+			<Collapse line="77" />
+			<Collapse line="125" />
+			<Collapse line="131" />
+			<Collapse line="144" />
+			<Collapse line="163" />
+			<Collapse line="168" />
+			<Collapse line="181" />
+			<Collapse line="207" />
+			<Collapse line="233" />
+			<Collapse line="246" />
+			<Collapse line="261" />
+			<Collapse line="306" />
+			<Collapse line="316" />
+			<Collapse line="346" />
+			<Collapse line="351" />
+			<Collapse line="358" />
+			<Collapse line="366" />
+			<Collapse line="374" />
+			<Collapse line="384" />
+			<Collapse line="392" />
+			<Collapse line="399" />
+			<Collapse line="405" />
+			<Collapse line="420" />
+			<Collapse line="463" />
+			<Collapse line="499" />
 		</Folding>
 	</File>
 	<File name="SURSE/dialog.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -741,6 +134,614 @@
 			<Collapse line="565" />
 			<Collapse line="583" />
 			<Collapse line="598" />
+		</Folding>
+	</File>
+	<File name="SURSE/quests.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11905" topLine="141" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="21" />
+			<Collapse line="73" />
+			<Collapse line="79" />
+			<Collapse line="86" />
+			<Collapse line="94" />
+			<Collapse line="104" />
+			<Collapse line="151" />
+			<Collapse line="159" />
+		</Folding>
+	</File>
+	<File name="SURSE/quests.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="119" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="9" />
+		</Folding>
+	</File>
+	<File name="SURSE/misc.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="712" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="12" />
+			<Collapse line="15" />
+			<Collapse line="26" />
+			<Collapse line="29" />
+			<Collapse line="32" />
+			<Collapse line="37" />
+		</Folding>
+	</File>
+	<File name="SURSE/gevents.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="167" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="9" />
+		</Folding>
+	</File>
+	<File name="SURSE/interface.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="613" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SURSE/player.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14267" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="13" />
+			<Collapse line="37" />
+			<Collapse line="71" />
+			<Collapse line="75" />
+			<Collapse line="79" />
+			<Collapse line="82" />
+			<Collapse line="85" />
+			<Collapse line="105" />
+			<Collapse line="111" />
+			<Collapse line="117" />
+			<Collapse line="123" />
+			<Collapse line="131" />
+			<Collapse line="134" />
+			<Collapse line="137" />
+			<Collapse line="139" />
+			<Collapse line="144" />
+			<Collapse line="146" />
+			<Collapse line="151" />
+			<Collapse line="153" />
+			<Collapse line="158" />
+			<Collapse line="160" />
+			<Collapse line="167" />
+			<Collapse line="169" />
+			<Collapse line="173" />
+			<Collapse line="177" />
+			<Collapse line="181" />
+			<Collapse line="188" />
+			<Collapse line="190" />
+			<Collapse line="195" />
+			<Collapse line="200" />
+			<Collapse line="205" />
+			<Collapse line="219" />
+			<Collapse line="223" />
+			<Collapse line="231" />
+			<Collapse line="243" />
+			<Collapse line="251" />
+			<Collapse line="256" />
+			<Collapse line="268" />
+			<Collapse line="277" />
+			<Collapse line="281" />
+			<Collapse line="284" />
+			<Collapse line="286" />
+			<Collapse line="288" />
+			<Collapse line="293" />
+			<Collapse line="307" />
+			<Collapse line="314" />
+			<Collapse line="316" />
+			<Collapse line="321" />
+			<Collapse line="334" />
+			<Collapse line="339" />
+			<Collapse line="341" />
+			<Collapse line="343" />
+			<Collapse line="348" />
+			<Collapse line="368" />
+			<Collapse line="373" />
+			<Collapse line="383" />
+			<Collapse line="385" />
+			<Collapse line="402" />
+			<Collapse line="433" />
+			<Collapse line="437" />
+			<Collapse line="439" />
+			<Collapse line="442" />
+			<Collapse line="444" />
+			<Collapse line="446" />
+			<Collapse line="450" />
+			<Collapse line="458" />
+			<Collapse line="464" />
+			<Collapse line="466" />
+			<Collapse line="472" />
+			<Collapse line="478" />
+			<Collapse line="486" />
+			<Collapse line="492" />
+			<Collapse line="494" />
+			<Collapse line="505" />
+			<Collapse line="508" />
+			<Collapse line="516" />
+			<Collapse line="520" />
+		</Folding>
+	</File>
+	<File name="SURSE/combat.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="155" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SURSE/run.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="188" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SURSE/combat.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3542" topLine="92" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+		</Folding>
+	</File>
+	<File name="SURSE/basics.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1472" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="9" />
+			<Collapse line="18" />
+			<Collapse line="23" />
+			<Collapse line="29" />
+			<Collapse line="37" />
+			<Collapse line="46" />
+		</Folding>
+	</File>
+	<File name="SURSE/npc.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11762" topLine="31" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="21" />
+			<Collapse line="29" />
+			<Collapse line="32" />
+			<Collapse line="35" />
+			<Collapse line="37" />
+			<Collapse line="46" />
+			<Collapse line="48" />
+			<Collapse line="57" />
+			<Collapse line="106" />
+			<Collapse line="108" />
+			<Collapse line="115" />
+			<Collapse line="121" />
+			<Collapse line="127" />
+			<Collapse line="133" />
+			<Collapse line="139" />
+			<Collapse line="156" />
+			<Collapse line="166" />
+			<Collapse line="176" />
+			<Collapse line="192" />
+			<Collapse line="196" />
+			<Collapse line="209" />
+			<Collapse line="216" />
+			<Collapse line="223" />
+			<Collapse line="231" />
+			<Collapse line="255" />
+			<Collapse line="263" />
+			<Collapse line="274" />
+			<Collapse line="294" />
+			<Collapse line="307" />
+			<Collapse line="321" />
+			<Collapse line="328" />
+			<Collapse line="334" />
+			<Collapse line="338" />
+			<Collapse line="347" />
+			<Collapse line="359" />
+			<Collapse line="362" />
+			<Collapse line="365" />
+			<Collapse line="371" />
+		</Folding>
+	</File>
+	<File name="SURSE/data.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="109" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SURSE/inventory.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="33547" topLine="31" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="83" />
+			<Collapse line="89" />
+			<Collapse line="99" />
+			<Collapse line="107" />
+			<Collapse line="113" />
+			<Collapse line="125" />
+			<Collapse line="170" />
+			<Collapse line="179" />
+			<Collapse line="181" />
+			<Collapse line="183" />
+			<Collapse line="188" />
+			<Collapse line="202" />
+			<Collapse line="204" />
+			<Collapse line="238" />
+			<Collapse line="242" />
+			<Collapse line="262" />
+			<Collapse line="296" />
+			<Collapse line="308" />
+			<Collapse line="315" />
+			<Collapse line="317" />
+			<Collapse line="332" />
+			<Collapse line="334" />
+			<Collapse line="349" />
+			<Collapse line="351" />
+			<Collapse line="366" />
+			<Collapse line="370" />
+			<Collapse line="373" />
+			<Collapse line="378" />
+			<Collapse line="394" />
+			<Collapse line="396" />
+			<Collapse line="410" />
+			<Collapse line="413" />
+			<Collapse line="417" />
+			<Collapse line="439" />
+			<Collapse line="444" />
+			<Collapse line="447" />
+			<Collapse line="450" />
+			<Collapse line="452" />
+			<Collapse line="458" />
+			<Collapse line="473" />
+			<Collapse line="486" />
+			<Collapse line="499" />
+			<Collapse line="502" />
+			<Collapse line="512" />
+			<Collapse line="528" />
+			<Collapse line="530" />
+			<Collapse line="532" />
+			<Collapse line="534" />
+			<Collapse line="540" />
+			<Collapse line="547" />
+			<Collapse line="578" />
+			<Collapse line="585" />
+			<Collapse line="590" />
+			<Collapse line="606" />
+			<Collapse line="624" />
+			<Collapse line="638" />
+			<Collapse line="643" />
+			<Collapse line="645" />
+			<Collapse line="650" />
+			<Collapse line="661" />
+			<Collapse line="671" />
+			<Collapse line="679" />
+			<Collapse line="683" />
+			<Collapse line="689" />
+			<Collapse line="691" />
+			<Collapse line="693" />
+			<Collapse line="698" />
+			<Collapse line="726" />
+			<Collapse line="738" />
+			<Collapse line="741" />
+			<Collapse line="744" />
+			<Collapse line="746" />
+			<Collapse line="756" />
+			<Collapse line="761" />
+			<Collapse line="765" />
+			<Collapse line="781" />
+			<Collapse line="784" />
+			<Collapse line="791" />
+			<Collapse line="795" />
+			<Collapse line="834" />
+			<Collapse line="843" />
+			<Collapse line="850" />
+			<Collapse line="857" />
+			<Collapse line="864" />
+			<Collapse line="868" />
+			<Collapse line="872" />
+			<Collapse line="876" />
+			<Collapse line="881" />
+			<Collapse line="885" />
+			<Collapse line="890" />
+			<Collapse line="895" />
+			<Collapse line="933" />
+			<Collapse line="941" />
+			<Collapse line="943" />
+			<Collapse line="945" />
+			<Collapse line="979" />
+			<Collapse line="986" />
+			<Collapse line="994" />
+			<Collapse line="1004" />
+			<Collapse line="1009" />
+			<Collapse line="1023" />
+			<Collapse line="1037" />
+			<Collapse line="1052" />
+			<Collapse line="1054" />
+			<Collapse line="1060" />
+			<Collapse line="1071" />
+			<Collapse line="1086" />
+			<Collapse line="1090" />
+			<Collapse line="1093" />
+			<Collapse line="1099" />
+			<Collapse line="1113" />
+			<Collapse line="1137" />
+			<Collapse line="1150" />
+			<Collapse line="1159" />
+			<Collapse line="1166" />
+			<Collapse line="1190" />
+			<Collapse line="1212" />
+			<Collapse line="1249" />
+			<Collapse line="1261" />
+			<Collapse line="1274" />
+			<Collapse line="1298" />
+			<Collapse line="1307" />
+			<Collapse line="1316" />
+			<Collapse line="1338" />
+			<Collapse line="1347" />
+			<Collapse line="1357" />
+			<Collapse line="1384" />
+			<Collapse line="1395" />
+			<Collapse line="1399" />
+			<Collapse line="1404" />
+			<Collapse line="1407" />
+			<Collapse line="1416" />
+			<Collapse line="1421" />
+			<Collapse line="1424" />
+			<Collapse line="1436" />
+			<Collapse line="1448" />
+			<Collapse line="1453" />
+			<Collapse line="1454" />
+		</Folding>
+	</File>
+	<File name="SURSE/debug.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1529" topLine="20" />
+		</Cursor>
+		<Folding>
+			<Collapse line="19" />
+			<Collapse line="47" />
+		</Folding>
+	</File>
+	<File name="SURSE/debug.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="268" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="SURSE/loot.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1663" topLine="4" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="9" />
+			<Collapse line="14" />
+		</Folding>
+	</File>
+	<File name="SURSE/main_headers.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1482" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="SURSE/main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="257" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SURSE/base.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12706" topLine="83" />
+		</Cursor>
+		<Folding>
+			<Collapse line="33" />
+			<Collapse line="43" />
+			<Collapse line="46" />
+			<Collapse line="49" />
+			<Collapse line="52" />
+			<Collapse line="55" />
+			<Collapse line="58" />
+			<Collapse line="61" />
+			<Collapse line="64" />
+			<Collapse line="67" />
+			<Collapse line="77" />
+			<Collapse line="90" />
+			<Collapse line="100" />
+			<Collapse line="108" />
+			<Collapse line="113" />
+			<Collapse line="138" />
+			<Collapse line="145" />
+			<Collapse line="155" />
+			<Collapse line="165" />
+			<Collapse line="235" />
+			<Collapse line="239" />
+			<Collapse line="245" />
+			<Collapse line="249" />
+			<Collapse line="270" />
+			<Collapse line="274" />
+			<Collapse line="280" />
+			<Collapse line="285" />
+			<Collapse line="300" />
+			<Collapse line="306" />
+			<Collapse line="313" />
+			<Collapse line="319" />
+			<Collapse line="327" />
+			<Collapse line="335" />
+			<Collapse line="347" />
+			<Collapse line="358" />
+			<Collapse line="375" />
+			<Collapse line="379" />
+			<Collapse line="385" />
+			<Collapse line="390" />
+			<Collapse line="401" />
+			<Collapse line="415" />
+			<Collapse line="429" />
+			<Collapse line="440" />
+			<Collapse line="454" />
+			<Collapse line="469" />
+			<Collapse line="475" />
+		</Folding>
+	</File>
+	<File name="SURSE/loot.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="96" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="7" />
+		</Folding>
+	</File>
+	<File name="SURSE/player.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="322" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="20" />
+			<Collapse line="38" />
+			<Collapse line="43" />
+		</Folding>
+	</File>
+	<File name="SURSE/structs.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3312" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+			<Collapse line="16" />
+			<Collapse line="22" />
+			<Collapse line="28" />
+			<Collapse line="35" />
+			<Collapse line="41" />
+			<Collapse line="47" />
+			<Collapse line="53" />
+			<Collapse line="59" />
+			<Collapse line="66" />
+			<Collapse line="76" />
+			<Collapse line="82" />
+			<Collapse line="86" />
+			<Collapse line="94" />
+			<Collapse line="98" />
+			<Collapse line="104" />
+			<Collapse line="109" />
+			<Collapse line="114" />
+			<Collapse line="121" />
+			<Collapse line="146" />
+		</Folding>
+	</File>
+	<File name="SURSE/base.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1259" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="SURSE/console.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="107" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="12" />
+			<Collapse line="34" />
+			<Collapse line="50" />
+			<Collapse line="52" />
+			<Collapse line="64" />
+			<Collapse line="66" />
+			<Collapse line="83" />
+			<Collapse line="86" />
+			<Collapse line="95" />
+			<Collapse line="102" />
+			<Collapse line="125" />
+			<Collapse line="145" />
+			<Collapse line="152" />
+			<Collapse line="161" />
+			<Collapse line="163" />
+			<Collapse line="168" />
+			<Collapse line="175" />
+		</Folding>
+	</File>
+	<File name="SURSE/scripts.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="577" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="12" />
+			<Collapse line="14" />
+		</Folding>
+	</File>
+	<File name="SURSE/console.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="639" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="SURSE/misc.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="367" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+		</Folding>
+	</File>
+	<File name="SURSE/interface.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4159" topLine="41" />
+		</Cursor>
+		<Folding>
+			<Collapse line="6" />
+			<Collapse line="48" />
+		</Folding>
+	</File>
+	<File name="SURSE/data.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9421" topLine="349" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="6" />
+			<Collapse line="12" />
+			<Collapse line="48" />
+		</Folding>
+	</File>
+	<File name="SURSE/dialog.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SURSE/pixel_manip.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1800" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SURSE/scripts.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2487" topLine="15" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="13" />
+		</Folding>
+	</File>
+	<File name="SURSE/npc.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="376" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SURSE/run.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2899" topLine="122" />
+		</Cursor>
+	</File>
+	<File name="SURSE/anim.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4172" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SURSE/map.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="597" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="10" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>

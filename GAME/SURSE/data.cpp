@@ -41,7 +41,7 @@ switch( type )
     case ARMOR_TYPE_CHEST:
     if( LoadedArmor_chest[nr]->nr != NONE )
     {
-        CONSOLE.out( "Already Loaded chest!" );
+        CONS.out( "Already Loaded chest!" );
         return *LoadedArmor_chest[nr];
     }
 
@@ -53,7 +53,7 @@ switch( type )
     case ARMOR_TYPE_CLOAK:
     if( LoadedArmor_cloak[nr]->nr != NONE )
     {
-        CONSOLE.out( "Already Loaded chest!" );
+        CONS.out( "Already Loaded chest!" );
         return *LoadedArmor_cloak[nr];
     }
 
@@ -71,7 +71,7 @@ ssaux<<"Loading ";
 if( type == ARMOR_TYPE_CHEST ) ssaux<<"chest";
 if( type == ARMOR_TYPE_CLOAK ) ssaux<<"cloak";
 ssaux<<" nr "<<nr;
-CONSOLE.out( ssaux.str().c_str() );
+CONS.out( ssaux.str().c_str() );
 
 
 
@@ -178,10 +178,10 @@ stringstream itm_src;
 
 if( LoadedShield[nr]->nr != NONE )
 {
-    CONSOLE.out( "Already loaded shield!" );
+    CONS.out( "Already loaded shield!" );
     return *LoadedShield[nr];
 }
-CONSOLE.out( "Loading Shield!" );
+CONS.out( "Loading Shield!" );
 
 
 itm_src <<"items//shields//" << nr << ".itm";
@@ -267,10 +267,10 @@ temp.nr = nr;
 
 if( LoadedWeapon[nr]->nr != NONE )
 {
-    CONSOLE.out( "Already loaded weapon!" );
+    CONS.out( "Already loaded weapon!" );
     return *LoadedWeapon[nr];
 }
-    CONSOLE.out( "Loading Weapon" );
+    CONS.out( "Loading Weapon" );
 
 itm_src <<"items//weapons//"<<nr<<".itm";
 
@@ -334,12 +334,12 @@ temp.nr = nr;
 
 if( LoadedBag[nr]->nr != NONE )
 {
-    CONSOLE.out( "Already loaded bag!" );
+    CONS.out( "Already loaded bag!" );
     return *LoadedBag[nr];
 }
 
 
-CONSOLE.out( "Loading new bag" );
+CONS.out( "Loading new bag" );
 itm_src <<"items//bags//"<<nr<<".itm";
 
 
@@ -399,12 +399,12 @@ temp.nr = nr;
 
 if( LoadedMisc[nr]->nr != NONE )
 {
-    CONSOLE.out( "Already loaded Misc!" );
+    CONS.out( "Already loaded Misc!" );
     return *LoadedMisc[nr];
 }
 
 
-CONSOLE.out( "Loading new misc" );
+CONS.out( "Loading new misc" );
 itm_src <<"items//misc//"<<nr<<".itm";
 
 
