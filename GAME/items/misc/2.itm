@@ -1,8 +1,0 @@
-name: Haling Potion
-skin_inv: 2
-stack: 5
-price: 15
-description: "Restores 55 health upon use"
-usable: 1
-effect_type: heal_points
-effect_val: 55
