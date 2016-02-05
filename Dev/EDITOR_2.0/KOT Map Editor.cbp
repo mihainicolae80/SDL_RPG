@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="KOT Map Editor" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/KOT Map Editor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="SOURCES" />
+				</Compiler>
+				<Linker>
+					<Add library="SDL2main" />
+					<Add library="SDL2" />
+					<Add library="SDL2_image" />
+					<Add library="SDL2_ttf" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/KOT Map Editor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="SOURCES/Interface.cc" />
+		<Unit filename="SOURCES/Interface.h" />
+		<Unit filename="SOURCES/PixelManipulation.cc" />
+		<Unit filename="SOURCES/PixelManipulation.h" />
+		<Unit filename="SOURCES/Placeable.cc" />
+		<Unit filename="SOURCES/Placeable.h" />
+		<Unit filename="SOURCES/Run.cc" />
+		<Unit filename="SOURCES/Run.h" />
+		<Unit filename="SOURCES/base.cpp" />
+		<Unit filename="SOURCES/base.h" />
+		<Unit filename="SOURCES/basics.cpp" />
+		<Unit filename="SOURCES/basics.h" />
+		<Unit filename="SOURCES/debug.cpp" />
+		<Unit filename="SOURCES/debug.h" />
+		<Unit filename="SOURCES/main.cpp" />
+		<Unit filename="SOURCES/main_header.cc" />
+		<Unit filename="SOURCES/main_headers.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

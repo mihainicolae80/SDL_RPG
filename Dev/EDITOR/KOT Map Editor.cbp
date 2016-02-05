@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="../EDITOR" />
 				</Compiler>
 				<Linker>
 					<Add option="-lSDLmain -lSDL -lSDL_image -lSDL_ttf" />
@@ -35,7 +36,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="SOURCES/Interface.cc" />
+		<Unit filename="SOURCES/Interface.h" />
+		<Unit filename="SOURCES/PixelManipulation.cc" />
+		<Unit filename="SOURCES/PixelManipulation.h" />
+		<Unit filename="SOURCES/Placeable.cc" />
+		<Unit filename="SOURCES/Placeable.h" />
+		<Unit filename="SOURCES/Run.cc" />
+		<Unit filename="SOURCES/Run.h" />
+		<Unit filename="SOURCES/base.cc" />
+		<Unit filename="SOURCES/base.h" />
+		<Unit filename="SOURCES/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

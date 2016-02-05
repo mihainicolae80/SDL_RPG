@@ -11,7 +11,7 @@ void RUN_GAME(){
 
 
     //TEST ONLY
-    PLAYER.TeleportXY( 101,101 );
+    PLAYER.TeleportXY( 201,201 );
     PLAYER.TurnBody( RIGHT );
     PLAYER.teleportZone( 0 );
 

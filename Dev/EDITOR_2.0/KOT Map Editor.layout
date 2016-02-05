@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="SOURCES/base.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1553" topLine="66" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/PixelManipulation.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="171" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/main.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/basics.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="774" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/Placeable.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="93" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/debug.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="367" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/main_headers.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="149" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/Interface.cc" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2220" topLine="49" />
+		</Cursor>
+		<Folding>
+			<Collapse line="2" />
+			<Collapse line="9" />
+			<Collapse line="11" />
+		</Folding>
+	</File>
+	<File name="SOURCES/debug.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="336" topLine="6" />
+		</Cursor>
+		<Folding>
+			<Collapse line="30" />
+		</Folding>
+	</File>
+	<File name="SOURCES/Placeable.cc" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="462" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/base.cpp" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8643" topLine="349" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/Interface.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1318" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/Run.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="112" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/PixelManipulation.cc" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4945" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="9" />
+			<Collapse line="14" />
+			<Collapse line="19" />
+			<Collapse line="25" />
+			<Collapse line="29" />
+			<Collapse line="34" />
+			<Collapse line="42" />
+			<Collapse line="46" />
+			<Collapse line="50" />
+			<Collapse line="54" />
+			<Collapse line="60" />
+			<Collapse line="64" />
+			<Collapse line="69" />
+			<Collapse line="76" />
+			<Collapse line="86" />
+			<Collapse line="90" />
+			<Collapse line="94" />
+			<Collapse line="98" />
+			<Collapse line="106" />
+			<Collapse line="109" />
+			<Collapse line="112" />
+			<Collapse line="116" />
+			<Collapse line="120" />
+			<Collapse line="127" />
+			<Collapse line="131" />
+			<Collapse line="138" />
+			<Collapse line="141" />
+			<Collapse line="150" />
+			<Collapse line="154" />
+		</Folding>
+	</File>
+	<File name="SOURCES/Run.cc" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1797" topLine="49" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/main_header.cc" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="52" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SOURCES/basics.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1597" topLine="11" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="8" />
+			<Collapse line="17" />
+			<Collapse line="22" />
+			<Collapse line="28" />
+			<Collapse line="36" />
+		</Folding>
+	</File>
+</CodeBlocks_layout_file>

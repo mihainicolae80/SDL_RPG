@@ -3044,3 +3044,254 @@
 1444839644 source:/home/mihai/Projects/Git/SDL_RPG/GAME/SURSE/console.cpp
 	"console.h"
 
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/anim.cpp
+	"anim.h"
+	"basics.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/anim.h
+	"main_headers.h"
+	"structs.h"
+	"basics.h"
+	"quests.h"
+	"map.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/main_headers.h
+	<iostream>
+	<fstream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<string>
+	<sstream>
+	<cstdlib>
+	<cmath>
+	"structs.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/structs.h
+	"SDL2/SDL.h"
+	<iostream>
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/basics.h
+	<iostream>
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+	"structs.h"
+	<sstream>
+	"main_headers.h"
+	"debug.h"
+	"base.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/debug.h
+	<fstream>
+	"basics.h"
+	"player.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/player.h
+	"basics.h"
+	"main_headers.h"
+	"anim.h"
+	"structs.h"
+	"map.h"
+	"dialog.h"
+	"loot.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/map.h
+	"basics.h"
+	"main_headers.h"
+	"quests.h"
+	"npc.h"
+	"data.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/quests.h
+	"main_headers.h"
+	"basics.h"
+	"data.h"
+	"pixel_manip.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/data.h
+	"structs.h"
+	"basics.h"
+	"console.h"
+	"pixel_manip.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/console.h
+	"base.h"
+	"basics.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/base.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_mixer.h>
+	<iostream>
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/pixel_manip.h
+	"main_headers.h"
+	"basics.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/npc.h
+	"structs.h"
+	"basics.h"
+	"main_headers.h"
+	"combat.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/combat.h
+	"basics.h"
+	"gevents.h"
+	"console.h"
+	"map.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/gevents.h
+	"structs.h"
+	"main_headers.h"
+	"quests.h"
+	"scripts.h"
+	"interface.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/scripts.h
+	<iostream>
+	"main_headers.h"
+	"anim.h"
+	"data.h"
+	"map.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/interface.h
+	"basics.h"
+	"main_headers.h"
+	"player.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/dialog.h
+	"basics.h"
+	"inventory.h"
+	"quests.h"
+	"data.h"
+	"pixel_manip.h"
+	"npc.h"
+	"map.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/inventory.h
+	"main_headers.h"
+	"basics.h"
+	"data.h"
+	"gevents.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/loot.h
+	"basics.h"
+	"main_headers.h"
+	"inventory.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/base.cpp
+	"base.h"
+	"debug.h"
+	"settings.h"
+	"main_headers.h"
+	"basics.h"
+	"gevents.h"
+	"pixel_manip.h"
+	"data.h"
+	"anim.h"
+	"combat.h"
+	"npc.h"
+	"map.h"
+	"interface.h"
+	"quests.h"
+	"dialog.h"
+	"inventory.h"
+	"loot.h"
+	"scripts.h"
+	"player.h"
+	"misc.h"
+	"console.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/settings.h
+	<fstream>
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/misc.h
+	<fstream>
+	"SDL2/SDL.h"
+	"main_headers.h"
+	"base.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/basics.cpp
+	"basics.h"
+	"base.h"
+	"player.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/combat.cpp
+	"combat.h"
+
+1444839644 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/console.cpp
+	"console.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/data.cpp
+	"data.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/debug.cpp
+	"debug.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/dialog.cpp
+	"dialog.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/gevents.cpp
+	"gevents.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/interface.cpp
+	"interface.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/inventory.cpp
+	"inventory.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/loot.cpp
+	"loot.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/main.cpp
+	"main_headers.h"
+	"run.h"
+	"base.h"
+	"settings.h"
+
+1443702939 /home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/run.h
+	"basics.h"
+	"gevents.h"
+	"quests.h"
+	"map.h"
+	"scripts.h"
+	"interface.h"
+	"basics.h"
+	"anim.h"
+	"inventory.h"
+	"loot.h"
+	"dialog.h"
+	"npc.h"
+	"combat.h"
+	"player.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/map.cpp
+	"map.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/misc.cpp
+	"misc.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/npc.cpp
+	"npc.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/pixel_manip.cpp
+	"pixel_manip.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/player.cpp
+	"player.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/quests.cpp
+	"quests.h"
+
+1453802396 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/run.cpp
+	"run.h"
+	"console.h"
+	"misc.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/scripts.cpp
+	"scripts.h"
+
+1443702939 source:/home/mihai/Projects/Git/SDL_RPG/Dev/GAME/SURSE/settings.cpp
+	"settings.h"
+
