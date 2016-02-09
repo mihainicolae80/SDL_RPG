@@ -640,6 +640,7 @@ TTF_Font *Font14,*Font18,*Font20,*Font24,*Font2_14,*Font2_18,*Font2_20,*Font2_24
 //COLORS
 SDL_Color WHITE        = {255,255,255,255};
 SDL_Color BLACK        = {0,0,0};
+SDL_Color GRAY         = {150,150,150};
 SDL_Color RED          = {255,21,5};
 SDL_Color BLUE         = {0,0,255};
 SDL_Color GREEN        = {93,255,61};

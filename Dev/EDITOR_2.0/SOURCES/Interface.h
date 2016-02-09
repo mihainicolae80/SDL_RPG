@@ -10,6 +10,7 @@
 #include "Placeable.h"
 #include "sstream"
 #include "PixelManipulation.h"
+#include "CallbackClass.h"
 
 
 class Interface{
@@ -81,10 +82,10 @@ private:
 public:
     void init(void);
     void AddNPC(int,int w,int h );
-    void showbg(void);
     void RenderNPCInfo(void);
     void handle_events( SDL_Event newevent );
     void handle_logics();
+    void showbg(void);
     void showNormaMap(void);
     void showMouse(void);
     void SaveMap(void);
@@ -94,5 +95,11 @@ public:
 };
 
 extern Interface INTERFACE;
+
+
+//Callback Classes
+class InterfaceCallback_showbg : public CallbackClass{
+    void execute();
+};
 
 #endif // INTERFACE_H_INCLUDED

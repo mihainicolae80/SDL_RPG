@@ -387,7 +387,7 @@ rInterfaceMenus_toggle[1].w = rInterfaceMenus_toggle[0].w;
 rInterfaceMenus_toggle[1].h = rInterfaceMenus_toggle[0].h;
 
 }
-void Interface::showbg(){
+void Interface::showbg(void){
 int i;
 applySurf(0,0,sInterface,NULL);
 
@@ -3491,3 +3491,9 @@ SDL_FreeSurface( sOptions );
 }
 
 Interface INTERFACE;
+
+
+void InterfaceCallback_showbg::execute(){
+
+    DEBUG_OUT_GEN("Callback");
+}

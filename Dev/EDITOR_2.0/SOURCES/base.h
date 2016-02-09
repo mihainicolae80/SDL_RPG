@@ -119,13 +119,13 @@ void applyTex(int x,int y,SDL_Texture *tex,SDL_Rect *clip = NULL,int w = NO_CHAN
 void applySurf(int x,int y,SDL_Surface *tex,SDL_Rect *clip = NULL,int w = NO_CHANGE,int h = NO_CHANGE );
 
 //Draw Rectangle
-void drawRectFree(int x,int y,int x2,int y2);
-void drawRectAdjusted(int x,int y,int x2,int y2);
-void drawRect(int x,int y,int x2,int y2,SDL_Color *color);
+void DrawRectFree(int x,int y,int x2,int y2);
+void DrawRectAdjusted(int x,int y,int x2,int y2);
+void DrawRect(int x,int y,int x2,int y2,SDL_Color *color);
 //FillRect
-void fillRectFree(int x,int y,int x2,int y2);
-void fillRectAdjusted(int x,int y,int x2,int y2);
-void fillRect(int x,int y,int x2,int y2,SDL_Color *color);
+void FillRectFree(int x,int y,int x2,int y2);
+void FillRectAdjusted(int x,int y,int x2,int y2);
+void FillRect(int x,int y,int x2,int y2,SDL_Color *color);
 
 
 
@@ -146,6 +146,6 @@ void ctos(char carray[],string &str );
 extern TTF_Font *Font14,*Font18,*Font20,*Font24,*Font2_14,*Font2_18,*Font2_20,*Font2_24;
 
 //Colors
-extern SDL_Color WHITE, BLACK, RED, BLUE, GREEN,YELLOW_LIGHT;
+extern SDL_Color WHITE, BLACK, GRAY,RED, BLUE, GREEN,YELLOW_LIGHT;
 
 #endif // BASE_H_INCLUDED
