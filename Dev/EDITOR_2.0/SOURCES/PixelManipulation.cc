@@ -72,16 +72,12 @@ SDL_Surface *PixelManipulation::rotate_img( SDL_Surface *surface,int direction ,
     SDL_Surface *newsurf;
     int x,y,z;
 
-
     if( SDL_MUSTLOCK( surface ) )
     {
         SDL_LockSurface( surface );
     }
 
     Uint32 pix;
-
-
-
 
 if( !animated )
 {
@@ -105,7 +101,11 @@ if( !animated )
 }
 else
 {
-    newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, surface->h*frames , surface->w/frames+1 ,surface->format->BitsPerPixel ,surface->format->Rmask, surface->format->Gmask, surface->format->Bmask,0 );
+    newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, surface->h*frames
+              ,surface->w/frames+1 ,surface->format->BitsPerPixel
+              ,surface->format->Rmask, surface->format->Gmask
+              ,surface->format->Bmask,0 );
+
     for( z = 0; z < frames ; z ++ )
     {
         for( x = 0; x < surface->w/frames; x ++ )
@@ -152,16 +152,9 @@ SDL_Surface *PixelManipulation::RenderCorner( SDL_Surface *surface ){
 
     SDL_Surface *newsurf;
     int x,y;
-    /*
-    if( surface->flags & SDL_SRCCOLORKEY )
-    {
-        newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, surface->w, surface->h,surface->format->BitsPerPixel ,surface->format->Rmask, surface->format->Gmask, surface->format->Bmask,0 );
-    }
-    else
-    {
-    */
-        newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, surface->w, surface->h,surface->format->BitsPerPixel ,surface->format->Rmask, surface->format->Gmask, surface->format->Bmask,surface->format->Amask );
-    //}
+
+    newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, surface->w, surface->h,surface->format->BitsPerPixel ,surface->format->Rmask, surface->format->Gmask, surface->format->Bmask,surface->format->Amask );
+
 
     if( SDL_MUSTLOCK( surface ) )
     {
@@ -190,12 +183,7 @@ SDL_Surface *PixelManipulation::RenderCorner( SDL_Surface *surface ){
     {
         SDL_UnlockSurface( surface );
     }
-    /*
-    if( surface->flags & SDL_SRCCOLORKEY )
-    {
-        SDL_SetColorKey( newsurf, SDL_RLEACCEL | SDL_SRCCOLORKEY, surface->format->colorkey );
-    }
-    */
+
     return newsurf;
 }
 SDL_Surface *PixelManipulation::RenderLightMap( int nr ){
@@ -240,7 +228,7 @@ newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, BLOCK_WIDTH * maxy, BLOCK_HEIGHT *
     for( i = 0; i < BLOCK_HEIGHT * maxx;i++ )
         for( j = 0; j < BLOCK_WIDTH * maxy ;j++ )
         {
-            Pixels.putpix(newsurf ,j , i, Pixels.getpix( Palette, color,0 ) );
+            PIXELS.putpix(newsurf ,j , i, PIXELS.getpix( Palette, color,0 ) );
         }
 
         for( p = FirstDNChunk -> next; p -> next != NULL && p != NULL; p = p-> next )
@@ -255,7 +243,7 @@ newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, BLOCK_WIDTH * maxy, BLOCK_HEIGHT *
                     {
                         if( sqrt( pow( i - p -> y, 2 ) + pow( j - p -> x, 2 ) ) < p -> range )
                         {
-                            Pixels.putpix( newsurf, j, i, Pixels.getpix( Palette, 4, 0) );
+                            PIXELS.putpix( newsurf, j, i, PIXELS.getpix( Palette, 4, 0) );
                         }
                     }
                 }
@@ -267,7 +255,7 @@ newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, BLOCK_WIDTH * maxy, BLOCK_HEIGHT *
                     {
                         if( sqrt( pow( i - p -> y, 2 ) + pow( j - p -> x, 2 ) ) < p -> range/2 )
                         {
-                            Pixels.putpix( newsurf, j, i, Pixels.getpix( Palette, 4, 0) );
+                            PIXELS.putpix( newsurf, j, i, PIXELS.getpix( Palette, 4, 0) );
                         }
                     }
                 }
@@ -319,7 +307,7 @@ newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, w, h,Palette->format->BitsPerPixel
     for( i = 0; i < h;i++ )
         for( j = 0; j < w ;j++ )
         {
-            Pixels.putpix(newsurf ,j , i, Pixels.getpix( Palette, col,0 ) );
+            PIXELS.putpix(newsurf ,j , i, PIXELS.getpix( Palette, col,0 ) );
         }
 
 if( SDL_MUSTLOCK( Palette ) )
@@ -355,16 +343,16 @@ newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, maxy*BLOCK_WIDTH , maxx*BLOCK_HEIG
     for( i = 0; i < maxx*BLOCK_HEIGHT ;i++ )
         for( j = 0; j < maxy*BLOCK_WIDTH ;j++ )
         {
-            Pixels.putpix(newsurf ,j , i, Pixels.getpix( Palette, 4,0 ) );
+            PIXELS.putpix(newsurf ,j , i, PIXELS.getpix( Palette, 4,0 ) );
         }
 
     for( i = 0 ; i < maxx ; i++ )
         for( j = 0; j < maxy ; j++ )
         {
             for( l = 0; l < BLOCK_WIDTH; l++ )
-            Pixels.putpix(newsurf , j*BLOCK_WIDTH + l, i*BLOCK_HEIGHT , Pixels.getpix( Palette, 6,0 ) );
+            PIXELS.putpix(newsurf , j*BLOCK_WIDTH + l, i*BLOCK_HEIGHT , PIXELS.getpix( Palette, 6,0 ) );
             for( k = 0; k < BLOCK_HEIGHT; k++ )
-            Pixels.putpix(newsurf , j*BLOCK_WIDTH ,i*BLOCK_HEIGHT + k, Pixels.getpix( Palette, 6,0 ) );
+            PIXELS.putpix(newsurf , j*BLOCK_WIDTH ,i*BLOCK_HEIGHT + k, PIXELS.getpix( Palette, 6,0 ) );
 
         }
 
@@ -403,8 +391,6 @@ putpix( l2,0,i,getpix( Palette, 4,0) );
 
 
 
-
-
 ///The instance
-PixelManipulation Pixels;
+PixelManipulation PIXELS;
 

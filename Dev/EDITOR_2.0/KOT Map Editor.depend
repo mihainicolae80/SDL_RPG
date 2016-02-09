@@ -358,23 +358,23 @@
 	<iostream>
 	"SDL2/SDL.h"
 
-1454439050 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/PixelManipulation.h
+1454946212 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/PixelManipulation.h
 	"SDL2/SDL.h"
 	"base.h"
 
-1454689344 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Interface.cc
+1454946427 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Interface.cc
 	"Interface.h"
 
 1454495557 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/main.cpp
 	"Run.h"
 
-1454512156 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/PixelManipulation.cc
+1454946399 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/PixelManipulation.cc
 	"PixelManipulation.h"
 
 1454689101 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Placeable.cc
 	"Placeable.h"
 
-1454689922 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Run.cc
+1454946263 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Run.cc
 	"Run.h"
 
 1454512036 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Run.h
@@ -394,7 +394,7 @@
 	"sstream"
 	"PixelManipulation.h"
 
-1454690330 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/base.cpp
+1454946235 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/base.cpp
 	"base.h"
 	<SDL2/SDL_image.h>
 
@@ -421,4 +421,9 @@
 
 1454512127 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/main_header.cc
 	"main_headers.h"
+
+1454946678 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/map.cc
+	"map.h"
+
+1454946655 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/map.h
 

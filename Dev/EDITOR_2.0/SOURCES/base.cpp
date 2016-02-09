@@ -504,13 +504,13 @@ switch( modelchunk -> orient ) //chose / render skin
     newchunk -> skin = modelchunk -> skin;
     break;
     case 1:
-    newchunk -> skin = Pixels.rotate_img( modelchunk -> skin ,ROTATE_RIGHT,newchunk->animated,newchunk->frames ) ;
+    newchunk -> skin = PIXELS.rotate_img( modelchunk -> skin ,ROTATE_RIGHT,newchunk->animated,newchunk->frames ) ;
     break;
     case 2:
-    newchunk -> skin = Pixels.flip_img( modelchunk -> skin , FLIP_HOR ) ;
+    newchunk -> skin = PIXELS.flip_img( modelchunk -> skin , FLIP_HOR ) ;
     break;
     case 3:
-    newchunk -> skin = Pixels.rotate_img( modelchunk -> skin, ROTATE_LEFT,newchunk->animated,newchunk->frames ) ;
+    newchunk -> skin = PIXELS.rotate_img( modelchunk -> skin, ROTATE_LEFT,newchunk->animated,newchunk->frames ) ;
     break;
 }
 
@@ -566,7 +566,7 @@ newchunk ->g1y = y - h/2;
 newchunk ->g2x = x + w/2;
 newchunk ->g2y = y + h/2;
 
-newchunk ->skin = Pixels.RenderRect(w,h,0);
+newchunk ->skin = PIXELS.RenderRect(w,h,0);
 
 newchunk -> next = FirstCOLChunk ->next;
 FirstCOLChunk -> next = newchunk;
@@ -586,7 +586,7 @@ nou -> info[0] = i1;
 nou -> info[1] = i2;
 nou -> info[2] = i3;
 nou -> info[3] = i4;
-nou -> skin = Pixels.RenderRect( nou -> w,nou -> h ,0 );
+nou -> skin = PIXELS.RenderRect( nou -> w,nou -> h ,0 );
 return nou;
 }
 InterSpot *AddInterSpot( int x,int y ){
@@ -602,7 +602,7 @@ nou -> info[0] = 0;
 nou -> info[1] = 0;
 nou -> info[2] = 0;
 nou -> info[3] = 0;
-nou -> skin = Pixels.RenderRect( nou -> w,nou -> h ,0 );
+nou -> skin = PIXELS.RenderRect( nou -> w,nou -> h ,0 );
 return nou;
 }
 NPCchunk *AddNPCchunk( NPCchunk *modelchunk ){

@@ -22,6 +22,6 @@ public:
     void cleanup();
 };
 
-extern PixelManipulation Pixels;
+extern PixelManipulation PIXELS;
 
 #endif // PIXELMANIPULATION_H_INCLUDED

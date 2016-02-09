@@ -933,8 +933,8 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
 
 
 
-        Pixels.RenderGrid();
-        Pixels.RenderMouseLines( sLine1,sLine2 );
+        PIXELS.RenderGrid();
+        PIXELS.RenderMouseLines( sLine1,sLine2 );
     }
     else if( C_FreeChunk ->nr == chunk_INTER[0].nr && !bCtrlDown ) //Check click on foreground item
     {
@@ -955,9 +955,9 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
                     if( sSelectedChunk != NULL )
                     SDL_FreeSurface( sSelectedChunk );
                     if( p->animated )
-                    sSelectedChunk = Pixels.RenderRect( p->skin->w/p->frames,p->skin->h,2 );
+                    sSelectedChunk = PIXELS.RenderRect( p->skin->w/p->frames,p->skin->h,2 );
                     else
-                    sSelectedChunk = Pixels.RenderRect( p->skin->w,p->skin->h,2 );
+                    sSelectedChunk = PIXELS.RenderRect( p->skin->w,p->skin->h,2 );
                     break;
                 }
                 else if( p->next == LastFreeChunk_back )
@@ -982,9 +982,9 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
                     if( sSelectedChunk != NULL )
                     SDL_FreeSurface( sSelectedChunk );
                     if( p->animated )
-                    sSelectedChunk = Pixels.RenderRect( p->skin->w/p->frames,p->skin->h,2 );
+                    sSelectedChunk = PIXELS.RenderRect( p->skin->w/p->frames,p->skin->h,2 );
                     else
-                    sSelectedChunk = Pixels.RenderRect( p->skin->w,p->skin->h,2 );
+                    sSelectedChunk = PIXELS.RenderRect( p->skin->w,p->skin->h,2 );
                     break;
                 }
                 else if( p->next == LastFreeChunk_dynam )
@@ -1009,9 +1009,9 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
                     if( sSelectedChunk != NULL )
                     SDL_FreeSurface( sSelectedChunk );
                     if( p->animated )
-                    sSelectedChunk = Pixels.RenderRect( p->skin->w/p->frames,p->skin->h,2 );
+                    sSelectedChunk = PIXELS.RenderRect( p->skin->w/p->frames,p->skin->h,2 );
                     else
-                    sSelectedChunk = Pixels.RenderRect( p->skin->w,p->skin->h,2 );
+                    sSelectedChunk = PIXELS.RenderRect( p->skin->w,p->skin->h,2 );
                     break;
                 }
                 else if( p->next == LastFreeChunk_fore )
@@ -1080,13 +1080,13 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
                         chunk_C.skin = chunk_BUILD[i].skin;
                         break;
                         case 1:
-                        chunk_C.skin = Pixels.rotate_img( chunk_BUILD[i].skin,ROTATE_RIGHT,chunk_C.animated,chunk_C.frames ) ;
+                        chunk_C.skin = PIXELS.rotate_img( chunk_BUILD[i].skin,ROTATE_RIGHT,chunk_C.animated,chunk_C.frames ) ;
                         break;
                         case 2:
-                        chunk_C.skin = Pixels.flip_img( chunk_BUILD[i].skin, FLIP_HOR ) ;
+                        chunk_C.skin = PIXELS.flip_img( chunk_BUILD[i].skin, FLIP_HOR ) ;
                         break;
                         case 3:
-                        chunk_C.skin = Pixels.rotate_img( chunk_BUILD[i].skin, ROTATE_LEFT,chunk_C.animated,chunk_C.frames ) ;
+                        chunk_C.skin = PIXELS.rotate_img( chunk_BUILD[i].skin, ROTATE_LEFT,chunk_C.animated,chunk_C.frames ) ;
                         break;
                     }
                 }
@@ -1132,15 +1132,15 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
                         bCSkinOrigin = true;
                         break;
                         case 1:
-                        C_FreeChunk -> skin = Pixels.rotate_img( chunk_INTER[i].skin ,ROTATE_RIGHT,C_FreeChunk->animated, C_FreeChunk->frames ) ;
+                        C_FreeChunk -> skin = PIXELS.rotate_img( chunk_INTER[i].skin ,ROTATE_RIGHT,C_FreeChunk->animated, C_FreeChunk->frames ) ;
                         bCSkinOrigin = false;
                         break;
                         case 2:
-                        C_FreeChunk -> skin = Pixels.flip_img( chunk_INTER[i].skin , FLIP_HOR ) ;
+                        C_FreeChunk -> skin = PIXELS.flip_img( chunk_INTER[i].skin , FLIP_HOR ) ;
                         bCSkinOrigin = false;
                         break;
                         case 3:
-                        C_FreeChunk -> skin = Pixels.rotate_img( chunk_INTER[i].skin, ROTATE_LEFT,C_FreeChunk->animated, C_FreeChunk->frames ) ;
+                        C_FreeChunk -> skin = PIXELS.rotate_img( chunk_INTER[i].skin, ROTATE_LEFT,C_FreeChunk->animated, C_FreeChunk->frames ) ;
                         bCSkinOrigin = false;
                         break;
                     }
@@ -1255,19 +1255,19 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
                     switch( chunk_C.orient ) //chose / render skin
                     {
                         case 4:
-                        chunk_C.skin = Pixels.RenderCorner( chunk_BUILD[i].skin );
+                        chunk_C.skin = PIXELS.RenderCorner( chunk_BUILD[i].skin );
                         break;
                         case 5:
-                        chunk_C.skin = Pixels.rotate_img( Pixels.RenderCorner( chunk_BUILD[i].skin ),
+                        chunk_C.skin = PIXELS.rotate_img( PIXELS.RenderCorner( chunk_BUILD[i].skin ),
                                                          ROTATE_RIGHT,chunk_C.animated,chunk_C.frames ) ;
                         break;
                         case 6:
-                        chunk_C.skin = Pixels.rotate_img( Pixels.rotate_img( Pixels.RenderCorner( chunk_BUILD[i].skin ),
+                        chunk_C.skin = PIXELS.rotate_img( PIXELS.rotate_img( PIXELS.RenderCorner( chunk_BUILD[i].skin ),
                                                           ROTATE_LEFT,chunk_C.animated,chunk_C.frames ),
                                                           ROTATE_LEFT,chunk_C.animated,chunk_C.frames )  ;
                         break;
                         case 7:
-                        chunk_C.skin = Pixels.rotate_img( Pixels.RenderCorner( chunk_BUILD[i].skin ),
+                        chunk_C.skin = PIXELS.rotate_img( PIXELS.RenderCorner( chunk_BUILD[i].skin ),
                                                           ROTATE_LEFT,chunk_C.animated,chunk_C.frames ) ;
                         break;
                     }
@@ -1314,15 +1314,15 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
                         bCSkinOrigin = true;
                         break;
                         case 1:
-                        C_FreeChunk -> skin = Pixels.rotate_img( chunk_INTER[i].skin ,ROTATE_RIGHT,C_FreeChunk->animated, C_FreeChunk->frames ) ;
+                        C_FreeChunk -> skin = PIXELS.rotate_img( chunk_INTER[i].skin ,ROTATE_RIGHT,C_FreeChunk->animated, C_FreeChunk->frames ) ;
                         bCSkinOrigin = false;
                         break;
                         case 2:
-                        C_FreeChunk -> skin = Pixels.flip_img( chunk_INTER[i].skin , FLIP_HOR ) ;
+                        C_FreeChunk -> skin = PIXELS.flip_img( chunk_INTER[i].skin , FLIP_HOR ) ;
                         bCSkinOrigin = false;
                         break;
                         case 3:
-                        C_FreeChunk -> skin = Pixels.rotate_img( chunk_INTER[i].skin, ROTATE_LEFT,C_FreeChunk->animated, C_FreeChunk->frames ) ;
+                        C_FreeChunk -> skin = PIXELS.rotate_img( chunk_INTER[i].skin, ROTATE_LEFT,C_FreeChunk->animated, C_FreeChunk->frames ) ;
                         bCSkinOrigin = false;
                         break;
                     }
@@ -1977,7 +1977,7 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
                                 FCmoveing = true;
                                 if( sSelectedChunk != NULL )
                                 SDL_FreeSurface( sSelectedChunk );
-                                sSelectedChunk = Pixels.RenderRect( inpc->w,inpc->h,2 );
+                                sSelectedChunk = PIXELS.RenderRect( inpc->w,inpc->h,2 );
                                 RenderNPCInfo();
                                 break;
                             }
@@ -2007,7 +2007,7 @@ if( newevent.type == SDL_MOUSEBUTTONDOWN )
                 FCmoveing = true;
                 if( sSelectedChunk != NULL )
                 SDL_FreeSurface( sSelectedChunk );
-                sSelectedChunk = Pixels.RenderRect( CSelectedNPC->w,CSelectedNPC->h,2 );
+                sSelectedChunk = PIXELS.RenderRect( CSelectedNPC->w,CSelectedNPC->h,2 );
 
                 RenderNPCInfo();
             }
@@ -2058,8 +2058,7 @@ else if( newevent.type == SDL_MOUSEBUTTONUP )
 }
 else if( newevent.type == SDL_MOUSEMOTION )
 {
-    FreeChunk *p,*Lastfc = NULL;
-    NPCchunk *inpc;
+
     stringstream ssaux;
     x = newevent.motion.x;
     y = newevent.motion.y;
@@ -2178,7 +2177,7 @@ else if( newevent.type == SDL_MOUSEMOTION )
     {
         CCOLChunk -> w = ( x - ( CCOLChunk -> x + iMoveMap_x + 280 ) )*2;
         SDL_FreeSurface( CCOLChunk ->skin );
-        CCOLChunk ->skin = Pixels.RenderRect( CCOLChunk -> w ,CCOLChunk ->h ,0);
+        CCOLChunk ->skin = PIXELS.RenderRect( CCOLChunk -> w ,CCOLChunk ->h ,0);
         CCOLChunk ->g1x = CCOLChunk ->x - CCOLChunk ->w/2;
         CCOLChunk ->g2x = CCOLChunk ->x + CCOLChunk ->w/2;
     }
@@ -2186,7 +2185,7 @@ else if( newevent.type == SDL_MOUSEMOTION )
     {
         CCOLChunk -> h = ( ( CCOLChunk -> y + iMoveMap_y + 50 ) - y )*2;
         SDL_FreeSurface( CCOLChunk ->skin );
-        CCOLChunk ->skin = Pixels.RenderRect( CCOLChunk -> w ,CCOLChunk ->h, 0 );
+        CCOLChunk ->skin = PIXELS.RenderRect( CCOLChunk -> w ,CCOLChunk ->h, 0 );
         CCOLChunk ->g1y = CCOLChunk ->y - CCOLChunk ->h/2;
         CCOLChunk ->g2y = CCOLChunk ->y + CCOLChunk ->h/2;
     }
@@ -2197,7 +2196,7 @@ else if( newevent.type == SDL_MOUSEMOTION )
         CCOLChunk -> w = CCOLChunk -> g2x - CCOLChunk -> g1x;
         CCOLChunk -> h = CCOLChunk -> g2y - CCOLChunk -> g1y;
         SDL_FreeSurface( CCOLChunk ->skin );
-        CCOLChunk ->skin = Pixels.RenderRect( CCOLChunk -> w,CCOLChunk -> h, 0 );
+        CCOLChunk ->skin = PIXELS.RenderRect( CCOLChunk -> w,CCOLChunk -> h, 0 );
         CCOLChunk ->x = CCOLChunk ->g1x + ( CCOLChunk ->g2x - CCOLChunk ->g1x )/2;
         CCOLChunk ->y = CCOLChunk ->g1y + ( CCOLChunk ->g2y - CCOLChunk ->g1y )/2;
     }
@@ -2208,7 +2207,7 @@ else if( newevent.type == SDL_MOUSEMOTION )
         CCOLChunk -> w = CCOLChunk -> g2x - CCOLChunk -> g1x;
         CCOLChunk -> h = CCOLChunk -> g2y - CCOLChunk -> g1y;
         SDL_FreeSurface( CCOLChunk ->skin );
-        CCOLChunk ->skin = Pixels.RenderRect( CCOLChunk -> w,CCOLChunk -> h,0 );
+        CCOLChunk ->skin = PIXELS.RenderRect( CCOLChunk -> w,CCOLChunk -> h,0 );
         CCOLChunk ->x = CCOLChunk ->g1x + ( CCOLChunk ->g2x - CCOLChunk ->g1x )/2;
         CCOLChunk ->y = CCOLChunk ->g1y + ( CCOLChunk ->g2y - CCOLChunk ->g1y )/2;
     }
@@ -2225,7 +2224,7 @@ else if( newevent.type == SDL_MOUSEMOTION )
         cInterChunk -> h = ( cInterChunk ->y + cInterChunk ->h + 50 + iMoveMap_y ) - y;
         cInterChunk -> x = x - 280 - iMoveMap_x;
         cInterChunk -> y = y - 50 - iMoveMap_y;
-        cInterChunk ->skin = Pixels.RenderRect(cInterChunk ->w ,cInterChunk ->h,0 );
+        cInterChunk ->skin = PIXELS.RenderRect(cInterChunk ->w ,cInterChunk ->h,0 );
     }
     else if( DragInter_g2 )
     {
@@ -2233,7 +2232,7 @@ else if( newevent.type == SDL_MOUSEMOTION )
         cInterChunk -> w = x - ( cInterChunk -> x + 280 + iMoveMap_x );
         cInterChunk -> h = y - ( cInterChunk -> y + 50 + iMoveMap_y );
 
-        cInterChunk ->skin = Pixels.RenderRect(cInterChunk ->w ,cInterChunk ->h,0 );
+        cInterChunk ->skin = PIXELS.RenderRect(cInterChunk ->w ,cInterChunk ->h,0 );
     }
 
     if( Window_Inter_Drag )
@@ -2257,9 +2256,9 @@ else if( newevent.type == SDL_MOUSEMOTION )
                 if( sCurrentChunk != NULL )
                 SDL_FreeSurface( sCurrentChunk );
                 if( p->animated )
-                sCurrentChunk = Pixels.RenderRect( p->skin->w/p->frames,p->skin->h, 1 );
+                sCurrentChunk = PIXELS.RenderRect( p->skin->w/p->frames,p->skin->h, 1 );
                 else
-                sCurrentChunk = Pixels.RenderRect( p->skin->w,p->skin->h, 1 );
+                sCurrentChunk = PIXELS.RenderRect( p->skin->w,p->skin->h, 1 );
             }
 
             ShowCChunk = true;
@@ -2283,9 +2282,9 @@ else if( newevent.type == SDL_MOUSEMOTION )
                 if( sCurrentChunk != NULL )
                 SDL_FreeSurface( sCurrentChunk );
                 if( p->animated )
-                sCurrentChunk = Pixels.RenderRect( p->skin->w/p->frames ,p->skin->h, 1 );
+                sCurrentChunk = PIXELS.RenderRect( p->skin->w/p->frames ,p->skin->h, 1 );
                 else
-                sCurrentChunk = Pixels.RenderRect( p->skin->w,p->skin->h, 1 );
+                sCurrentChunk = PIXELS.RenderRect( p->skin->w,p->skin->h, 1 );
             }
 
             ShowCChunk = true;
@@ -2309,9 +2308,9 @@ else if( newevent.type == SDL_MOUSEMOTION )
                 if( sCurrentChunk != NULL )
                 SDL_FreeSurface( sCurrentChunk );
                 if( p->animated )
-                sCurrentChunk = Pixels.RenderRect( p->skin->w/p->frames ,p->skin->h, 1 );
+                sCurrentChunk = PIXELS.RenderRect( p->skin->w/p->frames ,p->skin->h, 1 );
                 else
-                sCurrentChunk = Pixels.RenderRect( p->skin->w,p->skin->h, 1 );
+                sCurrentChunk = PIXELS.RenderRect( p->skin->w,p->skin->h, 1 );
             }
 
             ShowCChunk = true;
@@ -2335,7 +2334,7 @@ else if( newevent.type == SDL_MOUSEMOTION )
                 if( sCurrentChunk != NULL )
                 SDL_FreeSurface( sCurrentChunk );
 
-                sCurrentChunk = Pixels.RenderRect( inpc->w,inpc->h, 1 );
+                sCurrentChunk = PIXELS.RenderRect( inpc->w,inpc->h, 1 );
             }
 
             ShowCChunk = true;
@@ -2582,7 +2581,7 @@ for( i = 0; i < 6; i++ )
         {
             SDL_FreeSurface( sDayNightCicle[i] );
         }
-        sDayNightCicle[i] = Pixels.RenderLightMap( i );
+        sDayNightCicle[i] = PIXELS.RenderLightMap( i );
     }
 
     if( SDL_GetTicks() - tAnime > 250 )
@@ -3182,44 +3181,44 @@ for( j = 0;j < maxy;j++ )
                 case 1:
 
                 BuildSurf[ NormalMap[i][j].nr ][ NormalMap[i][j].orient ] =
-                Pixels.rotate_img( BuildSurf[ NormalMap[i][j].nr ][0],ROTATE_RIGHT,0,0 ) ;
+                PIXELS.rotate_img( BuildSurf[ NormalMap[i][j].nr ][0],ROTATE_RIGHT,0,0 ) ;
 
                 break;
                 case 2:
 
                 BuildSurf[ NormalMap[i][j].nr ][ NormalMap[i][j].orient ] =
-                Pixels.flip_img( BuildSurf[ NormalMap[i][j].nr ][0], FLIP_HOR ) ;
+                PIXELS.flip_img( BuildSurf[ NormalMap[i][j].nr ][0], FLIP_HOR ) ;
 
                 break;
                 case 3:
 
                 BuildSurf[ NormalMap[i][j].nr ][ NormalMap[i][j].orient ] =
-                Pixels.rotate_img( BuildSurf[ NormalMap[i][j].nr ][0], ROTATE_LEFT,0,0 ) ;
+                PIXELS.rotate_img( BuildSurf[ NormalMap[i][j].nr ][0], ROTATE_LEFT,0,0 ) ;
 
                 break;
                 case 4:
 
                 BuildSurf[ NormalMap[i][j].nr ][ NormalMap[i][j].orient ] =
-                Pixels.RenderCorner( BuildSurf[ NormalMap[i][j].nr ][0] );
+                PIXELS.RenderCorner( BuildSurf[ NormalMap[i][j].nr ][0] );
 
                 break;
                 case 5:
 
                 BuildSurf[ NormalMap[i][j].nr ][ NormalMap[i][j].orient ] =
-                Pixels.rotate_img( Pixels.RenderCorner( BuildSurf[ NormalMap[i][j].nr ][0] ),
+                PIXELS.rotate_img( PIXELS.RenderCorner( BuildSurf[ NormalMap[i][j].nr ][0] ),
                                           ROTATE_RIGHT,chunk_C.animated,chunk_C.frames ) ;
                 break;
                 case 6:
 
                 BuildSurf[ NormalMap[i][j].nr ][ NormalMap[i][j].orient ] =
-                Pixels.rotate_img( Pixels.rotate_img( Pixels.RenderCorner( BuildSurf[ NormalMap[i][j].nr ][0] ),
+                PIXELS.rotate_img( PIXELS.rotate_img( PIXELS.RenderCorner( BuildSurf[ NormalMap[i][j].nr ][0] ),
                                           ROTATE_LEFT,chunk_C.animated,chunk_C.frames ),
                                           ROTATE_LEFT,chunk_C.animated,chunk_C.frames )  ;
                 break;
                 case 7:
 
                 BuildSurf[ NormalMap[i][j].nr ][ NormalMap[i][j].orient ] =
-                Pixels.rotate_img( Pixels.RenderCorner( BuildSurf[ NormalMap[i][j].nr ][0] ),
+                PIXELS.rotate_img( PIXELS.RenderCorner( BuildSurf[ NormalMap[i][j].nr ][0] ),
                                           ROTATE_LEFT,chunk_C.animated,chunk_C.frames ) ;
                 break;
                 }
@@ -3410,7 +3409,7 @@ AddNPCchunk(modelnpcchunk);
 file.close();
 if( sGrid != NULL )
 SDL_FreeSurface( sGrid );
-sGrid = Pixels.RenderGrid();
+sGrid = PIXELS.RenderGrid();
 
 delete TempFreeChunk;
 delete modelnpcchunk;
@@ -3418,7 +3417,7 @@ delete modelnpcchunk;
 
 //Render lines
 //if( ShowMousePos )<<!>>
-Pixels.RenderMouseLines( sLine1,sLine2 );
+PIXELS.RenderMouseLines( sLine1,sLine2 );
 
 }
 void Interface::MapCleanup(){

@@ -7,16 +7,12 @@ int runEditor(void){
     SDL_Event event;
 
     ///Initlialize
-
     error = ENGINE_Init();
     if(error) return error;
 
     INTERFACE.init();
 
-    Pixels.init();
-
-
-    //SDL_EnableUNICODE( SDL_ENABLE );
+    PIXELS.init();
 
     ///Run the editor
     while( !end )
@@ -54,15 +50,15 @@ int runEditor(void){
             INTERFACE.handle_events( event );
         }
         ///Logics
-        ///! INTERFACE.handle_logics();
+         INTERFACE.handle_logics();
 
         ///RENDER
         //Clean the screen
         SDL_SetRenderDrawColor(RENDER_MAIN,0,0,0,255);
         SDL_RenderClear(RENDER_MAIN);
 
-        INTERFACE.showNormaMap();
-        INTERFACE.showbg();
+        //INTERFACE.showNormaMap();
+        //INTERFACE.showbg();
 
         //INTERFACE.showMouse();
 
@@ -74,8 +70,10 @@ int runEditor(void){
 
 
     ///Cleanup
-    ///TODO cleanup();
-    //SDL_EnableUNICODE( SDL_DISABLE );
+
+    //PIXELS.cleanup();
+    INTERFACE.cleanup();
+    ENGINE_Quit();
 
     return 0;
 }

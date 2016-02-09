@@ -56,6 +56,12 @@
 		<Unit filename="SOURCES/main.cpp" />
 		<Unit filename="SOURCES/main_header.cc" />
 		<Unit filename="SOURCES/main_headers.h" />
+		<Unit filename="SOURCES/map.cc" />
+		<Unit filename="SOURCES/map.h" />
+		<Unit filename="SOURCES/ui_button.cc" />
+		<Unit filename="SOURCES/ui_button.h" />
+		<Unit filename="SOURCES/ui_manager.cc" />
+		<Unit filename="SOURCES/ui_manager.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
