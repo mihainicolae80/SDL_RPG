@@ -39,6 +39,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="SOURCES/CallbackClass.h" />
 		<Unit filename="SOURCES/Interface.cc" />
 		<Unit filename="SOURCES/Interface.h" />
 		<Unit filename="SOURCES/PixelManipulation.cc" />
@@ -58,8 +59,19 @@
 		<Unit filename="SOURCES/main_headers.h" />
 		<Unit filename="SOURCES/map.cc" />
 		<Unit filename="SOURCES/map.h" />
+		<Unit filename="SOURCES/textures.cc" />
+		<Unit filename="SOURCES/textures.h" />
+		<Unit filename="SOURCES/ui_bar.cc" />
+		<Unit filename="SOURCES/ui_bar.h" />
 		<Unit filename="SOURCES/ui_button.cc" />
 		<Unit filename="SOURCES/ui_button.h" />
+		<Unit filename="SOURCES/ui_group.cc" />
+		<Unit filename="SOURCES/ui_group.h" />
+		<Unit filename="SOURCES/ui_item.h" />
+		<Unit filename="SOURCES/ui_list.cc" />
+		<Unit filename="SOURCES/ui_list.h" />
+		<Unit filename="SOURCES/ui_list_item.cc" />
+		<Unit filename="SOURCES/ui_list_item.h" />
 		<Unit filename="SOURCES/ui_manager.cc" />
 		<Unit filename="SOURCES/ui_manager.h" />
 		<Extensions>

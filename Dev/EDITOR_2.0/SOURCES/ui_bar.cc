@@ -11,7 +11,7 @@ UI_Bar::UI_Bar(SDL_Color *color,UI_BAR_TYPE barType){
     this->color = color;
 
     //Allocate space for the Item list
-    this->items = new list<UI_Item*>();
+    this->items = new std::list<UI_Item*>();
 }
 UI_Bar::~UI_Bar(){
 

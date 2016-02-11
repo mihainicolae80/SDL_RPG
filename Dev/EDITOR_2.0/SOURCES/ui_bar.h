@@ -2,7 +2,8 @@
 #define UI_BAR_H_INCLUDED
 
 #include <list>
-#include "ui_button.h"
+#include "base.h"
+#include "ui_item.h"
 
 enum UI_BAR_TYPE{
 
@@ -32,7 +33,7 @@ private:
     UI_BAR_TYPE barType;
     SDL_Color *color;
 
-    list<UI_Item*> *items;
+    std::list<UI_Item*> *items;
 
 };
 

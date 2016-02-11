@@ -1,8 +1,11 @@
 #include "Run.h"
 
-#include "ui_bar.h"
+
+#include "ui_manager.h"
 #include "ui_button.h"
-#include "ui_group.h"
+#include "ui_list.h"
+#include "textures.h"
+
 
 int runEditor(void){
 
@@ -32,12 +35,18 @@ int runEditor(void){
     bar2->addItem(new UI_Button(50,50,DEBUG.txExMark,(new InterfaceCallback_showbg())));
 
 
+    UI_List List(300,500,DEBUG.txExMark);
 
     UI_Bar* bar = new UI_Bar(&GRAY,UI_BAR_VERTICAL);
     bar->addItem(bar1);
     bar->addItem(bar2);
+    bar->addItem(&List);
 
-    UI_Group group(UI_GROUP_EAST,UI_GROUP_SOUTH, bar);
+    UI_Group group(UI_GROUP_CENTER,UI_GROUP_CENTER, bar);
+
+    UI_Manager um;
+
+    um.addGroup(&group);
 
     ///Run the editor
     while( !end )
@@ -75,9 +84,7 @@ int runEditor(void){
             //External events
             INTERFACE.handle_events(event);
 
-            //button.handleEvents(&event);
-            //bar.handleEvents(&event);
-            group.handleLogics(&event);
+            um.handleEvents(&event);
         }
         ///Logics
          INTERFACE.handle_logics();
@@ -89,13 +96,12 @@ int runEditor(void){
 
 
 
-        //INTERFACE.showNormaMap();
+        INTERFACE.showNormaMap();
         //INTERFACE.showbg();
 
         //INTERFACE.showMouse();
 
-        //bar.draw();
-        group.draw();
+        um.draw();
 
 
         //Update the screen

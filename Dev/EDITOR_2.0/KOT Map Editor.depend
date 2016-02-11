@@ -358,11 +358,11 @@
 	<iostream>
 	"SDL2/SDL.h"
 
-1454946212 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/PixelManipulation.h
+1455097026 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/PixelManipulation.h
 	"SDL2/SDL.h"
 	"base.h"
 
-1455016863 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Interface.cc
+1455091111 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Interface.cc
 	"Interface.h"
 
 1454495557 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/main.cpp
@@ -374,11 +374,12 @@
 1454689101 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Placeable.cc
 	"Placeable.h"
 
-1455028402 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Run.cc
+1455098605 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Run.cc
 	"Run.h"
-	"ui_bar.h"
+	"ui_manager.h"
 	"ui_button.h"
-	"ui_group.h"
+	"ui_list.h"
+	"textures.h"
 
 1454512036 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Run.h
 	"SDL2/SDL.h"
@@ -439,30 +440,47 @@
 	"Interface.h"
 	"ui_item.h"
 
-1454948366 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_manager.cc
+1455092295 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_manager.cc
 	"ui_manager.h"
 
-1455004336 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_manager.h
+1455092265 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_manager.h
 	<list>
 	"base.h"
 	"ui_group.h"
 
-1455028340 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_group.cc
+1455091956 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_group.cc
 	"ui_group.h"
 
-1455027655 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_group.h
+1455091955 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_group.h
 	"ui_bar.h"
 	"base.h"
 
 1455015665 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/CallbackClass.h
 
-1455028129 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_bar.cc
+1455092064 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_bar.cc
 	"ui_bar.h"
 
-1455028104 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_bar.h
+1455092084 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_bar.h
 	<list>
-	"ui_button.h"
+	"base.h"
+	"ui_item.h"
 
 1455025452 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_item.h
 	"SDL2/SDL.h"
+
+1455094992 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_list.cc
+	"ui_list.h"
+
+1455129982 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_list.h
+	"base.h"
+	<string>
+	<list>
+	"ui_item.h"
+
+1455098543 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/textures.cc
+	"textures.h"
+
+1455097812 /home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR_2.0/SOURCES/textures.h
+	"PixelManipulation.h"
+	<sstream>
 

@@ -4,6 +4,20 @@
 #include "SDL2/SDL.h"
 #include "base.h"
 
+enum PixelManipulationRotation{
+
+     ROTATE_NONE = 0,
+     ROTATE_90,
+     ROTATE_180,
+     ROTATE_270,
+
+     CORNER_ROTATE_NONE,
+     CORNER_ROTATE_90,
+     CORNER_ROTATE_180,
+     CORNER_ROTATE_270
+};
+
+
  class PixelManipulation{
 
 private:

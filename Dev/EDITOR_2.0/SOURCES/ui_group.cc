@@ -72,7 +72,7 @@ void UI_Group::draw(){
         bar->draw();
 }
 
-void UI_Group::handleLogics(SDL_Event *event){
+void UI_Group::handleEvents(SDL_Event *event){
 
     if(bar != NULL){
 

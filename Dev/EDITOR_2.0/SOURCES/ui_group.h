@@ -31,7 +31,7 @@ public:
     void setOffsetX(int offsetx);
     void setOffsetY(int offsety);
     void updatePosition();
-    void handleLogics(SDL_Event *event);
+    void handleEvents(SDL_Event *event);
 
     void draw();
 };

@@ -8,13 +8,12 @@
 class UI_Manager{
 
 private:
-    std::list <UI_Group> groups;
+    std::list <UI_Group*> groups;
 
 public:
     /* Group management */
-    void addGroup(UI_Group target);
-    void cleanup(void);
-
+    void addGroup(UI_Group *target);
+    void draw();
     void handleEvents(SDL_Event *event);
 };
 
