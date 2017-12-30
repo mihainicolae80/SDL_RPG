@@ -1,5 +1,6 @@
 #include "console.h"
 
+
 #define CONSOLE_HEIGHT 400
 #define CONSOLE_LINE_HEIGHT 30
 
