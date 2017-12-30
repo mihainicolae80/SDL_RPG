@@ -484,3 +484,144 @@
 	"PixelManipulation.h"
 	<sstream>
 
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/base.cpp
+	"base.h"
+	<SDL2/SDL_image.h>
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/base.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_mixer.h>
+	<iostream>
+	"main_headers.h"
+	"Placeable.h"
+	"PixelManipulation.h"
+	"debug.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/main_headers.h
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Placeable.h
+	<iostream>
+	"SDL2/SDL.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/PixelManipulation.h
+	"SDL2/SDL.h"
+	"base.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/debug.h
+	<fstream>
+	"basics.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/basics.h
+	<iostream>
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+	<sstream>
+	"debug.h"
+	"base.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/basics.cpp
+	"basics.h"
+	"base.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/debug.cpp
+	"debug.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Interface.cc
+	"Interface.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Interface.h
+	<cmath>
+	<fstream>
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+	"SDL2/SDL_ttf.h"
+	"base.h"
+	"Placeable.h"
+	"sstream"
+	"PixelManipulation.h"
+	"CallbackClass.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/CallbackClass.h
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/main.cpp
+	"Run.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Run.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_ttf.h"
+	"base.h"
+	"Interface.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/main_header.cc
+	"main_headers.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/map.cc
+	"map.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/map.h
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/PixelManipulation.cc
+	"PixelManipulation.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Placeable.cc
+	"Placeable.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/Run.cc
+	"Run.h"
+	"ui_manager.h"
+	"ui_button.h"
+	"ui_list.h"
+	"textures.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_manager.h
+	<list>
+	"base.h"
+	"ui_group.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_group.h
+	"ui_bar.h"
+	"base.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_bar.h
+	<list>
+	"base.h"
+	"ui_item.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_item.h
+	"SDL2/SDL.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_button.h
+	"base.h"
+	"Interface.h"
+	"ui_item.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_list.h
+	"base.h"
+	<string>
+	<list>
+	"ui_item.h"
+
+1507409503 /media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/textures.h
+	"PixelManipulation.h"
+	<sstream>
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/textures.cc
+	"textures.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_bar.cc
+	"ui_bar.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_button.cc
+	"ui_button.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_group.cc
+	"ui_group.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_list.cc
+	"ui_list.h"
+
+1507409503 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR_2.0/SOURCES/ui_manager.cc
+	"ui_manager.h"
+

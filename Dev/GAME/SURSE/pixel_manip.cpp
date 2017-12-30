@@ -1,4 +1,5 @@
 #include "pixel_manip.h"
+#include "conf_graphics.h"
 
 void PixelManipulation::init(){
 Palette = LoadSurf( "textures//environmental//DayNight_palette.png" );
@@ -427,7 +428,16 @@ SDL_Surface *newsurf;
 
 if( SDL_MUSTLOCK( Palette ) ) SDL_LockSurface( Palette );
 
-newsurf = SDL_CreateRGBSurface(0, BLOCK_WIDTH * NrBlockX , BLOCK_HEIGHT * NrBlockY ,32 ,Palette->format->Rmask, Palette->format->Gmask, Palette->format->Bmask,Palette->format->Amask );
+//newsurf = SDL_CreateRGBSurface(0, BLOCK_WIDTH * NrBlockX * UNIT2PIX, BLOCK_HEIGHT * NrBlockY * UNIT2PIX,32 ,Palette->format->Rmask, Palette->format->Gmask, Palette->format->Bmask,Palette->format->Amask );
+newsurf = SDL_CreateRGBSurface( 0,
+                                BLOCK_WIDTH * NrBlockX,
+                                BLOCK_HEIGHT * NrBlockY,
+                                32 ,
+                                Palette->format->Rmask,
+                                Palette->format->Gmask,
+                                Palette->format->Bmask,
+                                Palette->format->Amask
+);
 //Render Locked Back Layer
 for( i = 0; i < NrBlockY ;i++ )
     for( j = 0; j < NrBlockX ;j++ )
@@ -439,7 +449,11 @@ for( i = 0; i < NrBlockY ;i++ )
 
         for( k = 0; k < BLOCK_HEIGHT; k++ )
             for( l = 0; l < BLOCK_WIDTH; l++ )
-            putpix( newsurf,l + BLOCK_WIDTH*j,k + BLOCK_HEIGHT*i, getpix( GAME_MAP.Normal_Map[i][j],l,k ) );
+            putpix( newsurf,
+                    (l + j * BLOCK_WIDTH),
+                    (k + BLOCK_HEIGHT * i),
+                    getpix( GAME_MAP.Normal_Map[i][j],l,k )
+            );
 
         if( SDL_MUSTLOCK( GAME_MAP.Normal_Map[i][j] ) )
         {
@@ -477,54 +491,67 @@ if( SDL_MUSTLOCK( Palette ) ) SDL_UnlockSurface( Palette );
 
 return newsurf;
 }
+
+
+
 SDL_Surface *PixelManipulation::RenderForeLayerMap(){
-int i,j;
-FreeChunk *fcc,*delaux;
-SDL_Surface *newsurf;
+    int i,j;
+    FreeChunk *fcc,*delaux;
+    SDL_Surface *newsurf;
 
-if( SDL_MUSTLOCK( Palette ) )
-{
-    SDL_LockSurface( Palette );
-}
-
-newsurf = SDL_CreateRGBSurface(SDL_SWSURFACE, BLOCK_WIDTH * NrBlockX, BLOCK_HEIGHT * NrBlockY,Palette->format->BitsPerPixel ,Palette->format->Rmask, Palette->format->Gmask, Palette->format->Bmask,Palette->format->Amask );
-
-//Fill with Transparency
-for( i = 0; i < NrBlockY * BLOCK_HEIGHT ;i++ )
-    for( j = 0; j < NrBlockX * BLOCK_WIDTH;j++ )
+    if( SDL_MUSTLOCK( Palette ) )
     {
-        putpix( newsurf,j,i, getpix( Palette,7 ,0 ) );
+        SDL_LockSurface( Palette );
+    }
+
+    newsurf = SDL_CreateRGBSurface( SDL_SWSURFACE,
+                                    BLOCK_WIDTH * NrBlockX,
+                                    BLOCK_HEIGHT * NrBlockY,
+                                    Palette->format->BitsPerPixel ,
+                                    Palette->format->Rmask,
+                                    Palette->format->Gmask,
+                                    Palette->format->Bmask,
+                                    Palette->format->Amask
+    );
+
+    //Fill with Transparency
+    for( i = 0; i < NrBlockY * BLOCK_HEIGHT ;i++ )
+        for( j = 0; j < NrBlockX * BLOCK_WIDTH;j++ )
+        {
+            putpix( newsurf,j,i, getpix( Palette,7 ,0 ) );
+        }
+
+
+    //Fusio Render Free Back Layer
+    fcc = FirstFreeChunk_fore;
+    while( fcc->next != LastFreeChunk_fore )
+    {
+        // not animated
+        if( !fcc->next->animated )
+        {
+            if( fcc->next->tex != NULL )
+            for( i = 0; i < fcc->next->surf->w; i++ )
+                for( j = 0; j < fcc->next->surf->h; j++ )
+                    if( i <= BLOCK_WIDTH*NrBlockX
+                        && j <= BLOCK_HEIGHT*NrBlockY
+                        && ( getpix( fcc->next->surf,i,j ) != getpix( Palette,4 ,0 ) ) )
+                            putpix( newsurf,fcc->next->x + i ,fcc->next->y + j ,getpix( fcc->next->surf,i,j ) );
+
+            //Delete chunk
+            delaux = fcc->next;
+            fcc->next = fcc->next->next;
+            delete delaux;
+        }
+        else
+        fcc = fcc->next;
     }
 
 
-//Fusio Render Free Back Layer
-fcc = FirstFreeChunk_fore;
-while( fcc->next != LastFreeChunk_fore )
-{
-    if( !fcc->next->animated )
+    if( SDL_MUSTLOCK( Palette ) )
     {
-        if( fcc->next->tex != NULL )
-        for( i = 0; i < fcc->next->surf->w; i++ )
-        for( j = 0; j < fcc->next->surf->h; j++ )
-        if( i <= BLOCK_WIDTH*NrBlockX && j <= BLOCK_HEIGHT*NrBlockY && ( getpix( fcc->next->surf,i,j ) != getpix( Palette,4 ,0 ) ) )
-        putpix( newsurf,fcc->next->x + i ,fcc->next->y + j ,getpix( fcc->next->surf,i,j ) );
-
-        //Delete chunk
-        delaux = fcc->next;
-        fcc->next = fcc->next->next;
-        delete delaux;
+        SDL_UnlockSurface( Palette );
     }
-    else
-    fcc = fcc->next;
-
-}
-
-
-if( SDL_MUSTLOCK( Palette ) )
-{
-    SDL_UnlockSurface( Palette );
-}
-return newsurf;
+    return newsurf;
 }
 SDL_Surface *PixelManipulation::RenderMisc(int nr){
 int i,j;

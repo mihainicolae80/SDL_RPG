@@ -13,7 +13,7 @@ void RUN_GAME(){
     //TEST ONLY
     PLAYER.TeleportXY( 201,201 );
     PLAYER.TurnBody( RIGHT );
-    PLAYER.teleportZone( 0 );
+    PLAYER.teleportZone( 1 );
 
     INVENTORY.init_bags();
     INVENTORY.addTestItems();
@@ -36,7 +36,6 @@ void RUN_GAME(){
         ENGINE_HandleEvents( &event );
 
         // SEND EVENTS
-
         if( PLAYER.SPEAK_NPC )          DIALOG.handle_events(event);
 
         if( QUEST.SHOW_QUEST )          QUEST .handle_events(event);
@@ -78,15 +77,9 @@ void RUN_GAME(){
                 else
                 ENGINE_displaymode = DISPLAYMODE_FREE;
             }
-
-
         }
-
     }
-
-    }
-
-
+}
 
     ///LOGICS
     CONTROL.updateFPS();
@@ -105,8 +98,6 @@ void RUN_GAME(){
 
     if( PLAYER.SPEAK_NPC ) DIALOG.handle_logics();
 
-
-
     ///RENDER
 
     SDL_SetRenderDrawColor( RENDER_MAIN,80,80,80,255 );
@@ -123,9 +114,9 @@ void RUN_GAME(){
 
     ALLANIMES.showanimes();
 
-    GAME_NPCS.show( FORE );
+    GAME_NPCS.show(FORE);
 
-    GAME_MAP.display_fore();
+    //GAME_MAP.display_fore();
 
 
     COMBAT.showtexts();
@@ -151,6 +142,4 @@ void RUN_GAME(){
     CONTROL.countFrame();
 
     }
-
-
 }

@@ -1,4 +1,5 @@
 #include "map.h"
+#include "conf_graphics.h"
 
 
 void Map::init(){
@@ -110,32 +111,32 @@ CONS.out( "Failed to open map" );
 //Test only
 //ofstream out_temp("LoadMap_NPCFILE.txt");
 
-
+// === Clean Old Map ===
 GAME_NPCS.cleanup_allnpc();
 Map::CleanCMap();
 Map::PreLoadChanges();
 
-
+// Map Name
 file >> read_str;
 name = read_str;
+// Map size in blocks
 file >> NrBlockX >> NrBlockY;
 
-//Harta statica
+// read background blocks
 for(i = 0; i < NrBlockY; i++)
-    for(j = 0; j < NrBlockX; j++)
-    {
+    for(j = 0; j < NrBlockX; j++) {
         file >> cTerrain[i][j];
     }
 
+// read skins
 for(i = 0; i <NrBlockY; i++)
-    for(j = 0; j < NrBlockX; j++)
-    {
+    for(j = 0; j < NrBlockX; j++) {
         file >> k;
         Normal_Map[i][j]  = DATABASE.GetChunkSkin( cTerrain[i][j],k,0,0 );
     }
 
-MapWidth  = NrBlockX*BLOCK_WIDTH;
-MapHeight = NrBlockY*BLOCK_HEIGHT;
+MapWidth  = NrBlockX * BLOCK_WIDTH;
+MapHeight = NrBlockY * BLOCK_HEIGHT;
 
 
 file >> saux;
@@ -146,12 +147,11 @@ while( saux != "CLOSE_BG" && !file.fail() )
     file >> saux;
     file >> TempFreeChunk ->nr;
 
-
-        file >> saux >> TempFreeChunk ->x;
-        file >> saux >> TempFreeChunk ->y;
-        file >> saux >> TempFreeChunk ->orient;
-        file >> saux >> TempFreeChunk ->animated;
-        file >> saux >> TempFreeChunk ->frames;
+    file >> saux >> TempFreeChunk ->x;
+    file >> saux >> TempFreeChunk ->y;
+    file >> saux >> TempFreeChunk ->orient;
+    file >> saux >> TempFreeChunk ->animated;
+    file >> saux >> TempFreeChunk ->frames;
 
 
     TempFreeChunk->surf = NULL;
@@ -159,7 +159,7 @@ while( saux != "CLOSE_BG" && !file.fail() )
     TempFreeChunk->surf = DATABASE.GetChunkSkin( TempFreeChunk ->nr,TempFreeChunk ->orient,
                                       TempFreeChunk ->animated,TempFreeChunk ->frames );
 
-/// POSIBIL LOC DE EROARE
+    /// POSIBIL LOC DE EROARE
     if( TempFreeChunk->surf != NULL )
     {
         TempFreeChunk->tex = SDL_CreateTextureFromSurface( RENDER_MAIN,TempFreeChunk->surf );
@@ -169,8 +169,6 @@ while( saux != "CLOSE_BG" && !file.fail() )
     {
         TempFreeChunk->tex = SDL_CreateTextureFromSurface( RENDER_MAIN,DEBUG.sfExMark );
     }
-
-
 
     file >> saux;
 }
@@ -183,12 +181,11 @@ while( saux != "CLOSE_FG" && !file.fail() )
     file >> saux;
     file >> TempFreeChunk ->nr;
 
-        file >> saux >> TempFreeChunk ->x;
-        file >> saux >> TempFreeChunk ->y;
-        file >> saux >> TempFreeChunk ->orient;
-        file >> saux >> TempFreeChunk ->animated;
-        file >> saux >> TempFreeChunk ->frames;
-
+    file >> saux >> TempFreeChunk ->x;
+    file >> saux >> TempFreeChunk ->y;
+    file >> saux >> TempFreeChunk ->orient;
+    file >> saux >> TempFreeChunk ->animated;
+    file >> saux >> TempFreeChunk ->frames;
 
     TempFreeChunk->surf = DATABASE.GetChunkSkin( TempFreeChunk ->nr,TempFreeChunk ->orient,
                                       TempFreeChunk ->animated,TempFreeChunk ->frames );
@@ -634,7 +631,6 @@ for( fcf = FirstFreeChunk_back->next;fcf != LastFreeChunk_back; fcf = fcf->next 
         if( fcf->cframe >= fcf->frames )
         fcf->cframe = 0;
     }
-
 
     if( fcf->animated )
     {
