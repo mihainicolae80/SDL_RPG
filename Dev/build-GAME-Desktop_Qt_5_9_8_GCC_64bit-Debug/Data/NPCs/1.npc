@@ -1,0 +1,42 @@
+<BEHAVIORS>
+TALK_TO_PLAYER
+<END_BEHAVIORS>
+
+<DIALOG>
+
+txtline: ....
+  
+NEWTOPIC(SQ): 1 Who are you?
+NEWTOPIC(FQ): 1 I killed him!
+
+OPENTOPIC: 1
+txtline: I'm Friendly NPC
+txtline: and something happened here
+NEWTOPIC: What happened?
+
+OPENTOPIC: 11
+txtline: No time to explain
+txtline: Look an Enemy NPC is entering the
+txtline: front door.Im way too weak for this
+npcmanip: SPAWN FIRST -1 Enemy NPC
+NEWTOPIC(GIHO): 1 -1 1 I need a weapon
+
+OPENTOPIC: 111
+txtline: Take this weapon
+txtline: It's sharp, I promise
+colidemanip: 1 0
+NEWTOPIC(CS): I go
+
+OPENTOPIC: 2
+txtline: Take some items with you!
+txtline: They may prove useless,but still...
+NEWTOPIC: I need an explanation!
+
+OPENTOPIC: 21
+txtline: Awesome, but you have to run
+txtline: Go through that door down there. I will
+txtline: unlock it for you
+intermanip: 0 0 0
+
+<ENDDIALOG>
+

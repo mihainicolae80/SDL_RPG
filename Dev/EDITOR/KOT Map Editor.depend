@@ -340,3 +340,51 @@
 1454005841 source:/home/mihai/Projects/Git/SDL_RPG/Dev/EDITOR/SOURCES/main.cpp
 	"SOURCES/Run.h"
 
+1543086136 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/base.cc
+	"base.h"
+
+1543086136 /media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/base.h
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	"SDL/SDL_ttf.h"
+	"cmath"
+	"Placeable.h"
+	"PixelManipulation.h"
+
+1543086136 /media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/Placeable.h
+	<iostream>
+	"SDL/SDL.h"
+
+1543086136 /media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/PixelManipulation.h
+	"SDL/SDL.h"
+	"base.h"
+
+1543086136 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/Interface.cc
+	"SOURCES/Interface.h"
+
+1543086136 /media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/Interface.h
+	<cmath>
+	<fstream>
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	"SDL/SDL_ttf.h"
+	"base.h"
+	"Placeable.h"
+	"sstream"
+
+1543086136 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/main.cpp
+	"SOURCES/Run.h"
+
+1543086136 /media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/Run.h
+	"PixelManipulation.h"
+	"Interface.h"
+
+1543086136 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/PixelManipulation.cc
+	"PixelManipulation.h"
+
+1543086136 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/Placeable.cc
+	"Placeable.h"
+
+1543086136 source:/media/media2/Projects/SDL_RPG/Dev/EDITOR/SOURCES/Run.cc
+	"Run.h"
+
