@@ -167,7 +167,7 @@ while( saux != "CLOSE_BG" && !file.fail() )
     }
     else
     {
-        TempFreeChunk->tex = SDL_CreateTextureFromSurface( RENDER_MAIN,DEBUG.sfExMark );
+        TempFreeChunk->tex = SDL_CreateTextureFromSurface( RENDER_MAIN,DEBUG.ex_mark_sf );
     }
 
     file >> saux;

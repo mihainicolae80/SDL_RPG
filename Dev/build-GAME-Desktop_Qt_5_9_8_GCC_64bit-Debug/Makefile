@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_QML_DEBUG
 CFLAGS        = -pipe -g -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I../GAME -I. -I../GAME/src -I/opt/Qt/5.9.8/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../GAME -I. -I../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include -I-Isrc -I/opt/Qt/5.9.8/gcc_64/mkspecs/linux-g++
 QMAKE         = /opt/Qt/5.9.8/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -38,7 +38,7 @@ DISTNAME      = GAME1.0.0
 DISTDIR = /mnt/D/Projects/SDL_RPG/Dev/build-GAME-Desktop_Qt_5_9_8_GCC_64bit-Debug/.tmp/GAME1.0.0
 LINK          = g++
 LFLAGS        = 
-LIBS          = $(SUBLIBS) -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer 
+LIBS          = $(SUBLIBS) -LSDL2-2.0.3/x86_64-w64-mingw32/lib -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -650,6 +650,51 @@ compiler_clean:
 ####### Compile
 
 main.o: ../GAME/main.cpp ../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/structs.h \
 		../GAME/src/run.h \
 		../GAME/src/basics.h \
@@ -660,6 +705,7 @@ main.o: ../GAME/main.cpp ../GAME/src/main_headers.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
@@ -675,6 +721,51 @@ main.o: ../GAME/main.cpp ../GAME/src/main_headers.h \
 
 anim.o: ../GAME/src/anim.cpp ../GAME/src/anim.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/structs.h \
 		../GAME/src/basics.h \
 		../GAME/src/debug.h \
@@ -684,6 +775,7 @@ anim.o: ../GAME/src/anim.cpp ../GAME/src/anim.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/npc.h \
 		../GAME/src/combat.h \
@@ -696,6 +788,52 @@ anim.o: ../GAME/src/anim.cpp ../GAME/src/anim.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o anim.o ../GAME/src/anim.cpp
 
 base.o: ../GAME/src/base.cpp ../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/debug.h \
 		../GAME/src/basics.h \
 		../GAME/src/structs.h \
@@ -720,8 +858,53 @@ base.o: ../GAME/src/base.cpp ../GAME/src/base.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o base.o ../GAME/src/base.cpp
 
 basics.o: ../GAME/src/basics.cpp ../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
@@ -729,6 +912,7 @@ basics.o: ../GAME/src/basics.cpp ../GAME/src/basics.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
@@ -743,8 +927,53 @@ basics.o: ../GAME/src/basics.cpp ../GAME/src/basics.h \
 
 combat.o: ../GAME/src/combat.cpp ../GAME/src/combat.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
@@ -752,6 +981,7 @@ combat.o: ../GAME/src/combat.cpp ../GAME/src/combat.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
@@ -765,6 +995,52 @@ combat.o: ../GAME/src/combat.cpp ../GAME/src/combat.h \
 
 console.o: ../GAME/src/console.cpp ../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/basics.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
@@ -787,8 +1063,53 @@ console.o: ../GAME/src/console.cpp ../GAME/src/console.h \
 
 data.o: ../GAME/src/data.cpp ../GAME/src/data.h \
 		../GAME/src/structs.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
@@ -802,6 +1123,7 @@ data.o: ../GAME/src/data.cpp ../GAME/src/data.h \
 		../GAME/src/interface.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/dialog.h \
 		../GAME/src/inventory.h \
 		../GAME/src/loot.h
@@ -809,9 +1131,55 @@ data.o: ../GAME/src/data.cpp ../GAME/src/data.h \
 
 debug.o: ../GAME/src/debug.cpp ../GAME/src/debug.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
 		../GAME/src/quests.h \
@@ -831,8 +1199,53 @@ debug.o: ../GAME/src/debug.cpp ../GAME/src/debug.h \
 
 dialog.o: ../GAME/src/dialog.cpp ../GAME/src/dialog.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
@@ -840,6 +1253,7 @@ dialog.o: ../GAME/src/dialog.cpp ../GAME/src/dialog.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
@@ -853,7 +1267,52 @@ dialog.o: ../GAME/src/dialog.cpp ../GAME/src/dialog.h \
 
 gevents.o: ../GAME/src/gevents.cpp ../GAME/src/gevents.h \
 		../GAME/src/structs.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/quests.h \
 		../GAME/src/basics.h \
 		../GAME/src/debug.h \
@@ -864,6 +1323,7 @@ gevents.o: ../GAME/src/gevents.cpp ../GAME/src/gevents.h \
 		../GAME/src/combat.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/data.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/dialog.h \
@@ -874,6 +1334,51 @@ gevents.o: ../GAME/src/gevents.cpp ../GAME/src/gevents.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gevents.o ../GAME/src/gevents.cpp
 
 init.o: ../GAME/src/init.cpp ../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/structs.h \
 		../GAME/src/basics.h \
 		../GAME/src/debug.h \
@@ -883,6 +1388,7 @@ init.o: ../GAME/src/init.cpp ../GAME/src/main_headers.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
@@ -898,8 +1404,53 @@ init.o: ../GAME/src/init.cpp ../GAME/src/main_headers.h \
 
 interface.o: ../GAME/src/interface.cpp ../GAME/src/interface.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
@@ -907,6 +1458,7 @@ interface.o: ../GAME/src/interface.cpp ../GAME/src/interface.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
@@ -920,6 +1472,51 @@ interface.o: ../GAME/src/interface.cpp ../GAME/src/interface.h \
 
 inventory.o: ../GAME/src/inventory.cpp ../GAME/src/inventory.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/structs.h \
 		../GAME/src/basics.h \
 		../GAME/src/debug.h \
@@ -929,6 +1526,7 @@ inventory.o: ../GAME/src/inventory.cpp ../GAME/src/inventory.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
@@ -942,8 +1540,53 @@ inventory.o: ../GAME/src/inventory.cpp ../GAME/src/inventory.h \
 
 loot.o: ../GAME/src/loot.cpp ../GAME/src/loot.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
@@ -951,6 +1594,7 @@ loot.o: ../GAME/src/loot.cpp ../GAME/src/loot.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
@@ -964,8 +1608,53 @@ loot.o: ../GAME/src/loot.cpp ../GAME/src/loot.h \
 
 map.o: ../GAME/src/map.cpp ../GAME/src/map.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
@@ -973,6 +1662,7 @@ map.o: ../GAME/src/map.cpp ../GAME/src/map.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/dialog.h \
 		../GAME/src/inventory.h \
@@ -986,15 +1676,106 @@ map.o: ../GAME/src/map.cpp ../GAME/src/map.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o map.o ../GAME/src/map.cpp
 
 misc.o: ../GAME/src/misc.cpp ../GAME/src/misc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/structs.h \
-		../GAME/src/base.h
+		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o misc.o ../GAME/src/misc.cpp
 
 npc.o: ../GAME/src/npc.cpp ../GAME/src/npc.h \
 		../GAME/src/structs.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
@@ -1002,6 +1783,7 @@ npc.o: ../GAME/src/npc.cpp ../GAME/src/npc.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/dialog.h \
@@ -1015,6 +1797,51 @@ npc.o: ../GAME/src/npc.cpp ../GAME/src/npc.h \
 
 pixel_manip.o: ../GAME/src/pixel_manip.cpp ../GAME/src/pixel_manip.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/structs.h \
 		../GAME/src/basics.h \
 		../GAME/src/debug.h \
@@ -1024,6 +1851,7 @@ pixel_manip.o: ../GAME/src/pixel_manip.cpp ../GAME/src/pixel_manip.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
 		../GAME/src/combat.h \
@@ -1038,10 +1866,56 @@ pixel_manip.o: ../GAME/src/pixel_manip.cpp ../GAME/src/pixel_manip.h \
 
 player.o: ../GAME/src/player.cpp ../GAME/src/player.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/anim.h \
 		../GAME/src/quests.h \
 		../GAME/src/data.h \
@@ -1060,6 +1934,51 @@ player.o: ../GAME/src/player.cpp ../GAME/src/player.h \
 
 quests.o: ../GAME/src/quests.cpp ../GAME/src/quests.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/structs.h \
 		../GAME/src/basics.h \
 		../GAME/src/debug.h \
@@ -1073,6 +1992,7 @@ quests.o: ../GAME/src/quests.cpp ../GAME/src/quests.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/interface.h \
 		../GAME/src/dialog.h \
@@ -1082,8 +2002,53 @@ quests.o: ../GAME/src/quests.cpp ../GAME/src/quests.h \
 
 run.o: ../GAME/src/run.cpp ../GAME/src/run.h \
 		../GAME/src/basics.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
 		../GAME/src/structs.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/debug.h \
 		../GAME/src/player.h \
 		../GAME/src/anim.h \
@@ -1091,6 +2056,7 @@ run.o: ../GAME/src/run.cpp ../GAME/src/run.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/map.h \
 		../GAME/src/npc.h \
@@ -1106,6 +2072,51 @@ run.o: ../GAME/src/run.cpp ../GAME/src/run.h \
 
 scripts.o: ../GAME/src/scripts.cpp ../GAME/src/scripts.h \
 		../GAME/src/main_headers.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_main.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_config.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_platform.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/begin_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/close_code.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_assert.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_audio.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_error.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_endian.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_thread.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_events.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_video.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_rect.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_surface.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_quit.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_touch.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_hints.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_log.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_power.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_render.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_system.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_timer.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_version.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_image.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h \
 		../GAME/src/structs.h \
 		../GAME/src/anim.h \
 		../GAME/src/basics.h \
@@ -1116,6 +2127,7 @@ scripts.o: ../GAME/src/scripts.cpp ../GAME/src/scripts.h \
 		../GAME/src/data.h \
 		../GAME/src/console.h \
 		../GAME/src/base.h \
+		../GAME/SDL2-2.0.3/x86_64-w64-mingw32/include/SDL2/SDL_mixer.h \
 		../GAME/src/pixel_manip.h \
 		../GAME/src/npc.h \
 		../GAME/src/combat.h \

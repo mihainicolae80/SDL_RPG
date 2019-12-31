@@ -20,13 +20,13 @@
 //Real size
 #define WIN_WIDTH WIN_MAIN.getWindowWidth()
 #define WIN_HEIGHT WIN_MAIN.getWindowHeight()
-#define REAL_SCREEN_HEIGHT (double)WIN_WIDTH/16*9
+#define REAL_SCREEN_HEIGHT static_cast<double>(WIN_WIDTH / 16 * 9)
 #define REAL_SCREEN_WIDTH  WIN_WIDTH
-#define Y_ABS (WIN_HEIGHT - REAL_SCREEN_HEIGHT)/2
+#define Y_ABS ((WIN_HEIGHT - REAL_SCREEN_HEIGHT) / 2)
 
 
 
-#define SCALE ( (long double)REAL_SCREEN_WIDTH/SCREEN_WIDTH  )
+#define SCALE ( (long double)REAL_SCREEN_WIDTH / SCREEN_WIDTH  )
 
 #define constraint(x,low,high) x >= low ? ( x <= high ? x : high ) : low
 #define map(x,low,high,tolow,tohigh) (  ( (long double)x / (high-low) ) * (tohigh-tolow) )
@@ -51,7 +51,7 @@ extern class CLS_WINDOWING{
 
     private:
     std::string title;
-    int window_flags,render_flags;
+	uint32_t window_flags, render_flags;
     // --Screen --
     int width;
     int height;
@@ -76,35 +76,33 @@ extern class CLS_WINDOWING{
     void setWindowFlags( int x );
     void setRenderFlags( int x );
     int createWindow(void);
-    int createRender(void);
+	bool createRender(void);
 
-}WIN_MAIN;
+} WIN_MAIN;
 
 
-// -- GENERAL --
+// Engine
 int  ENGINE_Init(void);
-void ENGINE_HandleEvent_resizeWindow( SDL_Event *EVENT );
-void ENGINE_HandleEvents( SDL_Event *EVENT );
+void ENGINE_HandleEvent_resizeWindow(SDL_Event *EVENT);
+void ENGINE_HandleEvents(SDL_Event *event);
+void ENGINE_RenderPresent(void);
 void ENGINE_Quit(void);
 
-// -- RENDERING --
+// Surface / Textures
 SDL_Surface *LoadSurf(string file);
 SDL_Texture *LoadTex(string file);
-void ApplyTexFree(int x,int y,SDL_Texture *tex,SDL_Rect *clip = NULL,int w = NO_CHANGE,int h = NO_CHANGE );
-void ApplyTexLetterbox(int x,int y,SDL_Texture *tex,SDL_Rect *clip = NULL,int w = NO_CHANGE,int h = NO_CHANGE );
-void ApplyTex(int x,int y,SDL_Texture *tex,SDL_Rect *clip = NULL,int w = NO_CHANGE,int h = NO_CHANGE );
+void ApplyTexFree(int x,int y,SDL_Texture *tex,SDL_Rect *clip = nullptr,int w = NO_CHANGE,int h = NO_CHANGE );
+void ApplyTexLetterbox(int x,int y,SDL_Texture *tex,SDL_Rect *clip = nullptr,int w = NO_CHANGE,int h = NO_CHANGE );
+void ApplyTex(int x,int y,SDL_Texture *tex,SDL_Rect *clip = nullptr,int w = NO_CHANGE,int h = NO_CHANGE );
 
-//Draw Rectangle
-void DrawRectFree(int x,int y,int x2,int y2);
-void DrawRectAdjusted(int x,int y,int x2,int y2);
-void DrawRect(int x,int y,int x2,int y2,SDL_Color *color);
-//FillRect
-void FillRectFree(int x,int y,int x2,int y2);
-void FillRectAdjusted(int x,int y,int x2,int y2);
-void FillRect(int x,int y,int x2,int y2,SDL_Color *color);
+// Draw Rectangle
+void DrawRectFree(int x, int y, int x2, int y2);
+void DrawRectAdjusted(int x, int y, int x2, int y2);
+void DrawRect(int x, int y, int x2, int y2, SDL_Color *color);
 
-
-
-void ENGINE_RenderPresent(void);
+// FillRect
+void FillRectFree(int x, int y, int x2, int y2);
+void FillRectAdjusted(int x, int y, int x2, int y2);
+void FillRect(int x, int y, int x2, int y2, SDL_Color *color);
 
 #endif // BASE_H_INCLUDED

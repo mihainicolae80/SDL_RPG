@@ -21,17 +21,19 @@ const int FILE_CONSOUT = 1;
 
 
 
-extern class CLS_DEBUG{
+extern class cls_debug_t{
 private:
-ofstream ofGeneral;
-ofstream ofFlf;
-ofstream ofConsOut;
-bool drawcolrects;
+	// output file for general output
+	ofstream file_general;
+	// output file for file load fails
+	ofstream file_flf;
+	// output file for console
+	ofstream file_cons_out;
+	bool drawcolrects;
 
 public:
-
-SDL_Surface *sfExMark;
-SDL_Texture *txExMark;
+	SDL_Surface *ex_mark_sf;
+	SDL_Texture *ex_mark_tx;
 
     void init_low();
     int  init_high();
@@ -39,7 +41,7 @@ SDL_Texture *txExMark;
     void DrawCollRects(void);
     void setDrawCollRects(bool x);
     SDL_Surface *getNewsfExc(void);
-    ~CLS_DEBUG();
-}DEBUG;
+	~cls_debug_t();
+} DEBUG;
 
 #endif // DEBUG_H_INCLUDED

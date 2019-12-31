@@ -3,8 +3,10 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-LIBS += -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
-INCLUDEPATH += src
+LIBS += -L"SDL2-2.0.3/x86_64-w64-mingw32/lib" -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+
+INCLUDEPATH += "SDL2-2.0.3/x86_64-w64-mingw32/include"
+INCPATH += -Isrc
 
 SOURCES += \
     main.cpp \

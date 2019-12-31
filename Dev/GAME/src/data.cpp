@@ -112,7 +112,7 @@ temp.type = type;
         //If FAIL
         if( ArmorTex[type - 1][nr_bonus] == NULL )
         {
-            ArmorTex[type - 1][nr_bonus] = DEBUG.txExMark;
+            ArmorTex[type - 1][nr_bonus] = DEBUG.ex_mark_tx;
         }
 
     }
@@ -215,7 +215,7 @@ temp.nr = nr;
         //If FAIL
         if( ShieldTex[nr_bonus] == NULL )
         {
-            ShieldTex[nr_bonus] = DEBUG.txExMark;
+            ShieldTex[nr_bonus] = DEBUG.ex_mark_tx;
         }
     }
     temp.tex = ShieldTex[nr_bonus];
@@ -301,7 +301,7 @@ if( WeaponTex[iread] == NULL )
     //If FAIL
     if( WeaponTex[iread] == NULL )
     {
-        WeaponTex[iread] = DEBUG.txExMark;
+        WeaponTex[iread] = DEBUG.ex_mark_tx;
     }
 }
 temp.tex = WeaponTex[iread];
@@ -368,7 +368,7 @@ if( BagTex[iread] == NULL )
     //If FAIL
     if( BagTex[iread] == NULL )
     {
-        BagTex[iread] = DEBUG.txExMark;
+        BagTex[iread] = DEBUG.ex_mark_tx;
     }
 }
 temp.tex = BagTex[iread];
@@ -431,7 +431,7 @@ if( MiscTex[iread] == NULL )
     //If FAIL
     if( MiscTex[iread] == NULL )
     {
-        MiscTex[iread] = DEBUG.txExMark;
+        MiscTex[iread] = DEBUG.ex_mark_tx;
     }
 }
 temp.tex = MiscTex[iread];
@@ -588,7 +588,7 @@ if( ChunkSkins[nr][0] == NULL )
             ChunkSkins[nr][4] = Pixels.RenderCorner( ChunkSkins[nr][0] );
         }
         else
-            ChunkSkins[nr][4] = Pixels.RenderCorner( DEBUG.sfExMark );
+            ChunkSkins[nr][4] = Pixels.RenderCorner( DEBUG.ex_mark_sf );
     }
     else
     {
