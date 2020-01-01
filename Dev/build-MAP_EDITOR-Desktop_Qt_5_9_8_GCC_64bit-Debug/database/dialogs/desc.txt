@@ -1,0 +1,31 @@
+Name: Mr quest man
+txtline: Hello friend 
+txtline: this is the 2 nd
+txtline: line of text 
+
+NEWTOPIC: Click here!
+NEWTOPIC: Not here!
+
+ENDTOPIC
+
+OPENTOPIC(1):
+txtline: there is nothing here
+txtline: good bye
+
+OPENTOPIC(2):
+txtline: now i give you the quest
+startquest: 1 CHOSE 
+
+dupa ce se da click pe un topic ne dam seama ce nr are
+nr se adauga la nr curent al topicului cu n = n* 10 + nr
+
+se pot adauga comenzi ca de exemplu openquest:
+
+COMENZI:
+Name: numele NPCului (apare la inceput , deci doar 1 data)
+txtline: text (o linie de txt spusa de npc max 30 caractere si 10 linii)
+startquest: nr (porneste fortar questul cu nr respectiv)
+finishquest: nr (termina questul cu nr respectiv, daca cprogres == goalprogress)
+NEWTOPIC: numele topicului (deschide un topic nou max 20 caractere si 4 topice)
+OPENTOPIC(nr): nr este de forma 132 (topic 1 , topic 3 , topic 2 in aceasta ordine)
+ENDTOPIC incheie topicul curent

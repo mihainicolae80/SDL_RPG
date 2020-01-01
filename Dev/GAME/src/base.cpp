@@ -278,24 +278,24 @@ void LoadingTitle( int percent )
 	SDL_SetRenderDrawColor(RENDER_MAIN, 0, 0, 0, 255);
 	SDL_RenderClear(RENDER_MAIN);
 
-	ApplyTex((SCREEN_WIDTH - 330)/2, 300, txLoadTitle);
-	ApplyTex((SCREEN_WIDTH - 537)/2, SCREEN_HEIGHT - 300, txLoadBar_empty);
-	ApplyTex((SCREEN_WIDTH - 537)/2, SCREEN_HEIGHT - 300, txLoadBar_fill, &rLoadBar);
+	ApplyTex((SCREEN_WIDTH - 330) / 2, 300, txLoadTitle);
+	ApplyTex((SCREEN_WIDTH - 537) / 2, SCREEN_HEIGHT - 300, txLoadBar_empty);
+	ApplyTex((SCREEN_WIDTH - 537) / 2, SCREEN_HEIGHT - 300, txLoadBar_fill, &rLoadBar);
 	SDL_RenderPresent(RENDER_MAIN);
 	//SDL_Delay( 300 );
 }
 
 
-void ENGINE_HandleEvent_resizeWindow( SDL_Event *EVENT )
+void ENGINE_HandleEvent_resizeWindow(SDL_Event *EVENT)
 {
 	int w, h;
 
 
 	if(EVENT->type == SDL_WINDOWEVENT
 		&& EVENT->window.event == SDL_WINDOWEVENT_RESIZED) {
-        SDL_GetWindowSize( WIN_MAIN.window, &w, &h );
-        WIN_MAIN.setWindowWidth ( w );
-        WIN_MAIN.setWindowHeight( h );
+		SDL_GetWindowSize(WIN_MAIN.window, &w, &h);
+		WIN_MAIN.setWindowWidth(w);
+		WIN_MAIN.setWindowHeight(h);
     }
 }
 
@@ -376,47 +376,46 @@ void ApplyTexFree(int x,int y,SDL_Texture *tex,SDL_Rect *clip ,int w,int h ){
 }
 
 
-void ApplyTexLetterbox(int x,int y,SDL_Texture *tex,SDL_Rect *clip,int w,int h )
+void ApplyTexLetterbox(int x, int y, SDL_Texture *tex, SDL_Rect *clip, int w, int h)
 {
     SDL_Rect pos;
 
 	pos.y = static_cast<int>(Y_ABS);
 
-    pos.x = ceil( (double)x * SCALE );
-    pos.y += ceil( (double)y * SCALE  );
+	pos.x = static_cast<int>(ceil(SCALE * x));
+	pos.y += static_cast<int>(ceil(SCALE * y));
 
-	if(nullptr != clip)
-    {
+	if(nullptr != clip) {
         pos.w = clip->w;
         pos.h = clip->h;
 	} else {
-		SDL_QueryTexture( tex,NULL,NULL,&pos.w,&pos.h );
+		SDL_QueryTexture(tex, nullptr, nullptr, &pos.w, &pos.h);
 	}
 
-    if( w != NO_CHANGE ) pos.w = w;
-    if( h != NO_CHANGE ) pos.h = h;
+	if(w != NO_CHANGE) {
+		pos.w = w;
+	}
+	if(h != NO_CHANGE) {
+		pos.h = h;
+	}
 
     //ADJUST
-    pos.w = ceil((double)pos.w * SCALE);
-    pos.h = ceil((double)pos.h * SCALE);
+	pos.w = static_cast<int>(ceil(SCALE * pos.w));
+	pos.h = static_cast<int>(ceil(SCALE * pos.h));
 
-
-    SDL_RenderCopy( RENDER_MAIN,tex,clip,&pos );
+	SDL_RenderCopy(RENDER_MAIN, tex, clip, &pos);
 }
 
 
 void ApplyTex(int x,int y,SDL_Texture *tex,SDL_Rect *clip ,int w ,int h){
 
     //Free Mode
-    if( ENGINE_displaymode == DISPLAYMODE_FREE )
-    {
+	if(DISPLAYMODE_FREE == ENGINE_displaymode) {
         ApplyTexFree( x, y, tex, clip, w, h );
     }
     //Letterbox Mode
-    else
-    if( ENGINE_displaymode == DISPLAYMODE_LETTERBOX )
-    {
-        ApplyTexLetterbox( x, y, tex, clip , w, h );
+	else if(DISPLAYMODE_LETTERBOX == ENGINE_displaymode) {
+		ApplyTexLetterbox(x, y, tex, clip , w, h);
     }
 }
 
@@ -428,8 +427,8 @@ void DrawRectFree(int x,int y,int x2,int y2){
 
     target.x = x<x2 ? x : x2 ;
     target.y = y<y2 ? y : y2 ;
-    target.w = BAS_abs( x - x2 );
-    target.h = BAS_abs( y - y2 );
+	target.w = BAS_abs(x - x2);
+	target.h = BAS_abs(y - y2);
 
     SDL_RenderDrawRect( RENDER_MAIN, &target );
 }

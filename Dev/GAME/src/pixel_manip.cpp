@@ -421,43 +421,49 @@ SDL_Surface *PixelManipulation::RenderCorner( SDL_Surface *surface ){
 
     return newsurf;
 }
+
+
 SDL_Surface *PixelManipulation::RenderNormalMap()
 {
     int i,j,k,l;
     FreeChunk *fcc,*delaux;
     SDL_Surface *newsurf;
 
-    if( SDL_MUSTLOCK( Palette ) ) SDL_LockSurface( Palette );
+	if(SDL_MUSTLOCK(Palette)) {
+		SDL_LockSurface(Palette);
+	}
 
     //newsurf = SDL_CreateRGBSurface(0, BLOCK_WIDTH * NrBlockX * UNIT2PIX, BLOCK_HEIGHT * NrBlockY * UNIT2PIX,32 ,Palette->format->Rmask, Palette->format->Gmask, Palette->format->Bmask,Palette->format->Amask );
-    newsurf = SDL_CreateRGBSurface( 0,
-                                    BLOCK_WIDTH * NrBlockX,
-                                    BLOCK_HEIGHT * NrBlockY,
-                                    32 ,
-                                    Palette->format->Rmask,
-                                    Palette->format->Gmask,
-                                    Palette->format->Bmask,
-                                    Palette->format->Amask
+	newsurf = SDL_CreateRGBSurface(
+				0,
+				BLOCK_WIDTH * NrBlockX,
+				BLOCK_HEIGHT * NrBlockY,
+				32 ,
+				Palette->format->Rmask,
+				Palette->format->Gmask,
+				Palette->format->Bmask,
+				Palette->format->Amask
     );
 
     // iterate all map background blocks
     for(i = 0; i < NrBlockY; i++)
-        for(j = 0; j < NrBlockX ;j++) {
+		for(j = 0; j < NrBlockX; j++) {
             if(SDL_MUSTLOCK(GAME_MAP.Normal_Map[i][j])) {
                 SDL_LockSurface(GAME_MAP.Normal_Map[i][j]);
             }
 
-            for( k = 0; k < BLOCK_HEIGHT; k++ )
-                for( l = 0; l < BLOCK_WIDTH; l++ )
-                putpix( newsurf,
-                        (l + j * BLOCK_WIDTH),
-                        (k + BLOCK_HEIGHT * i),
-                        getpix( GAME_MAP.Normal_Map[i][j],l,k )
-                );
+			for(k = 0; k < BLOCK_HEIGHT; k++)
+				for(l = 0; l < BLOCK_WIDTH; l++) {
+					putpix(
+						newsurf,
+						(BLOCK_WIDTH * j + l),
+						(BLOCK_HEIGHT * i + k),
+						getpix(GAME_MAP.Normal_Map[i][j], l, k)
+					);
+				}
 
-            if( SDL_MUSTLOCK( GAME_MAP.Normal_Map[i][j] ) )
-            {
-                SDL_UnlockSurface( GAME_MAP.Normal_Map[i][j] );
+			if(SDL_MUSTLOCK(GAME_MAP.Normal_Map[i][j])) {
+				SDL_UnlockSurface(GAME_MAP.Normal_Map[i][j]);
             }
         }
 
@@ -466,14 +472,19 @@ SDL_Surface *PixelManipulation::RenderNormalMap()
     fcc = FirstFreeChunk_back;
     while( fcc->next != LastFreeChunk_back ) {
         if(!fcc->next->animated) {
-            if(fcc->next->surf != NULL) {
+			if(fcc->next->surf != nullptr) {
                 for( i = 0; i < fcc->next->surf->w; i++ ) {
                     for( j = 0; j < fcc->next->surf->h; j++ ) {
                         if( i <= BLOCK_WIDTH * NrBlockX &&
                             j <= BLOCK_HEIGHT * NrBlockY &&
                             ( getpix( fcc->next->surf,i,j ) != getpix( Palette,4 ,0 ) ) &&
                             ( getpix( fcc->next->surf,i,j ) != getpix( Palette,7 ,0 ) ) ) {
-                            putpix( newsurf,fcc->next->x + i ,fcc->next->y + j ,getpix( fcc->next->surf,i,j ) );
+							putpix(
+								newsurf,
+								static_cast<int>((200.0 / 100.0) * fcc->next->x + i),
+								static_cast<int>((200.0 / 100.0) * fcc->next->y + j), //fcc->next->y + j,
+								getpix(fcc->next->surf, i, j)
+							);
                         }
                     }
                 }
@@ -526,37 +537,49 @@ SDL_Surface *PixelManipulation::RenderForeLayerMap(){
         }
 
 
-    //Fusio Render Free Back Layer
+	// Fusio Render Free Back Layer
     fcc = FirstFreeChunk_fore;
-    while( fcc->next != LastFreeChunk_fore )
-    {
+	while(fcc->next != LastFreeChunk_fore) {
         // not animated
-        if( !fcc->next->animated )
-        {
-            if( fcc->next->tex != NULL )
+		if(!fcc->next->animated) {
+			if(fcc->next->tex != nullptr)
             for( i = 0; i < fcc->next->surf->w; i++ )
                 for( j = 0; j < fcc->next->surf->h; j++ )
                     if( i <= BLOCK_WIDTH*NrBlockX
                         && j <= BLOCK_HEIGHT*NrBlockY
-                        && ( getpix( fcc->next->surf,i,j ) != getpix( Palette,4 ,0 ) ) )
-                            putpix( newsurf,fcc->next->x + i ,fcc->next->y + j ,getpix( fcc->next->surf,i,j ) );
+						&& ( getpix( fcc->next->surf,i,j ) != getpix(Palette, 4, 0))) {
+						// TODO: scale with 200/80 is TEMP
+						putpix(
+							newsurf,
+							static_cast<int>((200.0 / 80.0) * fcc->next->x + i),
+							static_cast<int>((200.0 / 80.0) * fcc->next->y + j),
+							getpix(
+								fcc->next->surf,
+								i,
+								j
+							)
+						);
+					}
 
             //Delete chunk
             delaux = fcc->next;
             fcc->next = fcc->next->next;
             delete delaux;
         }
-        else
-        fcc = fcc->next;
+		else {
+			fcc = fcc->next;
+		}
     }
 
 
-    if( SDL_MUSTLOCK( Palette ) )
-    {
+	if(SDL_MUSTLOCK(Palette)) {
         SDL_UnlockSurface( Palette );
     }
+
     return newsurf;
 }
+
+
 SDL_Surface *PixelManipulation::RenderMisc(int nr){
 int i,j;
 SDL_Surface *newsurf;

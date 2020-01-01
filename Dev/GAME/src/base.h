@@ -24,12 +24,10 @@
 #define REAL_SCREEN_WIDTH  WIN_WIDTH
 #define Y_ABS ((WIN_HEIGHT - REAL_SCREEN_HEIGHT) / 2)
 
-
-
-#define SCALE ( (long double)REAL_SCREEN_WIDTH / SCREEN_WIDTH  )
+#define SCALE ( static_cast<double>(REAL_SCREEN_WIDTH) / SCREEN_WIDTH)
 
 #define constraint(x,low,high) x >= low ? ( x <= high ? x : high ) : low
-#define map(x,low,high,tolow,tohigh) (  ( (long double)x / (high-low) ) * (tohigh-tolow) )
+#define map(x, low, high, tolow, tohigh) ((static_cast<long double>(x) / (high-low)) * (tohigh-tolow))
 #define mousetovirtual(x) map( x,0,WIN_WIDTH,0,SCREEN_WIDTH ) //Convert mouse coordonates relative to window
                                                                 //to mouse coordonates relative to the rendered
                                                                 //image (without letterboxed part)
