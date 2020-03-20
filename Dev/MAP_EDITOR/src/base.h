@@ -34,7 +34,7 @@
 #define constraint(x,low,high) x >= low ? ( x <= high ? x : high ) : low
 #define map(x,low,high,tolow,tohigh) (  ( (long double)x / (high-low) ) * (tohigh-tolow) )
 #define mousetovirtual(x) map( x,0,WIN_WIDTH,0,SCREEN_WIDTH ) //Convert mouse coordonates relative to window
-                                                              //image (without letterboxed part)
+//image (without letterboxed part)
 
 
 #define FLIP_VERT 0x01
@@ -64,43 +64,43 @@ const int DISPLAYMODE_LETTERBOX = 1;
 extern int ENGINE_displaymode;
 
 ///TODO Trebuie facute private
-extern int cDayTime,iMoveMap_x,iMoveMap_y,iInitial_x,iInitial_y,FCMove_x,FCMove_y,maxx,maxy,cInterItm,InterInfo[3];
-extern bool bCtrlDown,bMouseDrag, bCSkinOrigin,FCmoveing,LightMap_Changed[6],LibLock[3];
+extern int cDayTime,iMoveMap_x,iMoveMap_y,mouse_drag_start_x,mouse_drag_start_y,FCMove_x,FCMove_y,maxx,maxy,cInterItm,InterInfo[3];
+extern bool key_ctrl_down,btn_mouse_down, bCSkinOrigin,FCmoveing,LightMap_Changed[6],LibLock[3];
 
 
 
-extern class CLS_WINDOWING{
+extern class CLS_WINDOWING
+{
+private:
+	std::string title;
+	uint32_t window_flags, render_flags;
+	// --Screen --
+	int width;
+	int height;
 
-    private:
-    std::string title;
-    int window_flags,render_flags;
-    // --Screen --
-    int width;
-    int height;
+	//ViewPorts
+	int viewport_x;
+	int viewport_y;
 
-    //ViewPorts
-    int viewport_x;
-    int viewport_y;
+public:
 
-    public:
+	//---WINDOWS AND RENDERES---
+	SDL_Window   *window;
+	SDL_Renderer *render;
 
-    //---WINDOWS AND RENDERES---
-    SDL_Window   *window;
-    SDL_Renderer *render;
+	CLS_WINDOWING();
+	void setTitle(std::string x);
+	void setWindowWidth (int x);
+	void setWindowHeight(int x);
+	int  getWindowWidth (void);
+	int  getWindowHeight(void);
+	Uint32 getID();
+	void setWindowFlags(uint32_t x);
+	void setRenderFlags(uint32_t x);
+	int createWindow(void);
+	int createRender(void);
 
-    CLS_WINDOWING();
-    void setTitle(std::string x );
-    void setWindowWidth ( int x );
-    void setWindowHeight( int x );
-    int  getWindowWidth ( void );
-    int  getWindowHeight( void );
-    Uint32 getID();
-    void setWindowFlags( int x );
-    void setRenderFlags( int x );
-    int createWindow(void);
-    int createRender(void);
-
-}WIN_MAIN;
+} WIN_MAIN;
 
 
 // -- GENERAL --
@@ -112,11 +112,10 @@ void ENGINE_Quit(void);
 // -- RENDERING --
 SDL_Surface *loadSurf(string file);
 SDL_Texture *loadTex(string file);
-void applyTexFree(int x,int y,SDL_Texture *tex,SDL_Rect *clip = NULL,int w = NO_CHANGE,int h = NO_CHANGE );
-void applyTexLetterbox(int x,int y,SDL_Texture *tex,SDL_Rect *clip = NULL,int w = NO_CHANGE,int h = NO_CHANGE );
-void applyTex(int x,int y,SDL_Texture *tex,SDL_Rect *clip = NULL,int w = NO_CHANGE,int h = NO_CHANGE );
-
-void applySurf(int x,int y,SDL_Surface *tex,SDL_Rect *clip = NULL,int w = NO_CHANGE,int h = NO_CHANGE );
+void applyTexFree(int x,int y,SDL_Texture *tex,SDL_Rect *clip = nullptr,int w = NO_CHANGE,int h = NO_CHANGE );
+void applyTexLetterbox(int x,int y,SDL_Texture *tex,SDL_Rect *clip = nullptr,int w = NO_CHANGE,int h = NO_CHANGE );
+void applyTex(int x,int y,SDL_Texture *tex,SDL_Rect *clip = nullptr,int w = NO_CHANGE,int h = NO_CHANGE );
+void applySurf(int x,int y,SDL_Surface *tex,SDL_Rect *clip = nullptr,int w = NO_CHANGE,int h = NO_CHANGE );
 
 //Draw Rectangle
 void DrawRectFree(int x,int y,int x2,int y2);

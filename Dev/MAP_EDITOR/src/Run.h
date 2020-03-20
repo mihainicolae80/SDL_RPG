@@ -8,6 +8,6 @@
 //#include "PixelManipulation.h"
 #include "Interface.h"
 
-int runEditor(void);
+int run_editor(void);
 
 #endif // RUN_H_INCLUDED

@@ -22,12 +22,12 @@ int ERROR = 0;
 
 
 //init picture
-sfExMark = NULL;
-txExMark = NULL;
+sfExMark = nullptr;
+txExMark = nullptr;
 
 //Surf
 sfExMark = loadSurf( "textures//debug//ExcMark.png" );
-if( sfExMark == NULL )
+if( sfExMark == nullptr )
 {
     CLS_DEBUG::fout( FILE_FLF, "Couldn't load ExMark surface" );
     ERROR =  true;
@@ -35,7 +35,7 @@ if( sfExMark == NULL )
 
 //Texture
 txExMark = loadTex( "textures//debug//ExcMark.png" );
-if( txExMark == NULL )
+if( txExMark == nullptr )
 {
     CLS_DEBUG::fout( FILE_FLF, "Couldn't load ExMark surface" );
     ERROR = true;

@@ -51,7 +51,6 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../MAP_EDITOR/main.cpp \
-		../MAP_EDITOR/src/CallbackClass.cpp \
 		../MAP_EDITOR/src/Interface.cc \
 		../MAP_EDITOR/src/PixelManipulation.cc \
 		../MAP_EDITOR/src/Placeable.cc \
@@ -62,14 +61,11 @@ SOURCES       = ../MAP_EDITOR/main.cpp \
 		../MAP_EDITOR/src/main_header.cc \
 		../MAP_EDITOR/src/map.cc \
 		../MAP_EDITOR/src/textures.cc \
-		../MAP_EDITOR/src/ui_bar.cc \
-		../MAP_EDITOR/src/ui_button.cc \
-		../MAP_EDITOR/src/ui_group.cc \
-		../MAP_EDITOR/src/ui_list.cc \
-		../MAP_EDITOR/src/ui_list_item.cc \
-		../MAP_EDITOR/src/ui_manager.cc 
+		../MAP_EDITOR/src/ui/ui_bar.cc \
+		../MAP_EDITOR/src/ui/ui_button.cc \
+		../MAP_EDITOR/src/ui/ui_list.cc \
+		../MAP_EDITOR/src/ui/ui_window.cc 
 OBJECTS       = main.o \
-		CallbackClass.o \
 		Interface.o \
 		PixelManipulation.o \
 		Placeable.o \
@@ -82,10 +78,8 @@ OBJECTS       = main.o \
 		textures.o \
 		ui_bar.o \
 		ui_button.o \
-		ui_group.o \
 		ui_list.o \
-		ui_list_item.o \
-		ui_manager.o
+		ui_window.o
 DIST          = /opt/Qt/5.9.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.9.8/gcc_64/mkspecs/common/unix.conf \
 		/opt/Qt/5.9.8/gcc_64/mkspecs/common/linux.conf \
@@ -236,8 +230,7 @@ DIST          = /opt/Qt/5.9.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.9.8/gcc_64/mkspecs/features/exceptions.prf \
 		/opt/Qt/5.9.8/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt/5.9.8/gcc_64/mkspecs/features/lex.prf \
-		../MAP_EDITOR/MAP_EDITOR.pro src/CallbackClass.h \
-		src/Interface.h \
+		../MAP_EDITOR/MAP_EDITOR.pro src/Interface.h \
 		src/PixelManipulation.h \
 		src/Placeable.h \
 		src/Run.h \
@@ -247,14 +240,11 @@ DIST          = /opt/Qt/5.9.8/gcc_64/mkspecs/features/spec_pre.prf \
 		src/main_headers.h \
 		src/map.h \
 		src/textures.h \
-		src/ui_bar.h \
-		src/ui_button.h \
-		src/ui_group.h \
-		src/ui_item.h \
-		src/ui_list.h \
-		src/ui_list_item.h \
-		src/ui_manager.h ../MAP_EDITOR/main.cpp \
-		../MAP_EDITOR/src/CallbackClass.cpp \
+		src/ui/ui_bar.h \
+		src/ui/ui_button.h \
+		src/ui/ui_core.h \
+		src/ui/ui_list.h \
+		src/ui/ui_window.h ../MAP_EDITOR/main.cpp \
 		../MAP_EDITOR/src/Interface.cc \
 		../MAP_EDITOR/src/PixelManipulation.cc \
 		../MAP_EDITOR/src/Placeable.cc \
@@ -265,12 +255,10 @@ DIST          = /opt/Qt/5.9.8/gcc_64/mkspecs/features/spec_pre.prf \
 		../MAP_EDITOR/src/main_header.cc \
 		../MAP_EDITOR/src/map.cc \
 		../MAP_EDITOR/src/textures.cc \
-		../MAP_EDITOR/src/ui_bar.cc \
-		../MAP_EDITOR/src/ui_button.cc \
-		../MAP_EDITOR/src/ui_group.cc \
-		../MAP_EDITOR/src/ui_list.cc \
-		../MAP_EDITOR/src/ui_list_item.cc \
-		../MAP_EDITOR/src/ui_manager.cc
+		../MAP_EDITOR/src/ui/ui_bar.cc \
+		../MAP_EDITOR/src/ui/ui_button.cc \
+		../MAP_EDITOR/src/ui/ui_list.cc \
+		../MAP_EDITOR/src/ui/ui_window.cc
 QMAKE_TARGET  = MAP_EDITOR
 DESTDIR       = 
 TARGET        = MAP_EDITOR
@@ -635,12 +623,8 @@ main.o: ../MAP_EDITOR/main.cpp ../MAP_EDITOR/src/Run.h \
 		../MAP_EDITOR/src/PixelManipulation.h \
 		../MAP_EDITOR/src/debug.h \
 		../MAP_EDITOR/src/basics.h \
-		../MAP_EDITOR/src/Interface.h \
-		../MAP_EDITOR/src/CallbackClass.h
+		../MAP_EDITOR/src/Interface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../MAP_EDITOR/main.cpp
-
-CallbackClass.o: ../MAP_EDITOR/src/CallbackClass.cpp ../MAP_EDITOR/src/CallbackClass.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CallbackClass.o ../MAP_EDITOR/src/CallbackClass.cpp
 
 Interface.o: ../MAP_EDITOR/src/Interface.cc ../MAP_EDITOR/src/Interface.h \
 		../MAP_EDITOR/src/base.h \
@@ -648,8 +632,7 @@ Interface.o: ../MAP_EDITOR/src/Interface.cc ../MAP_EDITOR/src/Interface.h \
 		../MAP_EDITOR/src/Placeable.h \
 		../MAP_EDITOR/src/PixelManipulation.h \
 		../MAP_EDITOR/src/debug.h \
-		../MAP_EDITOR/src/basics.h \
-		../MAP_EDITOR/src/CallbackClass.h
+		../MAP_EDITOR/src/basics.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Interface.o ../MAP_EDITOR/src/Interface.cc
 
 PixelManipulation.o: ../MAP_EDITOR/src/PixelManipulation.cc ../MAP_EDITOR/src/PixelManipulation.h \
@@ -671,14 +654,11 @@ Run.o: ../MAP_EDITOR/src/Run.cc ../MAP_EDITOR/src/Run.h \
 		../MAP_EDITOR/src/debug.h \
 		../MAP_EDITOR/src/basics.h \
 		../MAP_EDITOR/src/Interface.h \
-		../MAP_EDITOR/src/CallbackClass.h \
-		../MAP_EDITOR/src/ui_manager.h \
-		../MAP_EDITOR/src/ui_group.h \
-		../MAP_EDITOR/src/ui_bar.h \
-		../MAP_EDITOR/src/ui_item.h \
-		../MAP_EDITOR/src/ui_button.h \
-		../MAP_EDITOR/src/ui_list.h \
-		../MAP_EDITOR/src/textures.h
+		../MAP_EDITOR/src/textures.h \
+		../MAP_EDITOR/src/ui/ui_window.h \
+		../MAP_EDITOR/src/ui/ui_core.h \
+		../MAP_EDITOR/src/ui/ui_button.h \
+		../MAP_EDITOR/src/ui/ui_item.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Run.o ../MAP_EDITOR/src/Run.cc
 
 base.o: ../MAP_EDITOR/src/base.cpp ../MAP_EDITOR/src/base.h \
@@ -720,17 +700,18 @@ textures.o: ../MAP_EDITOR/src/textures.cc ../MAP_EDITOR/src/textures.h \
 		../MAP_EDITOR/src/basics.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o textures.o ../MAP_EDITOR/src/textures.cc
 
-ui_bar.o: ../MAP_EDITOR/src/ui_bar.cc ../MAP_EDITOR/src/ui_bar.h \
+ui_bar.o: ../MAP_EDITOR/src/ui/ui_bar.cc ../MAP_EDITOR/src/ui/ui_bar.h \
 		../MAP_EDITOR/src/base.h \
 		../MAP_EDITOR/src/main_headers.h \
 		../MAP_EDITOR/src/Placeable.h \
 		../MAP_EDITOR/src/PixelManipulation.h \
 		../MAP_EDITOR/src/debug.h \
 		../MAP_EDITOR/src/basics.h \
-		../MAP_EDITOR/src/ui_item.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_bar.o ../MAP_EDITOR/src/ui_bar.cc
+		../MAP_EDITOR/src/ui/ui_core.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_bar.o ../MAP_EDITOR/src/ui/ui_bar.cc
 
-ui_button.o: ../MAP_EDITOR/src/ui_button.cc ../MAP_EDITOR/src/ui_button.h \
+ui_button.o: ../MAP_EDITOR/src/ui/ui_button.cc ../MAP_EDITOR/src/ui/ui_button.h \
+		../MAP_EDITOR/src/ui/ui_core.h \
 		../MAP_EDITOR/src/base.h \
 		../MAP_EDITOR/src/main_headers.h \
 		../MAP_EDITOR/src/Placeable.h \
@@ -738,46 +719,28 @@ ui_button.o: ../MAP_EDITOR/src/ui_button.cc ../MAP_EDITOR/src/ui_button.h \
 		../MAP_EDITOR/src/debug.h \
 		../MAP_EDITOR/src/basics.h \
 		../MAP_EDITOR/src/Interface.h \
-		../MAP_EDITOR/src/CallbackClass.h \
-		../MAP_EDITOR/src/ui_item.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_button.o ../MAP_EDITOR/src/ui_button.cc
+		../MAP_EDITOR/src/ui/ui_item.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_button.o ../MAP_EDITOR/src/ui/ui_button.cc
 
-ui_group.o: ../MAP_EDITOR/src/ui_group.cc ../MAP_EDITOR/src/ui_group.h \
-		../MAP_EDITOR/src/ui_bar.h \
+ui_list.o: ../MAP_EDITOR/src/ui/ui_list.cc ../MAP_EDITOR/src/ui/ui_list.h \
 		../MAP_EDITOR/src/base.h \
 		../MAP_EDITOR/src/main_headers.h \
 		../MAP_EDITOR/src/Placeable.h \
 		../MAP_EDITOR/src/PixelManipulation.h \
 		../MAP_EDITOR/src/debug.h \
 		../MAP_EDITOR/src/basics.h \
-		../MAP_EDITOR/src/ui_item.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_group.o ../MAP_EDITOR/src/ui_group.cc
+		../MAP_EDITOR/src/ui/ui_core.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_list.o ../MAP_EDITOR/src/ui/ui_list.cc
 
-ui_list.o: ../MAP_EDITOR/src/ui_list.cc ../MAP_EDITOR/src/ui_list.h \
+ui_window.o: ../MAP_EDITOR/src/ui/ui_window.cc ../MAP_EDITOR/src/ui/ui_window.h \
 		../MAP_EDITOR/src/base.h \
 		../MAP_EDITOR/src/main_headers.h \
 		../MAP_EDITOR/src/Placeable.h \
 		../MAP_EDITOR/src/PixelManipulation.h \
 		../MAP_EDITOR/src/debug.h \
 		../MAP_EDITOR/src/basics.h \
-		../MAP_EDITOR/src/ui_item.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_list.o ../MAP_EDITOR/src/ui_list.cc
-
-ui_list_item.o: ../MAP_EDITOR/src/ui_list_item.cc ../MAP_EDITOR/src/ui_list_item.h \
-		../MAP_EDITOR/src/CallbackClass.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_list_item.o ../MAP_EDITOR/src/ui_list_item.cc
-
-ui_manager.o: ../MAP_EDITOR/src/ui_manager.cc ../MAP_EDITOR/src/ui_manager.h \
-		../MAP_EDITOR/src/base.h \
-		../MAP_EDITOR/src/main_headers.h \
-		../MAP_EDITOR/src/Placeable.h \
-		../MAP_EDITOR/src/PixelManipulation.h \
-		../MAP_EDITOR/src/debug.h \
-		../MAP_EDITOR/src/basics.h \
-		../MAP_EDITOR/src/ui_group.h \
-		../MAP_EDITOR/src/ui_bar.h \
-		../MAP_EDITOR/src/ui_item.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_manager.o ../MAP_EDITOR/src/ui_manager.cc
+		../MAP_EDITOR/src/ui/ui_core.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ui_window.o ../MAP_EDITOR/src/ui/ui_window.cc
 
 ####### Install
 

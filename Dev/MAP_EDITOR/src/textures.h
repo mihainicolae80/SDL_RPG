@@ -10,7 +10,6 @@
 
 class Textures{
 public:
-
     Textures();
     SDL_Surface* getSurf(int nr,PixelManipulationRotation state);
 

@@ -1,7 +1,7 @@
 #ifndef MAIN_HEADERS_H_INCLUDED
 #define MAIN_HEADERS_H_INCLUDED
 
-extern int BLOCK_WIDTH;
-extern int BLOCK_HEIGHT;
+#define	BLOCK_WIDTH (100)
+#define	BLOCK_HEIGHT (100)
 
 #endif // MAIN_HEADERS_H_INCLUDED

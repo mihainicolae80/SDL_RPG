@@ -235,7 +235,7 @@ SDL_Surface *PixelManipulation::RenderLightMap(int nr)
 	}
 
 
-	for( p = FirstDNChunk -> next; p -> next != NULL && p != NULL; p = p-> next ) {
+	for( p = FirstDNChunk -> next; p -> next != nullptr && p != nullptr; p = p-> next ) {
 		if( p ->nr == 1 )//Round light
 		{
 			if( nr == 3 )//Night
@@ -331,7 +331,7 @@ if( Palette->flags & SDL_SRCCOLORKEY )
 
 	}
 	else
-		newsurf = NULL;
+		newsurf = nullptr;
 
 	return newsurf;
 }

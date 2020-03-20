@@ -9,7 +9,6 @@ INCPATH += -Isrc
 
 SOURCES += \
     main.cpp \
-    src/CallbackClass.cpp \
     src/Interface.cc \
     src/PixelManipulation.cc \
     src/Placeable.cc \
@@ -20,15 +19,12 @@ SOURCES += \
     src/main_header.cc \
     src/map.cc \
     src/textures.cc \
-    src/ui_bar.cc \
-    src/ui_button.cc \
-    src/ui_group.cc \
-    src/ui_list.cc \
-    src/ui_list_item.cc \
-    src/ui_manager.cc
+    src/ui/ui_bar.cc \
+    src/ui/ui_button.cc \
+    src/ui/ui_list.cc \
+    src/ui/ui_window.cc
 
 HEADERS += \
-    src/CallbackClass.h \
     src/Interface.h \
     src/PixelManipulation.h \
     src/Placeable.h \
@@ -39,10 +35,8 @@ HEADERS += \
     src/main_headers.h \
     src/map.h \
     src/textures.h \
-    src/ui_bar.h \
-    src/ui_button.h \
-    src/ui_group.h \
-    src/ui_item.h \
-    src/ui_list.h \
-    src/ui_list_item.h \
-    src/ui_manager.h
+    src/ui/ui_bar.h \
+    src/ui/ui_button.h \
+    src/ui/ui_core.h \
+    src/ui/ui_list.h \
+    src/ui/ui_window.h

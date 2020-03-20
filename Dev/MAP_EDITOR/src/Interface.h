@@ -10,7 +10,6 @@
 #include "Placeable.h"
 #include "sstream"
 #include "PixelManipulation.h"
-#include "CallbackClass.h"
 
 
 class Interface{
@@ -20,13 +19,12 @@ private:
     SDL_Surface *sInterface,*sOptions,*sSave;
     SDL_Surface *sTxt1,*sTxt2,*sTxt3,*sTxt4,*sTxt5;
 
-
     SDL_Surface *sDayNightCicle[6],*sInteractSkin,*sGrid,*sMousePoz,*sLine1,*sLine2;
     SDL_Rect box_NewMap,box_Build,box_Inter,box_Light;
     SDL_Rect box_NormalMap[100][100];
-    SDL_Rect box_Chunk[10],box_ROTATE[4],rInterfaceMenus[4],rInterfaceMenus_toggle[2] ;
+	SDL_Rect box_Chunk[10],box_ROTATE[4],inter_menu_rect[4],inter_menu_toggle_rect[2] ;
     SDL_Rect Button_WidthPlus,Button_WidthMinus,Button_HeightPlus,Button_HeightMinus;
-    SDL_Surface *sNormalNULL,*sWidth,*sHeight,*ModeLibHighlight,*sLight_CENTRE,*sLight_EDGE;
+    SDL_Surface *sNormalnullptr,*sWidth,*sHeight,*ModeLibHighlight,*sLight_CENTRE,*sLight_EDGE;
     SDL_Surface *RedSquare,*YellowSquare,*GreenSquare,*sLibLock;
     SDL_Surface *sColId;
     int max_BUILD,max_INTER,max_DayNight,max_COLIDE;
@@ -45,7 +43,7 @@ private:
     FreeChunk *FChunks[10];
     InterSpot *cInterChunk;
     //Interact Atributes window
-    SDL_Surface *sWindow_Inter_bg,*sWindow_InterButton_Door,*sWindow_InterButton_Custom;
+	SDL_Surface *inter_bg_sf,*inter_btn_door_sf,*sWindow_InterButton_Custom;
     SDL_Surface *sWindow_Inter_Text[5],*sWindow_Inter_Data[5],*sWindow_InterButton_TextAboveHead,
                 *sWindow_InterButton_Loot;
     int Window_Inter_x,Window_Inter_y,Window_Inter_Drag_x,Window_Inter_Drag_y,
@@ -81,9 +79,9 @@ private:
 
 public:
     void init(void);
-    void AddNPC(int,int w,int h );
+	void AddNPC(int skinnr, int w, int h);
     void RenderNPCInfo(void);
-    void handle_events( SDL_Event newevent );
+	void handle_events(SDL_Event newevent);
     void handle_logics();
     void showbg(void);
     void showNormaMap(void);
@@ -92,14 +90,17 @@ public:
     void LoadMap(void);
     void MapCleanup(void);
     void cleanup();
+
+	void btn_new_map_clicked(void);
+
 };
 
 extern Interface INTERFACE;
 
 
 //Callback Classes
-class InterfaceCallback_showbg : public CallbackClass{
-	void execute() override;
-};
+//class InterfaceCallback_showbg : public CallbackClass{
+//	void execute() override;
+//};
 
 #endif // INTERFACE_H_INCLUDED

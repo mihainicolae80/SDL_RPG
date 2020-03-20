@@ -82,7 +82,7 @@ void UI_Group::handleEvents(SDL_Event *event){
             this->updatePosition();
         }
 
-        bar->handleEvents(event);
+        bar->handle_events(event);
     }
 
 }

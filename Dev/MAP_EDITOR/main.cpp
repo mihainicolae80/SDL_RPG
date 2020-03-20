@@ -2,11 +2,10 @@
 
 int main(int argc, char *args[])
 {
-
     (void)argc;
     (void)args;
 
-    runEditor();
+	run_editor();
 
     return 0;
 }

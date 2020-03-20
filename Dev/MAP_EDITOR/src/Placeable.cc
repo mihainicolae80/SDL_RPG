@@ -3,17 +3,20 @@
 
 
 
-CHUNK chunk_NULL,chunk_C;
+CHUNK chunk_nullptr,chunk_C;
 
-FreeChunk *FirstFCLib = NULL,*FirstFreeChunk_fore = NULL,*LastFreeChunk_fore = NULL,*FirstFreeChunk_back= NULL,
-*LastFreeChunk_back = NULL ,*FirstFreeChunk_dynam = NULL,*LastFreeChunk_dynam = NULL ,*C_FreeChunk = NULL,
-*NULL_FreeChunk = NULL,*FreeCTarget_Move = NULL ,*LastChunkFore= NULL ,*LastChunkBack = NULL,*LastChunkDynam= NULL;
+FreeChunk *FirstFCLib = nullptr,*FirstFreeChunk_fore = nullptr,*LastFreeChunk_fore = nullptr,*FirstFreeChunk_back= nullptr,
+*LastFreeChunk_back = nullptr ,*FirstFreeChunk_dynam = nullptr,*LastFreeChunk_dynam = nullptr ,*C_FreeChunk = nullptr,
+*nullptr_FreeChunk = nullptr,*FreeCTarget_Move = nullptr ,*LastChunkFore= nullptr ,*LastChunkBack = nullptr,*LastChunkDynam= nullptr;
 
-DayNightChunk *FirstDNChunk = NULL ,*LastDNChunk= NULL,*CDNChunk= NULL;
+DayNightChunk *FirstDNChunk = nullptr ,*LastDNChunk= nullptr,*CDNChunk= nullptr;
 DayNightTool DNTool[2],*CDNTool;
 
-ColideChunk *FirstCOLChunk = NULL,*LastCOLChunk = NULL,*CCOLChunk = NULL;
+ColideChunk *FirstCOLChunk = nullptr,*LastCOLChunk = nullptr,*CCOLChunk = nullptr;
 
 ColideTool COLTool[2],*CCOLTool;
 InterSpot *FirstItr,*LastItr;
-NPCchunk *FirstNPCList,*LastNPCList,*FirstNPCMap,*LastNPCMap;
+
+
+list<NPCchunk *> npc_list;
+list<NPCchunk *> npc_map;

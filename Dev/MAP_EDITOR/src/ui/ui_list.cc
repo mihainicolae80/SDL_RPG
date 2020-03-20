@@ -30,6 +30,8 @@ int UI_List::addTab(){
 
     ///TODO delete the added lists
     tabsList.push_back(new std::list<SDL_Surface*>);
+
+	return 0;
 }
 
 void UI_List::handleEvents(SDL_Event *){
