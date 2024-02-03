@@ -1,11 +1,12 @@
-#ifndef BASE_H_INCLUDED
-#define BASE_H_INCLUDED
+#pragma once
+
+#include <iostream>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_mixer.h>
-#include <iostream>
+
 #include "main_headers.h"
 #include "Placeable.h"
 #include "PixelManipulation.h"
@@ -147,4 +148,3 @@ extern TTF_Font *Font14,*Font18,*Font20,*Font24,*Font2_14,*Font2_18,*Font2_20,*F
 //Colors
 extern SDL_Color WHITE, BLACK, GRAY,RED, BLUE, GREEN,YELLOW_LIGHT;
 
-#endif // BASE_H_INCLUDED
