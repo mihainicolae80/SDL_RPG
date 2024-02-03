@@ -31,7 +31,7 @@ UI_Bar::~UI_Bar()
 }
 
 
-void UI_Bar::addItem(UI_Item * newitem)
+void UI_Bar::addItem(IItem * newitem)
 {
     items.push_back(newitem);
     updateItems();
@@ -101,7 +101,7 @@ int UI_Bar::getHeight(){ return h; }
 void UI_Bar::updateItems()
 {
 
-    std::list<UI_Item*>::iterator it;
+    std::list<IItem*>::iterator it;
 
     w = 0;
     h = 0;

@@ -11,15 +11,17 @@ INCLUDEPATH += -I"src"
 SOURCES += \
     main.cpp \
     src/Interface.cc \
+    src/MapEditor.cpp \
     src/PixelManipulation.cc \
     src/Placeable.cc \
-    src/Run.cc \
     src/base.cpp \
     src/basics.cpp \
     src/debug.cpp \
     src/main_header.cc \
     src/map.cc \
     src/textures.cc \
+    src/ui/Button.cpp \
+    src/ui/Rect.cpp \
     src/ui/ui_bar.cc \
     src/ui/ui_group.cc \
     src/ui/ui_list.cc \
@@ -27,21 +29,23 @@ SOURCES += \
 
 HEADERS += \
     src/Interface.h \
+    src/MapEditor.h \
     src/PixelManipulation.h \
     src/Placeable.h \
-    src/Run.h \
     src/base.h \
     src/basics.h \
     src/debug.h \
     src/main_headers.h \
     src/map.h \
     src/textures.h \
+    src/ui/Button.h \
     src/ui/CallbackClass.h \
+    src/ui/IItem.h \
+    src/ui/Rect.h \
     src/ui/ui_bar.h \
     src/ui/ui_bar.h \
     src/ui/ui_core.h \
     src/ui/ui_group.h \
-    src/ui/ui_item.h \
     src/ui/ui_list.h \
     src/ui/ui_list.h \
     src/ui/ui_list_item.h \

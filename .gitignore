@@ -1,2 +1,8 @@
 *.o
 *.layout
+FPS Count.txt
+FileLoadFails.txt
+Makefile
+Makefile.*
+object_script.*
+MAP_EDITOR.exe

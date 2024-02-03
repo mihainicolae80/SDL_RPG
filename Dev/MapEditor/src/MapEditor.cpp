@@ -1,7 +1,7 @@
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_ttf.h"
 
-#include "Run.h"
+#include "MapEditor.h"
 #include "base.h"
 #include "Interface.h"
 #include "textures.h"
@@ -9,22 +9,23 @@
 
 //#include "PixelManipulation.h"
 //#include "ui/ui_window.h"
-#include "ui/ui_button.h"
+#include "ui/Button.h"
 
+using namespace engine;
 
-
-int RunEditor(void)
+void MapEditor::Run(void)
 {
     int error = ENGINE_Init();
     if(error) {
-        return error;
+        exit(error);
     }
-
-    //win.add_item(new UI_Button(UI_Rect(0, 0, 100, 100), tex, nullptr));
-    //win.add_item(new UI_Button(UI_Rect(50, 50, 100, 100), tex, nullptr));
 
     INTERFACE.init();
     PIXELS.init();
+
+    auto buttonTexture = loadTex("textures\\debug\\ExcMark.png");
+    auto button = new ui::Button(50, 100, 100, 50, buttonTexture);
+
 
     // Program Loop
     bool runLoop = true;
@@ -68,10 +69,10 @@ int RunEditor(void)
             }
 
             ENGINE_HandleEvent_resizeWindow(&event);
-
-            //win.handle_events(&event);
-
             INTERFACE.handle_events(event);
+
+            // TEST
+            button->handleEvents(&event);
         }
 
         // LOGICS
@@ -89,6 +90,9 @@ int RunEditor(void)
         INTERFACE.showbg();
         INTERFACE.showMouse();
 
+        // TEST
+        button->draw();
+
         //Update the screen
         SDL_RenderPresent(RENDER_MAIN);
     }
@@ -97,13 +101,16 @@ int RunEditor(void)
     //PIXELS.cleanup();
     INTERFACE.cleanup();
     ENGINE_Quit();
-
-    return 0;
 }
 
 
 /*
- ///// NEW UI TEST
+ // UI test1
+
+    //win.add_item(new UI_Button(UI_Rect(0, 0, 100, 100), tex, nullptr));
+    //win.add_item(new UI_Button(UI_Rect(50, 50, 100, 100), tex, nullptr));
+
+ // UI test2
 
     //UI_Button button(DEBUG.txExMark
     //    ,(new InterfaceCallback_showbg()));

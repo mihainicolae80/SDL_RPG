@@ -1,14 +1,14 @@
 #define SDL_MAIN_HANDLED
 
-#include "src/Run.h"
+#include "src/MapEditor.h"
 
 int main(int argc, char *args[])
 {
     (void)argc;
     (void)args;
 
-    RunEditor();
+    MapEditor mapEditor;
+    mapEditor.Run();
 
     return 0;
 }
-
