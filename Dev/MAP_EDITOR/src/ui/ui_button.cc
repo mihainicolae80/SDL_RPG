@@ -18,7 +18,7 @@ UI_Button::~UI_Button(){
 */
 
 
-bool UI_Button::handle_events(SDL_Event *event)
+bool UI_Button::handleEvents(SDL_Event * event)
 {
 	// flag if event should be captured by item
 	bool capture = false;
@@ -32,8 +32,9 @@ bool UI_Button::handle_events(SDL_Event *event)
 		click_point.x = event->button.x;
 		click_point.y = event->button.y;
 
+        // TODO: add back
 		// check button pressed
-		this->pressed = _rect.contains(click_point);
+        //this->pressed = _rect.contains(click_point);
 
 		// capture event
 		capture = capture || this->pressed;

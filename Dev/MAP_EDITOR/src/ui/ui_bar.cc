@@ -14,9 +14,10 @@ UI_Bar::UI_Bar(SDL_Color *color,UI_BAR_TYPE barType)
 	throw std::runtime_error("Not Implemented!");
 }
 
-/*
+
 UI_Bar::~UI_Bar()
 {
+    /*
     UI_Item *temp;
 
     //Empty the list and free the buttons
@@ -26,24 +27,23 @@ UI_Bar::~UI_Bar()
 		items.pop_front();
         delete temp;
     }
+    */
 }
-*/
 
 
-void UI_Bar::addItem(UI_Item *newitem){
-
-	items.push_back(newitem);
-
+void UI_Bar::addItem(UI_Item * newitem)
+{
+    items.push_back(newitem);
     updateItems();
-
 }
 
 
-bool UI_Bar::handle_events(SDL_Event *event)
+bool UI_Bar::handleEvents(SDL_Event * event)
 {
 	// pass event to all bar members
-	for (auto &i : items) {
-		i->handle_events(event);
+    for (auto i : items)
+    {
+        i->handleEvents(event);
 	}
 
 	// TODO: should only pass event untill
@@ -70,10 +70,10 @@ void UI_Bar::draw()
 		it->draw();
 
         if(barType == UI_BAR_HORIZONTAL){
-			cx += it->rect().w;
+            cx += it->getWidth();
         }
         else{
-			cy += it->rect().h;
+            cy += it->getHeight();
         }
     }
 
@@ -109,24 +109,24 @@ void UI_Bar::updateItems()
 	for(auto & it : items) {
 
         if(barType == UI_BAR_HORIZONTAL){
-			it->set_x(x+w);
-			it->set_y(y);
-			w += it->rect().w;
+            it->setX(x+w);
+            it->setY(y);
+            w += it->getWidth();
 
-			if(it->rect().h > h){
-				h = it->rect().h;
+            if(it->getHeight() > h){
+                h = it->getHeight();
             }
         }
         else{
 
-			it->set_x(x);
-			it->set_y(y + h);
+            it->setX(x);
+            it->setY(y + h);
 
-			h += it->rect().h;
+            h += it->getHeight();
 
-			if(it->rect().w > w){
+            if(it->getWidth() > w){
 
-				w = it->rect().w;
+                w = it->getWidth();
             }
         }
 

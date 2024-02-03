@@ -1,15 +1,21 @@
-#include "Run.h"
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_ttf.h"
 
+#include "Run.h"
+#include "base.h"
+
+//#include "PixelManipulation.h"
+#include "Interface.h"
 #include "textures.h"
 #include "debug.h"
-#include "ui/ui_window.h"
+//#include "ui/ui_window.h"
 #include "ui/ui_button.h"
 
 
 
-int run_editor(void)
+int RunEditor(void)
 {
-	bool run = true;
+
     int error = 0;
     SDL_Event event;
 	SDL_Texture *tex;
@@ -21,18 +27,19 @@ int run_editor(void)
 		return error;
 	}
 
-	UI_Window win;
+    //UI_Window win;
 
 
 	tex = loadTex("textures/BUILDING/build/1.png");
-	win.add_item(new UI_Button(UI_Rect(0, 0, 100, 100), tex, nullptr));
-	win.add_item(new UI_Button(UI_Rect(50, 50, 100, 100), tex, nullptr));
+    //win.add_item(new UI_Button(UI_Rect(0, 0, 100, 100), tex, nullptr));
+    //win.add_item(new UI_Button(UI_Rect(50, 50, 100, 100), tex, nullptr));
 
 
-	//INTERFACE.init();
-	//PIXELS.init();
+    INTERFACE.init();
+    PIXELS.init();
 
 	// Program Loop
+    bool run = true;
 	while(run) {
         //Events
 		while(SDL_PollEvent(&event)) {
@@ -60,27 +67,27 @@ int run_editor(void)
 
             ENGINE_HandleEvent_resizeWindow(&event);
 
-			win.handle_events(&event);
+            //win.handle_events(&event);
 
             //External events
-			//INTERFACE.handle_events(event);
+            INTERFACE.handle_events(event);
         }
 
 		/// LOGICS
 
-//      INTERFACE.handle_logics();
+        INTERFACE.handle_logics();
 
 		/// RENDER
         //Clean the screen
-		//SDL_SetRenderDrawColor(RENDER_MAIN, 0, 0, 0, 255);
+        SDL_SetRenderDrawColor(RENDER_MAIN, 0, 0, 0, 255);
 		SDL_SetRenderDrawColor(RENDER_MAIN, 255, 255, 255, 255);
         SDL_RenderClear(RENDER_MAIN);
 
-		win.draw();
+        //win.draw();
 
-//      INTERFACE.showNormaMap();
-//		INTERFACE.showbg();
-//		INTERFACE.showMouse();
+        INTERFACE.showNormaMap();
+        INTERFACE.showbg();
+        INTERFACE.showMouse();
 
         //Update the screen
         SDL_RenderPresent(RENDER_MAIN);

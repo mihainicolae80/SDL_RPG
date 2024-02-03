@@ -1,3 +1,5 @@
+#define SDL_MAIN_HANDLED
+
 #include "src/Run.h"
 
 int main(int argc, char *args[])
@@ -5,7 +7,7 @@ int main(int argc, char *args[])
     (void)argc;
     (void)args;
 
-	run_editor();
+    RunEditor();
 
     return 0;
 }

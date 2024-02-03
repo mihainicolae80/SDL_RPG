@@ -14,9 +14,11 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="../EDITOR" />
+					<Add directory="C:/bin/SDL2-2.28.5/x86_64-w64-mingw32/include" />
 				</Compiler>
 				<Linker>
-					<Add option="-lSDLmain -lSDL -lSDL_image -lSDL_ttf" />
+					<Add option="-lSDLmain -lSDL -lSDL_image -lSDL_ttf -mwindow" />
+					<Add directory="C:/bin/SDL2-2.28.5/x86_64-w64-mingw32/lib" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -47,10 +49,6 @@
 		<Unit filename="SOURCES/base.cc" />
 		<Unit filename="SOURCES/base.h" />
 		<Unit filename="SOURCES/main.cpp" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-			<envvars />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

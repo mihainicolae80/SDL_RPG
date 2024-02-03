@@ -34,7 +34,7 @@ int UI_List::addTab(){
 	return 0;
 }
 
-void UI_List::handleEvents(SDL_Event *){
+bool UI_List::handleEvents(SDL_Event *){
 
 
 }
