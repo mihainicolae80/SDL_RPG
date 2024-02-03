@@ -1,9 +1,0 @@
-The begining...
-An Injured goblin made his way into the house.Get rid of him and then return to The old man
-1
-10 5 
-1
-3
-a 0 1
-a 1 1
-a 2 1
