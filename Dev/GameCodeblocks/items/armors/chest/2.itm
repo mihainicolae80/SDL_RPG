@@ -1,0 +1,6 @@
+name: Epic heavy armor
+def:  900
+skin_inv: 1
+skin_equ: 1
+description: "II desc"
+nrbonus: 0
