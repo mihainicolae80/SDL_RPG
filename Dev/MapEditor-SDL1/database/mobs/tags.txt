@@ -1,0 +1,2 @@
+aggresive :ataca playerul cand acesta este in apropiere
+test_mob_behavior: atac defensiv
