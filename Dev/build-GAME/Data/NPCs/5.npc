@@ -1,0 +1,26 @@
+<BEHAVIORS>
+TALK_TO_PLAYER
+<END_BEHAVIORS>
+
+<DIALOG>
+
+txtline: <Treasure Chest>
+NEWTOPIC(SQ): 4 <Get a grip>
+NEWTOPIC(FQ): 4 <Spread The treasures all over your body>
+NEWTOPIC(CS): Leave it
+
+OPENTOPIC: 1
+txtline: Big Boss: You no touch da treasure
+txtline: mon
+npcmanip: SPAWN FIRST -1 Big Boss
+NEWTOPIC: Come here you dirty creature
+
+OPENTOPIC: 11
+txtline: Big Boss: Resistance is futile!
+NEWTOPIC(CS): <Attack>
+
+OPENTOPIC: 2
+NEWTOPIC(CS): <Close Chest>
+
+<ENDDIALOG>
+

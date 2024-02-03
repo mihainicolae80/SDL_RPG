@@ -1,0 +1,11 @@
+name: Orange Cloak on the awesome jim that is
+def: 3
+skin_inv: 1
+skin_player: 1
+no_desc
+nrbonus: 2
+type: H
+value: 10
+type: H
+value: 15
+

@@ -1,0 +1,19 @@
+Name: Fly me to the moon! (part 2/2)
+
+descline: Dinamite Quest
+descline: take items from dep
+descline: bring to table
+
+goalprogress: 3
+
+rewardgold: 0
+
+rewardexp: 15
+
+rewarditmtake: 1
+
+
+rewarditm: 
+type: 4
+quant: 1
+nr: 3

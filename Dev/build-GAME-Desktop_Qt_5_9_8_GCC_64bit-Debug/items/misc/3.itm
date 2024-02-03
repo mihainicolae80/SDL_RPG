@@ -1,8 +1,0 @@
-name: Dynamite
-skin_inv: 3
-stack: 1
-price: 15
-description: "Particularly good at blowing things up."
-usable: 1
-effect_type: explode_door
-effect_val: 55

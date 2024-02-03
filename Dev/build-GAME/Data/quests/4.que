@@ -1,0 +1,33 @@
+Name: Beat Big Boss
+
+descline: Grraw arghh hrrr
+descline: kill...eh..kill
+descline: <dramatic ending for 
+descline: dramatic description>
+
+goalprogress: 1
+
+rewardgold: 0
+
+rewardexp: 15
+
+rewarditmtake: 4
+
+
+rewarditm: 
+type: 3
+nr: 1
+
+rewarditm: 
+type: 4
+quant: 4
+nr: 1
+
+rewarditm: 
+type: 4
+quant: 2
+nr: 2
+
+rewarditm: 
+type: 1
+nr: 2

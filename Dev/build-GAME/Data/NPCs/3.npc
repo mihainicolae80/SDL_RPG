@@ -1,0 +1,30 @@
+<BEHAVIORS>
+TALK_TO_PLAYER
+<END_BEHAVIORS>
+
+<DIALOG>
+
+txtline: Hello. Me Da Alchemist!
+  
+NEWTOPIC(SQ): 2 Give me Quest!
+NEWTOPIC(FQ): 2 I found the book!
+
+OPENTOPIC: 1
+txtline: Go to the library
+txtline: and read a book!
+NEWTOPIC(CS): All Right!
+
+
+OPENTOPIC: 2
+txtline: Go get items 
+txtline: from ...
+NEWTOPIC(SQ): 3 Where can I find them?
+
+
+OPENTOPIC: 21
+txtline: Deposit!
+
+
+
+<ENDDIALOG>
+
