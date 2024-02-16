@@ -3,8 +3,8 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-LIBS += -L"C:\bin\SDL2-2.28.5\x86_64-w64-mingw32\lib" -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
-INCLUDEPATH += "C:\bin\SDL2-2.28.5\x86_64-w64-mingw32\include"
+LIBS += -L"C:\lib\SDL2-2.28.5\x86_64-w64-mingw32\lib" -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+INCLUDEPATH += "C:\lib\SDL2-2.28.5\x86_64-w64-mingw32\include"
 INCLUDEPATH += -I"src"
 #INCLUDEPATH += -I"src\ui"
 

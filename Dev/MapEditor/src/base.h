@@ -146,5 +146,5 @@ void ctos(char carray[],string &str );
 extern TTF_Font *Font14,*Font18,*Font20,*Font24,*Font2_14,*Font2_18,*Font2_20,*Font2_24;
 
 //Colors
-extern SDL_Color WHITE, BLACK, GRAY,RED, BLUE, GREEN,YELLOW_LIGHT;
+extern SDL_Color WHITE, BLACK, DARKGRAY, GRAY, LIGHTGRAY, RED, BLUE, GREEN,YELLOW_LIGHT;
 

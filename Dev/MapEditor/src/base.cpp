@@ -161,6 +161,7 @@ int  ENGINE_Init()
 	if( !BAS_LoadFonts() )
 	{
 		//CONSOUT( "Failed to load some/all FONTS" );
+        std::cerr << "Failed to load fonts" << endl;
 		ERROR_ADD( ERROR_HIGH );
 	}
 
@@ -677,7 +678,9 @@ TTF_Font *Font14,*Font18,*Font20,*Font24,*Font2_14,*Font2_18,*Font2_20,*Font2_24
 //COLORS
 SDL_Color WHITE        = {255, 255, 255, 255};
 SDL_Color BLACK        = {0, 0, 0, 255};
+SDL_Color DARKGRAY     = {100, 100, 100, 255};
 SDL_Color GRAY         = {150, 150, 150, 255};
+SDL_Color LIGHTGRAY    = {190, 190, 190, 255};
 SDL_Color RED          = {255, 21, 5, 255};
 SDL_Color BLUE         = {0, 0, 255, 255};
 SDL_Color GREEN        = {93, 255, 61, 255};

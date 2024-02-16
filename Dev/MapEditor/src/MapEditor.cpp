@@ -23,9 +23,16 @@ void MapEditor::Run(void)
     INTERFACE.init();
     PIXELS.init();
 
-    auto buttonTexture = loadTex("textures\\debug\\ExcMark.png");
-    auto button = new ui::Button(50, 100, 100, 50, buttonTexture);
+    auto button = new ui::Button(300, 200, 150, 50);
 
+    //auto buttonTexture = loadTex("textures\\debug\\ExcMark.png");
+    //button->setBackgroundTexture(buttonTexture);
+
+    button->setForegroundText("Building");
+    button->setForegroundColor(YELLOW_LIGHT);
+
+    button->setOnClick([] {
+    });
 
     // Program Loop
     bool runLoop = true;
@@ -44,7 +51,8 @@ void MapEditor::Run(void)
                 {
                     key_ctrl_down = true;
                 }
-                else if (SDLK_ESCAPE == event.key.keysym.sym)
+                else if ((SDLK_ESCAPE == event.key.keysym.sym)
+                      || (SDLK_q == event.key.keysym.sym))
                 {
                     runLoop = false;
                 }
