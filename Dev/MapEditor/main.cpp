@@ -1,6 +1,6 @@
 #define SDL_MAIN_HANDLED
 
-#include "src/MapEditor.h"
+#include "src/map_editor.h"
 
 int main(int argc, char *args[])
 {

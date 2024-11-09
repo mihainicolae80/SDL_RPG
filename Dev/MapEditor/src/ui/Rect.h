@@ -2,9 +2,7 @@
 
 #include "SDL2/SDL.h"
 
-namespace engine
-{
-namespace ui
+namespace engine::ui
 {
 
 class Rect
@@ -16,5 +14,4 @@ public:
     SDL_Rect m_rect;
 };
 
-}
 }

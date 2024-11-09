@@ -45,17 +45,17 @@ return ERROR;
 }
 
 
-            CLS_DEBUG::~CLS_DEBUG(){
+CLS_DEBUG::~CLS_DEBUG() {
 
-//Close FILES
-if( ofFlf.is_open() )
-ofFlf.close();
+    //Close FILES
+    if( ofFlf.is_open() )
+    ofFlf.close();
 
-if( ofGeneral.is_open() )
-ofGeneral.close();
+    if( ofGeneral.is_open() )
+    ofGeneral.close();
 
-SDL_FreeSurface   ( sfExMark  );
-SDL_DestroyTexture( txExMark );
+    SDL_FreeSurface   ( sfExMark  );
+    SDL_DestroyTexture( txExMark );
 }
 void        CLS_DEBUG::fout( int file_out, string text ){
 

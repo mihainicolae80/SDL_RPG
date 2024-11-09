@@ -126,7 +126,7 @@ int  ENGINE_Init()
 	///--- INIT WINDOW + RENDERER ---
 
 	WIN_MAIN.setTitle( "RPG Map Editor" );
-	WIN_MAIN.setWindowWidth ( 1024 );
+	WIN_MAIN.setWindowWidth ( 1920 );
 	WIN_MAIN.setWindowHeight( 768 );
 
 	//Flags
@@ -675,21 +675,6 @@ void ctos(char carray[],string &str ){
 //Fonts
 TTF_Font *Font14,*Font18,*Font20,*Font24,*Font2_14,*Font2_18,*Font2_20,*Font2_24;
 
-//COLORS
-SDL_Color WHITE        = {255, 255, 255, 255};
-SDL_Color BLACK        = {0, 0, 0, 255};
-SDL_Color DARKGRAY     = {100, 100, 100, 255};
-SDL_Color GRAY         = {150, 150, 150, 255};
-SDL_Color LIGHTGRAY    = {190, 190, 190, 255};
-SDL_Color RED          = {255, 21, 5, 255};
-SDL_Color BLUE         = {0, 0, 255, 255};
-SDL_Color GREEN        = {93, 255, 61, 255};
-SDL_Color YELLOW_LIGHT = {255, 240, 168, 255};
-
 //Global Svariables
-
-
-
 int cDayTime,iMoveMap_x,iMoveMap_y = 50,mouse_drag_start_x,mouse_drag_start_y,FCMove_x,FCMove_y,maxx,maxy,cInterItm,InterInfo[3];
 bool key_ctrl_down,btn_mouse_down, bCSkinOrigin = false,FCmoveing = false,LightMap_Changed[6],LibLock[3];
-

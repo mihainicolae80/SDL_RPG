@@ -1,7 +1,9 @@
-#ifndef IITEM_H_
-#define IITEM_H_
+#pragma once
 
 #include "SDL2/SDL.h"
+
+namespace engine::ui
+{
 
 class IItem
 {
@@ -14,8 +16,7 @@ public:
     virtual int getWidth() = 0;
     virtual int getHeight() = 0;
     virtual void draw() = 0;
-    virtual bool handleEvents(SDL_Event *) = 0;
-    virtual void updateItems() = 0;
+    virtual bool handleEvents(SDL_Event&) = 0;
 };
 
-#endif // IITEM_H_
+} // namespace engine::ui

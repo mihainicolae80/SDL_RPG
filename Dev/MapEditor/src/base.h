@@ -146,5 +146,14 @@ void ctos(char carray[],string &str );
 extern TTF_Font *Font14,*Font18,*Font20,*Font24,*Font2_14,*Font2_18,*Font2_20,*Font2_24;
 
 //Colors
-extern SDL_Color WHITE, BLACK, DARKGRAY, GRAY, LIGHTGRAY, RED, BLUE, GREEN,YELLOW_LIGHT;
-
+static constexpr SDL_Color TRANSPARENT  = {0, 0, 0, 0};
+static constexpr SDL_Color WHITE        = {255, 255, 255, 255};
+static constexpr SDL_Color BLACK        = {0, 0, 0, 255};
+static constexpr SDL_Color GRAY         = {150, 150, 150, 255};
+static constexpr SDL_Color LIGHTGRAY    = {190, 190, 190, 255};
+static constexpr SDL_Color DARKGRAY     = {100, 100, 100, 255};
+static constexpr SDL_Color DARKGRAY2   = { 40,  40,  40, 255};
+static constexpr SDL_Color RED          = {255, 21, 5, 255};
+static constexpr SDL_Color BLUE         = {  0,   0, 255, 255};
+static constexpr SDL_Color GREEN        = { 93, 255, 61, 255};
+static constexpr SDL_Color YELLOW_LIGHT = {255, 240, 168, 255};

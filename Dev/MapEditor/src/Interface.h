@@ -97,10 +97,4 @@ public:
 
 extern Interface INTERFACE;
 
-
-//Callback Classes
-//class InterfaceCallback_showbg : public CallbackClass{
-//	void execute() override;
-//};
-
 #endif // INTERFACE_H_INCLUDED
